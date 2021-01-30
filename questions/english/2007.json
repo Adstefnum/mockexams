@@ -1,0 +1,602 @@
+[
+ {
+  "question": "Yesterday in the hall, Ola said that ...........  his watch.",
+  "option": {
+   "a": "he had mislaid ",
+   "b": "he had forgot ",
+   "c": "ne has misplaced  ",
+   "d": "he have lost "
+  },
+  "section": "choose the option that best completes the gap(s).",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": " If he arrived late, everyone... \u2026\u2026.. him",
+  "option": {
+   "a": "would have blamed   ",
+   "b": "will blame ",
+   "c": "would  blame ",
+   "d": "must blame"
+  },
+  "section": "choose the option that best completes the gap(s).",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "Emeka hardly ever holds with my view on good governance.",
+  "option": {
+   "a": "Emeka sometimes opposes my idea of good governance.  ",
+   "b": "My view on what good Governance is conforms with that of Emeka.",
+   "c": "Emeka never really supports my opinion of good governance ",
+   "d": "Emeka may never hold a view which conflicts with mine on good governance."
+  },
+  "section": "select the option that best explains the information conveyed in the sentence.",
+  "image": "",
+  "answer": "c",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "",
+  "option": {
+   "a": " superior ",
+   "b": "surcharge",
+   "c": "slaughter ",
+   "d": "superman."
+  },
+  "section": "choose the option that has a different stress pattern from the others.",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "There was \u2026\u2026\u2026\u2026. any traffic as he drove home.",
+  "option": {
+   "a": " hardly ",
+   "b": " normally ",
+   "c": "usually  ",
+   "d": "no "
+  },
+  "section": "choose the option that best completes the gap(s).",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "The rain fell for days... ",
+  "option": {
+   "a": "on ending ",
+   "b": "at ending ",
+   "c": "on end  ",
+   "d": "at end"
+  },
+  "section": "choose the option that best completes the gap(s).",
+  "image": "",
+  "answer": "c",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "association ",
+  "option": {
+   "a": "aSSociation    ",
+   "b": "associaTION",
+   "c": "associAtion   ",
+   "d": "Association."
+  },
+  "section": "choose the appropriate stress pattern from the options. The syllables are written in capital letters.",
+  "image": "",
+  "answer": "c",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "",
+  "option": {
+   "a": "cigarette ",
+   "b": "European ",
+   "c": "evacuee",
+   "d": "expedite."
+  },
+  "section": "choose the option that has a different stress pattern from the others.",
+  "image": "",
+  "answer": "d",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "The study he carried out of the problem was quite <i>comprehensive</i>",
+  "option": {
+   "a": "detailed ",
+   "b": " sketch  ",
+   "c": "inscrutable ",
+   "d": "complete."
+  },
+  "section": "choose the option opposite in meaning to the word or phrase in italics.",
+  "image": "",
+  "answer": "b",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "Kola was fined; \u2026\u2026\u2026.. thieves were given a jail sentence.",
+  "option": {
+   "a": "the rest of the",
+   "b": "rest ",
+   "c": "the rest",
+   "d": "rest off "
+  },
+  "section": "choose the option that best completes the gap(s).",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "The tax rebate was a <i>concession</i> given to the civil servants ",
+  "option": {
+   "a": "a donation ",
+   "b": " an allowance",
+   "c": "an incentive  ",
+   "d": "an emolument. "
+  },
+  "section": "choose the option nearest in meaning to the word or phrase in italics.",
+  "image": "",
+  "answer": "b",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "I look forward to \u2026\u2026. you next week.",
+  "option": {
+   "a": "seen ",
+   "b": "seeing  ",
+   "c": " be seeing ",
+   "d": "see "
+  },
+  "section": "choose the option that best completes the gap(s).",
+  "image": "",
+  "answer": "b",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "E<u>ngs</u>lish",
+  "option": {
+   "a": "end",
+   "b": "thin",
+   "c": "think",
+   "d": "edge"
+  },
+  "section": "choose the option that has the same consonant sound as the one represented by the letter(s) underlined.",
+  "image": "",
+  "answer": "c",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "The striking workers have vowed not to return to work until the decision is <i>reversed.</i> ",
+  "option": {
+   "a": "rescinded         ",
+   "b": "dismissed",
+   "c": "implemented    ",
+   "d": "reverted. "
+  },
+  "section": "choose the option nearest in meaning to the word or phrase in italics.",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "bl<u>ues</u>",
+  "option": {
+   "a": "book",
+   "b": "root",
+   "c": "foot",
+   "d": "look"
+  },
+  "section": "choose the option that has the same vowel sound as the letter(s) underlined.",
+  "image": "",
+  "answer": "d",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "",
+  "option": {
+   "a": "education ",
+   "b": "individual ",
+   "c": "agriculture",
+   "d": "Cinderella."
+  },
+  "section": "choose the option that has a different stress pattern from the others.",
+  "image": "",
+  "answer": "d",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "The stadium was <i>seething</i> with people when we entered",
+  "option": {
+   "a": " filled ",
+   "b": " crowded ",
+   "c": "empty   ",
+   "d": "noisy."
+  },
+  "section": "choose the option opposite in meaning to the word or phrase in italics.",
+  "image": "",
+  "answer": "c",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "He says he ............. find me a job, but will accommodate me.",
+  "option": {
+   "a": "could not ",
+   "b": "was notable to",
+   "c": "is not able to",
+   "d": "cannot be able to "
+  },
+  "section": "choose the option that best completes the gap(s).",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "The idle steward could not see ....... on the wall, and he lost his job.",
+  "option": {
+   "a": "the writing",
+   "b": "what will be written ",
+   "c": "the handwriting",
+   "d": "what is written"
+  },
+  "section": "choose the option that best completes the gap(s).",
+  "image": "",
+  "answer": "c",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "The police are not happy with the growing number of <i>depraved</i> people around the politician.",
+  "option": {
+   "a": "violent ",
+   "b": "immoral ",
+   "c": "indolent ",
+   "d": "loquacious "
+  },
+  "section": "choose the option nearest in meaning to the word or phrase in italics.",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "advertisement ",
+  "option": {
+   "a": "adVERtisement  ",
+   "b": "advertiseMENT",
+   "c": " adverTISEment   ",
+   "d": "ADvertisement."
+  },
+  "section": "choose the appropriate stress pattern from the options. The syllables are written in capital letters.",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "The next village is at least 30 kilometres away.",
+  "option": {
+   "a": "The next village is 30 kilometres away, possibly less. ",
+   "b": "The next village is approximately 30 kilometres away.    ",
+   "c": "The next village is   only 30 kilometres away.",
+   "d": "The next village is 30 kilometres away, or possibly more."
+  },
+  "section": "select the option that best explains the information conveyed in the sentence.",
+  "image": "",
+  "answer": "d",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "My father has been away on a journey but my mother  says she \u2026...he \u2026\u2026 this Friday.",
+  "option": {
+   "a": " expects/would arrive",
+   "b": "expected/win arrive ",
+   "c": "expects/will arrive",
+   "d": "expected/would arrive "
+  },
+  "section": "choose the option that best completes the gap(s).",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "The man advised his wife to steer a <i>middle course</i> the argument between her and her employers",
+  "option": {
+   "a": "be recalcitrant  ",
+   "b": "be unrepentant",
+   "c": "be compromising",
+   "d": "be unrelenting"
+  },
+  "section": "choose the option opposite in meaning to the word or phrase in italics.",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "",
+  "option": {
+   "a": " intact  ",
+   "b": " integral ",
+   "c": "negotiate ",
+   "d": "about."
+  },
+  "section": "choose the option that has the stress on the first syllable.",
+  "image": "",
+  "answer": "b",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "The team has benefitted from the coach's \u2026\u2026\u2026. of experience. ",
+  "option": {
+   "a": "minefield ",
+   "b": "reservoir ",
+   "c": "wealth ",
+   "d": "world "
+  },
+  "section": "choose the option that best completes the gap(s).",
+  "image": "",
+  "answer": "c",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "My advice to Tolu was: 'Look before you leap.'",
+  "option": {
+   "a": "Tolu was advised to consider her opinions before reaching any decisions.",
+   "b": "Tolu was advised to consider the possible consequences before taking action.",
+   "c": "Tolu was advised to weigh her decisions by looking and leaping.  ",
+   "d": "Tolu was advised to leap only after looking."
+  },
+  "section": "select the option that best explains the information conveyed in the sentence.",
+  "image": "",
+  "answer": "b",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "capitalism    ",
+  "option": {
+   "a": "capiTAIism   ",
+   "b": "capitaLIsm",
+   "c": "caPItalism ",
+   "d": "CApitalism."
+  },
+  "section": "choose the appropriate stress pattern from the options. The syllables are written in capital letters.",
+  "image": "",
+  "answer": "d",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "Is it necessary for us to go?' she asked in her <i>shrill</i> voice ",
+  "option": {
+   "a": "angry ",
+   "b": "quiet",
+   "c": " indistinct ",
+   "d": "aggressive."
+  },
+  "section": "choose the option opposite in meaning to the word or phrase in italics.",
+  "image": "",
+  "answer": "c",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "For anything to do with academic work, he has a great  a <i>version</i>",
+  "option": {
+   "a": "conversion ",
+   "b": "attention",
+   "c": "contempt  ",
+   "d": "predilection."
+  },
+  "section": "choose the option opposite in meaning to the word or phrase in italics.",
+  "image": "",
+  "answer": "b",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "Do not be <i>discouraged</i> by failure in life.",
+  "option": {
+   "a": "overjoyed",
+   "b": "dissuaded",
+   "c": "actuated ",
+   "d": "disoriented."
+  },
+  "section": "choose the option opposite in meaning to the word or phrase in italics.",
+  "image": "",
+  "answer": "c",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "Didn't .......  draw your attention to the entry requirements?",
+  "option": {
+   "a": "anyone ",
+   "b": "everyone ",
+   "c": "everybody",
+   "d": "no body"
+  },
+  "section": "choose the option that best completes the gap(s).",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "There's a door at either end of the building.",
+  "option": {
+   "a": "The building has two ends and two doors. ",
+   "b": "The building has two ends, but only one doc'",
+   "c": "The building has two ends, but I do not know which of the two has a door. ",
+   "d": "The building has many ends each with a door."
+  },
+  "section": "select the option that best explains the information conveyed in the sentence.",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "clo<u>ths</u>e",
+  "option": {
+   "a": "thomas",
+   "b": "three",
+   "c": "they",
+   "d": "mouth"
+  },
+  "section": "choose the option that has the same consonant sound as the one represented by the letter(s) underlined.",
+  "image": "",
+  "answer": "c",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "When they examined his body, they found that he ...",
+  "option": {
+   "a": " had been dead  ",
+   "b": " had been dying  ",
+   "c": "died  ",
+   "d": "was dead"
+  },
+  "section": "choose the option that best completes the gap(s).",
+  "image": "",
+  "answer": "d",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "Mr. Adeyemo is quite a <i>conceited</i> young man",
+  "option": {
+   "a": "a resourceful",
+   "b": "a practical ",
+   "c": "an experienced ",
+   "d": "an unassuming."
+  },
+  "section": "choose the option opposite in meaning to the word or phrase in italics.",
+  "image": "",
+  "answer": "d",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "The woman won't have lived through the night. ",
+  "option": {
+   "a": "It was likely that the woman died before morning ",
+   "b": "The woman survived her ordeal but not without some help .   ",
+   "c": "From all indications, the woman was taken much worse, though she overcame her ordeal",
+   "d": "The woman might not have lived if she hadn\u2019t got the right support"
+  },
+  "section": "select the option that best explains the information conveyed in the sentence.",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "The refugees were received at the <i>transit</i> camp.",
+  "option": {
+   "a": "passage ",
+   "b": " permanent ",
+   "c": "temporary ",
+   "d": "nearby."
+  },
+  "section": "choose the option opposite in meaning to the word or phrase in italics.",
+  "image": "",
+  "answer": "b",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "The man paid a large sum to <i>redeem</i> his mortgaged property ",
+  "option": {
+   "a": "ransom ",
+   "b": "acquire ",
+   "c": "pawn ",
+   "d": "recover."
+  },
+  "section": "choose the option opposite in meaning to the word or phrase in italics.",
+  "image": "",
+  "answer": "c",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ },
+ {
+  "question": "The astute businessman neatly <i>fended</i> off questions off questions about his private life.",
+  "option": {
+   "a": "asked ",
+   "b": "explained ",
+   "c": "welcomed",
+   "d": "sidestepped."
+  },
+  "section": "choose the option nearest in meaning to the word or phrase in italics.",
+  "image": "",
+  "answer": "a",
+  "solution": "",
+  "examtype": "utme",
+  "examyear": "2007"
+ }
+]
