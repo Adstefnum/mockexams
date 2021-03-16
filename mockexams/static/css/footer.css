@@ -1,0 +1,73 @@
+footer{
+  height: 120px;
+  width: 100%;
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#legalpanel, #mediapanel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 0 0 0;
+  width: 50%;
+  height: inherit;
+}
+
+#mediapanel{
+  flex-direction: row;
+}
+
+.socialmedia{
+  height: 26px;
+}
+
+#youtube{
+  background: url('../imgs/youtube.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  width: 34px;
+}
+  
+#twitter{
+  background: url('../imgs/twitter.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  width: 26px;
+}
+  
+#mail{
+  background: url('../imgs/mail.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  width: 26px;
+}
+
+@media screen and (max-width : 1024px), (min-height : 768px) {
+  footer{
+    height: 400px;
+    font-size: xx-large;
+  }
+  
+  .socialmedia{
+    height: 60px;
+  }
+  
+  #youtube{
+    width: 70px;
+  }
+    
+  #twitter{
+    width: 60px;
+  }
+    
+  #mail{
+    width: 60px;
+  }
+}

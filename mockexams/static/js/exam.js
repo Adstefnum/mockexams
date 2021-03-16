@@ -221,6 +221,7 @@ var h = (tag, props, children = EMPTY_ARR)=>createVNode(tag, props, isArray(chil
         children
     ])
 ;
+const h1 = h;
 var app = ({ init =EMPTY_OBJ , view , subscriptions , dispatch =id , node ,  })=>{
     var vdom = node && recycleNode(node);
     var subs = [];
@@ -244,6 +245,7 @@ var app = ({ init =EMPTY_OBJ , view , subscriptions , dispatch =id , node ,  })=
         , setState(action[0])) : action == null ? patchSubs(subs, EMPTY_ARR, dispatch = id) : setState(action)
     ))(init), dispatch;
 };
+const app1 = app;
 const inc = (count, len)=>count === len - 1 ? count : count + 1
 ;
 const dec = (count)=>count === 0 ? count : count - 1
@@ -276,7 +278,7 @@ const options = (options1, number)=>Object.keys(options1).map((key)=>h('li', {
         ])
     )
 ;
-const question = (data, number)=>h('main', {
+const question = (data, number)=>h('div', {
         id: 'question'
     }, [
         h('section', {
@@ -312,6 +314,94 @@ const question = (data, number)=>h('main', {
         ])
     ])
 ;
+const slideopen = ()=>document.getElementById('sidebar').classList.toggle('opensidebar')
+;
+const burger1 = ()=>h('div', {
+        id: 'burger',
+        onclick: slideopen
+    }, [
+        h('div', {
+            id: 'upperburger'
+        }, [
+            h('div', {
+                class: 'line'
+            }),
+            h('div', {
+                class: 'line'
+            })
+        ]),
+        h('div', {
+            id: 'lowerburger'
+        }, [
+            h('div', {
+                class: 'line'
+            }),
+            h('div', {
+                class: 'line'
+            })
+        ])
+    ])
+;
+const burger2 = ()=>h('div', {
+        id: 'burger2',
+        onclick: slideopen
+    }, [
+        h('div', {
+            id: 'line1'
+        }),
+        h('div', {
+            id: 'line2'
+        })
+    ])
+;
+const sidebar = ()=>h('navbar', {
+        id: 'sidebar'
+    }, [
+        burger2(),
+        h('section', {
+            id: 'profilepic'
+        }, [
+            h('img', {
+                src: 'imgs/avatar.png'
+            }, []),
+            h('p', {
+                id: 'username'
+            }, text('username')),
+            h('p', {
+                id: 'id'
+            }, text('09838839BD'))
+        ]),
+        h('section', {
+            id: 'subjects'
+        }, [
+            h('button', {
+                class: 'subjects'
+            }, text('physics')),
+            h('button', {
+                class: 'subjects'
+            }, text('biology')),
+            h('button', {
+                class: 'subjects'
+            }, text('chemistry')),
+            h('button', {
+                class: 'subjects'
+            }, text('english'))
+        ]),
+        h('section', {
+            id: 'time'
+        }, [
+            h('p', {
+                id: 'timetitle'
+            }, text('Time left')),
+            h('div', {
+                class: 'time'
+            }, text('100:00'))
+        ]),
+        h('button', {
+            id: 'submit'
+        }, text('submit'))
+    ])
+;
 const range = (end)=>[
         ...Array(end + 1).keys()
     ].filter((x)=>x > 0
@@ -324,24 +414,38 @@ const panel = (number)=>range(number).map((x)=>h('button', {
         }, text(x))
     )
 ;
-async function info() {
-    await fetch("http://0.0.0.0:3000/http%3A%2F%2F0.0.0.0:10000%2Fquestions%2Fenglish%2F2006.json").then((r)=>r.json()
-    ).then((data)=>app({
+const layout = (data, count)=>[
+        burger1(),
+        sidebar(),
+        h('div', {
+            id: 'questionarea'
+        }, [
+            question(data[count], count + 1),
+            h('section', {
+                id: 'panel'
+            }, panel(data.length))
+        ])
+    ]
+;
+var url = `http://0.0.0.0:3000/questions/english/2006.json`;
+const Http = new XMLHttpRequest();
+Http.open("GET", url);
+Http.send();
+var data = [];
+Http.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        data = JSON.parse(Http.responseText);
+        app1({
             init: {
                 data: data,
                 count: 0
             },
-            node: document.getElementById("app"),
-            view: ({ data: data1 , count  })=>h('main', {
+            view: ({ data: data1 , count  })=>h1('main', {
                     id: 'background'
-                }, [
-                    question(data1[count], count + 1),
-                    h('section', {
-                        id: 'panel'
-                    }, panel(data1.length))
-                ])
-        })
-    );
-}
-info();
+                }, layout(data1, count))
+            ,
+            node: document.getElementById("app")
+        });
+    }
+};
 
