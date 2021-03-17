@@ -6,7 +6,7 @@ from mockexamsapp.models import *
 from mockexamsapp.serializers import *
 
 @csrf_exempt
-def questions(request):
+def questions_list(request):
     """
         List all questions or add new questions
     """
