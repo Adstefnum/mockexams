@@ -1,14 +1,16 @@
 from rest_framework import serializers
 from rest_framework.renderers import JSONRenderer
-from models import *
+from mockexamsapp.models import *
 
 class accompanySerializer(serializers.ModelSerializer):
-	model = "Accompany"
-	fields = "__all__"
+	class Meta:
+		model = Accompany
+		fields = "__all__"
 
 class questionSerializer(serializers.ModelSerializer):
-	model = "Question"
-	fields = "__all__"
+	class Meta:
+		model = Question
+		fields = "__all__"
 
 
 questions = questionSerializer(question)
