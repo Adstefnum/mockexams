@@ -1,0 +1,89 @@
+#background{
+    justify-content: center;
+}
+
+#panel{
+    display: flex;
+    width: 40%;
+    min-height: 40%;
+    max-height: 80%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 0px 0px rgb(255, 255, 255),
+    2px 2px 6px rgb(100, 100, 100);
+}
+
+#panel input{
+    padding: 10px 8px 10px 8px;
+}
+
+#title{
+    font-size: xx-large;
+    font-weight: lighter;
+}
+
+input[type='text'], input[type='email'], .dual, #title, input[type='submit']{
+    margin: 10px 0 10px 0;
+}
+
+input[type='text'], input[type='email'], .dual{
+    width: 320px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.dual{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 8px 0px 8px;
+    background-color: white;
+    color: rgba(80, 80, 197, 0.589);
+}
+
+.dual input{
+    width: 280px;
+    border: none;
+    background: none;
+    margin: 0 0 0 0;
+}
+
+.dual input:focus{
+    border: none;
+    outline: none;
+}
+
+.dual div{
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#telegram{
+    background: url('../imgs/telegram.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+}
+
+#panel input[type='submit']{
+    width: 260px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    /*background-color: rgb(100, 0, 194);*/
+    box-shadow: 0px 0px 0px rgb(255, 255, 255),
+    2px 2px 6px rgb(100, 100, 100);
+}
+
+#panel input[type='submit']:active{
+    border: none;
+    /*background-color: rgb(145, 28, 255);*/
+    box-shadow: inset 0px 0px 0px rgb(255, 255, 255),
+    inset 2px 2px 6px rgb(100, 100, 100);
+}

@@ -1,0 +1,162 @@
+#landing, #exampanel{
+  width: 90%;
+  padding: 50px 20px 50px 20px;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+#exampanel{
+  display: block;
+  min-height: auto;
+}
+
+#descriptionpanel, #fancyimage{
+  height: inherit;
+}
+
+#descriptionpanel{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#signinpanel{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#signinpanel a{
+  width: 30%;
+}
+
+#fancyimage{
+  width: 65%;
+  height: 100%;
+  background: url('../imgs/fancyimage1.png') no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.exam{
+  width: 40%;
+  height: 400px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 20px 20px 20px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 0px rgb(255, 255, 255),
+  2px 2px 6px rgb(100, 100, 100);
+  margin: 0 0 5% 5%;
+}
+
+.exam img{
+  outline: none;
+  /*width: 300px;*/
+  height: 200px;
+  align-self: center;
+}
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 10px 0;
+  width: 100%;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid black;
+  outline: none;
+  background: none;
+}
+
+.btn:active{
+  box-shadow: inset 0px 0px 0px rgb(255, 255, 255),
+  inset 2px 2px 6px rgb(100, 100, 100);
+}
+
+#exams{
+  height: 800px;
+  background-color: aliceblue;
+  display: grid;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width : 1024px), (min-height : 768px) {
+  #landing, #exampanel{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-size: xx-large;
+  }
+
+  #landing{
+    flex-direction: column-reverse;
+  }
+
+  #exampanel{
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #descriptionpanel{
+    height: 30%;
+  }
+  
+  #descriptionpanel{
+    width: 100%;
+  }
+  
+  #signinpanel a{
+    width: 50%;
+  }
+  
+  #fancyimage{
+    width: 100%;
+    height: 70%;
+  }
+
+  .examlinks{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+  }
+  
+  .exam{
+    width: 80%;
+    height: 800px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 6px;
+    margin: 0 0 0 0;
+  }
+  
+  .exam img{
+    outline: none;
+    /*width: 300px;*/
+    height: 400px;
+    align-self: center;
+  }
+  
+  .btn{
+    height: 100px;
+    margin: 25px 0 25px 0;
+  }
+  
+  #exams{
+    height: 800px;
+    background-color: aliceblue;
+    display: grid;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
