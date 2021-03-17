@@ -19,8 +19,8 @@ ACC_TYPE = (
 
 class Accompany(models.Model):
 	acom_type = models.CharField(max_length = 100, choices= ACC_TYPE)
-	passage = models.TextField()
-	diagram = models.ImageField(upload_to ='media/images/', default =None )
+	passage = models.TextField(null=True)
+	diagram = models.ImageField(upload_to ='media/images/', default =None,null=True)
 
 
 class Question(models.Model):
