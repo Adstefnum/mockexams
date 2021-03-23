@@ -246,11 +246,14 @@ var app = ({ init =EMPTY_OBJ , view , subscriptions , dispatch =id , node ,  })=
 };
 const changetheme = ()=>document.getElementById('themechanger').classList.toggle('sun')
 ;
+const gohome = ()=>window.location.replace('/')
+;
 const nav = (name)=>h('nav', {
         id: 'navbar'
     }, [
         h('span', {
-            id: 'logopanel'
+            id: 'logopanel',
+            onclick: gohome
         }, [
             h('div', {
                 id: 'logo'
