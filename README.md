@@ -3,6 +3,9 @@ A website to practice cbt examination
 
 # plans
 
+# Getting the database
+The database has been created and will soon be populated but it will not be uploaded to github rather i will include the populate_database.py file so you can run that file and populate the database on your local machine. Make sure not to upload the sqlite databse. It might be later changed to postgresql.
+
 ### scraping past questions
 
 - The question dirrectory contains past questions to be used for testing the backend.

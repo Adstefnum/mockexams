@@ -12,9 +12,9 @@ class questionSerializer(serializers.ModelSerializer):
 		model = Question
 		fields = "__all__"
 
-
+'''
 questions = questionSerializer(question)
 question_json = JSONRenderer().render(questions.data)
 
 accompany = accompanySerializer(question)
-accompany_json = JSONRenderer().render(accompany.data)
+accompany_json = JSONRenderer().render(accompany.data)'''
