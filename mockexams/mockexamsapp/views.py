@@ -31,7 +31,7 @@ def questions_list_by_subject(request,subject):
     """
 
     if request.method == 'GET':
-        questions = Question.objects.all(subject=subject)
+        questions = Question.objects.filter(subject=subject)
         question_serializer = questionSerializer(questions, many=True)
         return JsonResponse(question_serializer.data, safe=False)
 
@@ -50,7 +50,7 @@ def questions_list_by_year(request,year):
     """
 
     if request.method == 'GET':
-        questions = Question.objects.all(year=year)
+        questions = Question.objects.filter(year=year)
         question_serializer = questionSerializer(questions, many=True)
         return JsonResponse(question_serializer.data, safe=False)
 
@@ -69,7 +69,7 @@ def questions_list_by_accompaniment(request,fk):
     """
 
     if request.method == 'GET':
-        questions = Question.objects.all(fk=fk)
+        questions = Question.objects.filter(fk=fk)
         question_serializer = questionSerializer(questions, many=True)
         return JsonResponse(question_serializer.data, safe=False)
 
@@ -88,7 +88,7 @@ def questions_list_by_acom_type(request,fk):
     """
 
     if request.method == 'GET':
-        questions = Question.objects.all(fk=fk)
+        questions = Question.objects.filter(fk=fk)
         question_serializer = questionSerializer(questions, many=True)
         return JsonResponse(question_serializer.data, safe=False)
 
@@ -108,7 +108,7 @@ def question_detail(request,pk):
     """
 
     try:
-        question = Question.objects.get(pk=pk)
+        question = Question.objects.filter(pk=pk)
 
     except Exception: 
         return HttpResponse(status=404)

@@ -12,10 +12,8 @@ SUB_CHOICES = (
 
 EXAM_TYPE = (
 
-	(),
-	(),
-	(),
-	(),
+	("UTME", "Jamb Examination"),
+	("POST-UTME", 'Post Jamb Examination'),
 )
 
 YEAR_CHOICES =  [(str(i), i) for i in range(1990,2022)]
