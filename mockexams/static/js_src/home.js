@@ -43,6 +43,9 @@ const landing = (describe) =>
       h('div', {id : 'descriptionpanel'}, [
         h('p', {id : 'description'}, text(describe)),
         h('span', {id : 'signinpanel'}, [
+          h('a', {href : '/leaderboard'}, [
+            h('div', {class : 'btn'}, text('View leaderboard')),
+          ]),
           h('a', {href : '/signup'}, [
             h('div', {class : 'btn'}, text('Sign Up')),
           ]),

@@ -244,6 +244,8 @@ var app = ({ init =EMPTY_OBJ , view , subscriptions , dispatch =id , node ,  })=
         , setState(action[0])) : action == null ? patchSubs(subs, EMPTY_ARR, dispatch = id) : setState(action)
     ))(init), dispatch;
 };
+const show = (state, event)=>'password' == event.srcElement.previousSibling.type ? event.srcElement.previousSibling.type : "text"
+;
 const tel = (name)=>h('span', {
         class: 'dual'
     }, [
@@ -268,7 +270,8 @@ const password = (name)=>h('span', {
             type: 'password'
         }),
         h('div', {
-            class: 'show'
+            class: 'show',
+            onclick: show
         }, text('show'))
     ])
 ;

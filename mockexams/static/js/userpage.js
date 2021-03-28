@@ -244,46 +244,6 @@ var app = ({ init =EMPTY_OBJ , view , subscriptions , dispatch =id , node ,  })=
         , setState(action[0])) : action == null ? patchSubs(subs, EMPTY_ARR, dispatch = id) : setState(action)
     ))(init), dispatch;
 };
-const slideopen = ()=>document.getElementById('sidebar').classList.toggle('opensidebar')
-;
-const burger1 = ()=>h('div', {
-        id: 'burger',
-        onclick: slideopen
-    }, [
-        h('div', {
-            id: 'upperburger'
-        }, [
-            h('div', {
-                class: 'line'
-            }),
-            h('div', {
-                class: 'line'
-            })
-        ]),
-        h('div', {
-            id: 'lowerburger'
-        }, [
-            h('div', {
-                class: 'line'
-            }),
-            h('div', {
-                class: 'line'
-            })
-        ])
-    ])
-;
-const burger2 = ()=>h('div', {
-        id: 'burger2',
-        onclick: slideopen
-    }, [
-        h('div', {
-            id: 'line1'
-        }),
-        h('div', {
-            id: 'line2'
-        })
-    ])
-;
 const userinfo = ()=>h('section', {
         id: 'profilepic'
     }, [
@@ -298,152 +258,47 @@ const userinfo = ()=>h('section', {
         }, text('09838839BD'))
     ])
 ;
-const inc = (count, len)=>count === len - 1 ? count : count + 1
-;
-const dec = (count)=>count === 0 ? count : count - 1
-;
-const jump = (state, event)=>({
-        ...state,
-        count: parseInt(event.target.value) - 1
-    })
-;
-const increase = (state)=>({
-        ...state,
-        count: inc(state.count, state.data.length)
-    })
-;
-const decrease = (state)=>({
-        ...state,
-        count: dec(state.count)
-    })
-;
-const options = (options1, number)=>Object.keys(options1).map((key)=>h('li', {
-            class: 'options'
-        }, [
-            h('input', {
-                type: 'radio',
-                name: number,
-                value: key
-            }),
-            h('p', {
-            }, text(options1[key]))
-        ])
-    )
-;
-const question = (data, number)=>h('div', {
-        id: 'question'
+const menubuttons = [
+    'Analytics',
+    'Start CBT',
+    'Leaderboard',
+    'Make Payments',
+    'Settings'
+];
+const buttons = (name)=>h('div', {
+        class: 'btn'
     }, [
-        h('section', {
-            class: 'paragraph'
-        }, text(data.section)),
-        h('section', {
-            class: 'question'
-        }, [
-            h('p', {
-                class: 'number'
-            }, text(number)),
-            h('p', {
-                class: 'qinfo'
-            }, text(data.question))
-        ]),
-        h('section', {
-            id: 'options'
-        }, [
-            h('ul', {
-            }, options(data.option, number))
-        ]),
-        h('section', {
-            id: 'buttons'
-        }, [
-            h('button', {
-                class: 'prev',
-                onclick: decrease
-            }, text('previous')),
-            h('button', {
-                class: 'next',
-                onclick: increase
-            }, text('next'))
-        ])
+        h('div', {
+            id: name
+        }, []),
+        text(name)
     ])
 ;
-const sidebar = ()=>h('navbar', {
+const menuoptions = ()=>h('section', {
+        id: 'menuoptions'
+    }, menubuttons.map((x)=>buttons(x)
+    ))
+;
+const sidemenu = ()=>h('span', {
         id: 'sidebar'
     }, [
-        burger2(),
         userinfo(),
-        h('section', {
-            id: 'subjects'
-        }, [
-            h('button', {
-                class: 'subjects'
-            }, text('physics')),
-            h('button', {
-                class: 'subjects'
-            }, text('biology')),
-            h('button', {
-                class: 'subjects'
-            }, text('chemistry')),
-            h('button', {
-                class: 'subjects'
-            }, text('english'))
-        ]),
-        h('section', {
-            id: 'time'
-        }, [
-            h('p', {
-                id: 'timetitle'
-            }, text('Time left')),
-            h('div', {
-                class: 'time'
-            }, text('100:00'))
-        ]),
-        h('button', {
-            id: 'submit'
-        }, text('submit'))
+        menuoptions()
     ])
 ;
-const range = (end)=>[
-        ...Array(end + 1).keys()
-    ].filter((x)=>x > 0
-    )
-;
-const panel = (number)=>range(number).map((x)=>h('button', {
-            class: 'btn',
-            value: x,
-            onclick: jump
-        }, text(x))
-    )
-;
-const layout = (data, count)=>[
-        burger1(),
-        sidebar(),
-        h('div', {
+const layout = ()=>[
+        sidemenu(),
+        h('span', {
             id: 'mainarea'
-        }, [
-            question(data[count], count + 1),
-            h('section', {
-                id: 'panel'
-            }, panel(data.length))
-        ])
+        }, [])
     ]
 ;
-var url = `http://0.0.0.0:3000/file/%2Fhome%2Fcnerd%2FDocuments%2FPython%2Fwebdev%2Fmockexams%2Fquestions%2Fchemistry%2F2001.json`;
-async function info() {
-    await fetch(url).then((data)=>data.json()
-    ).then((data)=>app({
-            init: {
-                data: data,
-                count: 0
-            },
-            view: ({ data: data1 , count  })=>h('main', {
-                    id: 'background'
-                }, layout(data1, count))
-            ,
-            node: document.getElementById("app")
-        })
-    ).catch(function(error) {
-        console.error(error);
-    });
-}
-info();
+app({
+    init: {
+    },
+    node: document.getElementById("app"),
+    view: ()=>h("main", {
+            id: "background"
+        }, layout())
+});
 

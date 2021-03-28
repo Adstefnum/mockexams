@@ -1,4 +1,6 @@
 import { h, text, app } from "https://unpkg.com/hyperapp"
+import { burger1, burger2 } from "./burger.js"
+import { userinfo } from "./others.js"
 
 const inc = (count, len) =>
     count === len -1 ? count : count + 1
@@ -45,33 +47,9 @@ const question = (data, number) => h('div', {id : 'question'}, [
     ])
 ])
 
-const slideopen = () => (
-    document.getElementById('sidebar').classList.toggle('opensidebar')
-)
-
-const burger1 = () => h('div', {id : 'burger', onclick : slideopen}, [
-    h('div', {id : 'upperburger'}, [
-        h('div', {class : 'line'}),
-        h('div', {class : 'line'})
-    ]),
-    h('div', {id : 'lowerburger'}, [
-        h('div', {class : 'line'}),
-        h('div', {class : 'line'})
-    ])
-])
-
-const burger2 = () => h('div', {id : 'burger2', onclick : slideopen}, [
-    h('div', {id : 'line1'}),
-    h('div', {id : 'line2'})
-])
-
 const sidebar = () => h('navbar', {id : 'sidebar'}, [
     burger2(),
-    h('section', {id : 'profilepic'}, [
-        h('img', {src : 'imgs/avatar.png'}, []),
-        h('p', {id : 'username'}, text('username')),
-        h('p', {id : 'id'}, text('09838839BD'))
-    ]),
+    userinfo(),
     h('section', {id : 'subjects'}, [
         h('button', {class : 'subjects'}, text('physics')),
         h('button', {class : 'subjects'}, text('biology')),
@@ -97,13 +75,13 @@ const panel = number =>
 const layout = (data, count) =>[
     burger1(),
     sidebar(),
-    h('div', {id : 'questionarea'}, [
+    h('div', {id : 'mainarea'}, [
         question(data[count], count + 1),
         h('section', {id : 'panel'}, panel(data.length))
     ])
 ]
 
-var url = `http://0.0.0.0:3000/questions/english/2006.json`
+var url = `http://0.0.0.0:3000/file/%2Fhome%2Fcnerd%2FDocuments%2FPython%2Fwebdev%2Fmockexams%2Fquestions%2Fchemistry%2F2001.json`
 async function info() {
     await fetch(url)
         .then(data => data.json())

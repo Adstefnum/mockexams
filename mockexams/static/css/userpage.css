@@ -1,0 +1,7 @@
+#background{
+    flex-direction: row;
+}
+
+#sidebar section{
+    width: 80%;
+}
