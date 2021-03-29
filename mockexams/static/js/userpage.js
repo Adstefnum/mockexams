@@ -258,11 +258,11 @@ const userinfo = ()=>h('section', {
         }, text('09838839BD'))
     ])
 ;
-const menubuttons = [
+const adminbuttons = [
+    'UserPage',
     'Analytics',
-    'Start CBT',
     'Leaderboard',
-    'Make Payments',
+    'LogCat',
     'Settings'
 ];
 const buttons = (name)=>h('div', {
@@ -274,20 +274,20 @@ const buttons = (name)=>h('div', {
         text(name)
     ])
 ;
-const menuoptions = ()=>h('section', {
+const menuoptions = (menubuttons)=>h('section', {
         id: 'menuoptions'
     }, menubuttons.map((x)=>buttons(x)
     ))
 ;
-const sidemenu = ()=>h('span', {
+const sidemenu = (baroptions)=>h('span', {
         id: 'sidebar'
     }, [
         userinfo(),
-        menuoptions()
+        menuoptions(baroptions)
     ])
 ;
-const layout = ()=>[
-        sidemenu(),
+const layout = (baroptions)=>[
+        sidemenu(baroptions),
         h('span', {
             id: 'mainarea'
         }, [])
@@ -295,10 +295,11 @@ const layout = ()=>[
 ;
 app({
     init: {
+        menubuttons: adminbuttons
     },
     node: document.getElementById("app"),
-    view: ()=>h("main", {
+    view: ({ menubuttons  })=>h("main", {
             id: "background"
-        }, layout())
+        }, layout(menubuttons))
 });
 

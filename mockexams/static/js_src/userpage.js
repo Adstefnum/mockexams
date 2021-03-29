@@ -1,7 +1,8 @@
 import { h, text, app } from "https://unpkg.com/hyperapp"
 import { userinfo } from "./others.js"
 
-const menubuttons = ['Analytics', 'Start CBT', 'Leaderboard', 'Make Payments', 'Settings']
+const userbuttons = ['Analytics', 'Start CBT', 'Leaderboard', 'Make Payments', 'Settings']
+const adminbuttons = ['UserPage', 'Analytics', 'Leaderboard', 'LogCat', 'Settings']
 
 const info = (name) =>
     h('span', {id : 'profileinfo1'}, [
@@ -50,25 +51,30 @@ const buttons = (name) =>
         text(name)
     ])
 
-const menuoptions = () =>
+const menuoptions = (menubuttons) =>
     h('section', {id : 'menuoptions'}, menubuttons.map(
         (x) => buttons(x)
     ))
 
-const sidemenu = () =>
+const sidemenu = (baroptions) =>
     h('span', {id : 'sidebar'}, [
         userinfo(),
-        menuoptions()
+        menuoptions(baroptions)
     ])
 
-const layout = () => [
-    sidemenu(),
+const layout = (baroptions) => [
+    sidemenu(baroptions),
     h('span', {id : 'mainarea'}, [])
 ]
 
+/*const adminlayout = (baroptions) => [
+    sidemenu(baroptions),
+    h('span', {id : 'mainarea'}, [])
+]*/
+
 app({
-    init: {},
+    init: {menubuttons : adminbuttons},
     node: document.getElementById("app"),
-    view: () =>
-        h("main", {id : "background"}, layout())
+    view: ({ menubuttons }) =>
+        h("main", {id : "background"}, layout(menubuttons))
 })
