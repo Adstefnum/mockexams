@@ -1,8 +1,8 @@
 import { h, text, app } from "https://unpkg.com/hyperapp"
 import { userinfo } from "./others.js"
 
-const userbuttons = ['Analytics', 'Start CBT', 'Leaderboard', 'Make Payments', 'Settings']
-const adminbuttons = ['UserPage', 'Analytics', 'Leaderboard', 'LogCat', 'Settings']
+const userbuttons = ['Analytics', 'CBT', 'Leaderboard', 'Payments', 'Settings']
+const adminbuttons = ['UserPage', 'Overview', 'Users', 'LogCat', 'Privilege']
 
 const info = (name) =>
     h('span', {id : 'profileinfo1'}, [
@@ -73,7 +73,7 @@ const layout = (baroptions) => [
 ]*/
 
 app({
-    init: {menubuttons : adminbuttons},
+    init: {menubuttons : userbuttons},
     node: document.getElementById("app"),
     view: ({ menubuttons }) =>
         h("main", {id : "background"}, layout(menubuttons))

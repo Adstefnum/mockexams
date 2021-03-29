@@ -87,6 +87,70 @@ a{
     justify-content: space-evenly;
 }
 
+#UserPage{
+    background: url('../imgs/user.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#Overview, #Analytics{
+    background: url('../imgs/analytics.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#Users{
+    background: url('../imgs/users.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#LogCat{
+    background: url('../imgs/log.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#Privilege, #Settings{
+    background: url('../imgs/settings.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#Payments{
+    background: url('../imgs/money.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#Leaderboard{
+    background: url('../imgs/leaderboard.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#CBT{
+    background: url('../imgs/cbt.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
 @media screen and (max-width : 1024px), (min-height : 768px) {
     .btn{
         height: 100px;

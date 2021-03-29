@@ -258,11 +258,11 @@ const userinfo = ()=>h('section', {
         }, text('09838839BD'))
     ])
 ;
-const adminbuttons = [
-    'UserPage',
+const userbuttons = [
     'Analytics',
+    'CBT',
     'Leaderboard',
-    'LogCat',
+    'Payments',
     'Settings'
 ];
 const buttons = (name)=>h('div', {
@@ -295,7 +295,7 @@ const layout = (baroptions)=>[
 ;
 app({
     init: {
-        menubuttons: adminbuttons
+        menubuttons: userbuttons
     },
     node: document.getElementById("app"),
     view: ({ menubuttons  })=>h("main", {
