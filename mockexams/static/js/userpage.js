@@ -259,17 +259,47 @@ const userinfo = ()=>h('section', {
     ])
 ;
 const userbuttons = [
-    'Analytics',
     'CBT',
+    'Analytics',
     'Leaderboard',
     'Payments',
     'Settings'
 ];
+const testdata = {
+    log: `\n    New User test created\n    User test bought 10 trials\n    Django Error\n    `,
+    overview: {
+        topics: [
+            'UTME',
+            'ABU',
+            'UNILORIN',
+            'UNILAG'
+        ],
+        values: [
+            30,
+            6,
+            18,
+            10
+        ],
+        info: ''
+    },
+    privilege: {
+        minimenu: [
+            'General Settings',
+            'Site Settings',
+            'List Users'
+        ],
+        general: {
+            name: 'Alaya Abdullahi',
+            email: 'alayaa694@gmail.com',
+            number: '+2349065739180'
+        }
+    }
+};
 const buttons = (name)=>h('div', {
         class: 'btn'
     }, [
         h('div', {
-            id: name
+            id: name.replace(' ', '_')
         }, []),
         text(name)
     ])
@@ -279,6 +309,17 @@ const menuoptions = (menubuttons)=>h('section', {
     }, menubuttons.map((x)=>buttons(x)
     ))
 ;
+const overview = (info)=>h('span', {
+        id: 'overview'
+    }, [
+        h('canvas', {
+            id: 'graph'
+        }),
+        h('div', {
+            id: 'siteinfo'
+        }, text('some shit'))
+    ])
+;
 const sidemenu = (baroptions)=>h('span', {
         id: 'sidebar'
     }, [
@@ -286,20 +327,22 @@ const sidemenu = (baroptions)=>h('span', {
         menuoptions(baroptions)
     ])
 ;
-const layout = (baroptions)=>[
-        sidemenu(baroptions),
+const userlayout = (data)=>[
+        sidemenu(userbuttons),
         h('span', {
             id: 'mainarea'
-        }, [])
+        }, [
+            overview(data.overview), 
+        ])
     ]
 ;
 app({
     init: {
-        menubuttons: userbuttons
+        data: testdata
     },
     node: document.getElementById("app"),
-    view: ({ menubuttons  })=>h("main", {
+    view: ({ data  })=>h("main", {
             id: "background"
-        }, layout(menubuttons))
+        }, userlayout(data))
 });
 

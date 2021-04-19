@@ -75,7 +75,7 @@ a{
     align-items: center;
     justify-content: space-around;
     border: 1px solid black;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
     background-color: inherit;
 }
 
@@ -145,6 +145,22 @@ a{
 
 #CBT{
     background: url('../imgs/cbt.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#Blog{
+    background: url('../imgs/blog.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#New_Questions{
+    background: url('../imgs/question.svg') no-repeat;
     background-position: center;
     background-size: contain;
     width: 30px;
