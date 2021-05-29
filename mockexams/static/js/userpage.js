@@ -1,3 +1,40 @@
+const userbuttons = [
+    'CBT',
+    'Analytics',
+    'Leaderboard',
+    'Payments',
+    'Settings'
+];
+const testdata = {
+    log: `\n    New User test created\n    User test bought 10 trials\n    Django Error\n    `,
+    overview: {
+        topics: [
+            'UTME',
+            'ABU',
+            'UNILORIN',
+            'UNILAG'
+        ],
+        values: [
+            30,
+            6,
+            18,
+            10
+        ],
+        info: ''
+    },
+    privilege: {
+        minimenu: [
+            'General Settings',
+            'Site Settings',
+            'List Users'
+        ],
+        general: {
+            name: 'Alaya Abdullahi',
+            email: 'alayaa694@gmail.com',
+            number: '+2349065739180'
+        }
+    }
+};
 var SSR_NODE = 1;
 var TEXT_NODE = 3;
 var EMPTY_OBJ = {
@@ -244,57 +281,6 @@ var app = ({ init =EMPTY_OBJ , view , subscriptions , dispatch =id , node ,  })=
         , setState(action[0])) : action == null ? patchSubs(subs, EMPTY_ARR, dispatch = id) : setState(action)
     ))(init), dispatch;
 };
-const userinfo = ()=>h('section', {
-        id: 'profilepic'
-    }, [
-        h('img', {
-            src: 'imgs/avatar.png'
-        }, []),
-        h('p', {
-            id: 'username'
-        }, text('username')),
-        h('p', {
-            id: 'id'
-        }, text('09838839BD'))
-    ])
-;
-const userbuttons = [
-    'CBT',
-    'Analytics',
-    'Leaderboard',
-    'Payments',
-    'Settings'
-];
-const testdata = {
-    log: `\n    New User test created\n    User test bought 10 trials\n    Django Error\n    `,
-    overview: {
-        topics: [
-            'UTME',
-            'ABU',
-            'UNILORIN',
-            'UNILAG'
-        ],
-        values: [
-            30,
-            6,
-            18,
-            10
-        ],
-        info: ''
-    },
-    privilege: {
-        minimenu: [
-            'General Settings',
-            'Site Settings',
-            'List Users'
-        ],
-        general: {
-            name: 'Alaya Abdullahi',
-            email: 'alayaa694@gmail.com',
-            number: '+2349065739180'
-        }
-    }
-};
 const buttons = (name)=>h('div', {
         class: 'btn'
     }, [
@@ -320,6 +306,46 @@ const overview = (info)=>h('span', {
         }, text('some shit'))
     ])
 ;
+const userinfo = ()=>h('section', {
+        id: 'profilepic'
+    }, [
+        h('img', {
+            src: 'imgs/avatar.png'
+        }, []),
+        h('p', {
+            id: 'username'
+        }, text('username')),
+        h('p', {
+            id: 'id'
+        }, text('09838839BD'))
+    ])
+;
+const wallpaper = ()=>h('span', {
+        id: 'wallpaper'
+    }, [
+        h('span', {
+            class: 'pushright'
+        }, [
+            h('div', {
+                class: 'largedot'
+            })
+        ]),
+        h('span', {
+            class: 'pushleft'
+        }, [
+            h('div', {
+                class: 'smalldot'
+            })
+        ]),
+        h('span', {
+            class: 'pushright'
+        }, [
+            h('div', {
+                class: 'largedot'
+            })
+        ])
+    ])
+;
 const sidemenu = (baroptions)=>h('span', {
         id: 'sidebar'
     }, [
@@ -328,11 +354,16 @@ const sidemenu = (baroptions)=>h('span', {
     ])
 ;
 const userlayout = (data)=>[
-        sidemenu(userbuttons),
+        wallpaper(),
         h('span', {
-            id: 'mainarea'
+            id: 'content'
         }, [
-            overview(data.overview), 
+            sidemenu(userbuttons),
+            h('span', {
+                id: 'mainarea'
+            }, [
+                overview(data.overview), 
+            ])
         ])
     ]
 ;

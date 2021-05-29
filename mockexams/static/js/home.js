@@ -244,62 +244,6 @@ var app = ({ init =EMPTY_OBJ , view , subscriptions , dispatch =id , node ,  })=
         , setState(action[0])) : action == null ? patchSubs(subs, EMPTY_ARR, dispatch = id) : setState(action)
     ))(init), dispatch;
 };
-const changetheme = ()=>document.getElementById('themechanger').classList.toggle('sun')
-;
-const gohome = ()=>window.location.replace('/')
-;
-const nav = (name)=>h('nav', {
-        id: 'navbar'
-    }, [
-        h('span', {
-            id: 'logopanel',
-            onclick: gohome
-        }, [
-            h('div', {
-                id: 'logo'
-            }),
-            h('label', {
-                id: 'logoname'
-            }, text(name))
-        ]),
-        h('span', {
-            id: 'themechanger',
-            class: 'moon',
-            onclick: changetheme
-        })
-    ])
-;
-const linktype = [
-    'Privacy Policy',
-    'Terms and Conditions',
-    'FAQ'
-];
-const links = (name)=>h('a', {
-        href: name
-    }, text(name))
-;
-const socialmedia = (name, medialink)=>h('a', {
-        href: medialink
-    }, [
-        h('div', {
-            class: 'socialmedia',
-            id: name
-        })
-    ])
-;
-const foot = (medialinks)=>h('footer', {
-        id: 'footer'
-    }, [
-        h('div', {
-            id: 'legalpanel'
-        }, linktype.map((name)=>links(name)
-        )),
-        h('div', {
-            id: 'mediapanel'
-        }, Object.keys(medialinks).map((name)=>socialmedia(name, medialinks[name])
-        ))
-    ])
-;
 let describe = {
     name: 'Mock Exams',
     description: `Hello guys welcome to mockexams, we are a group of inovators looking to make\n  studing for CBT exams easier and cheaper for all while abiding by the rules set by the examination\n  body`
@@ -343,6 +287,13 @@ const landing = (describe1)=>h('span', {
             h('span', {
                 id: 'signinpanel'
             }, [
+                h('a', {
+                    href: '/leaderboard'
+                }, [
+                    h('div', {
+                        class: 'btn'
+                    }, text('View leaderboard')), 
+                ]),
                 h('a', {
                     href: '/signup'
                 }, [
@@ -391,11 +342,98 @@ const exampanel = (examinfo1)=>h('span', {
     }, examinfo1.map((value)=>exams(value)
     ))
 ;
+const wallpaper = ()=>h('span', {
+        id: 'wallpaper'
+    }, [
+        h('span', {
+            class: 'pushright'
+        }, [
+            h('div', {
+                class: 'largedot'
+            })
+        ]),
+        h('span', {
+            class: 'pushleft'
+        }, [
+            h('div', {
+                class: 'smalldot'
+            })
+        ]),
+        h('span', {
+            class: 'pushright'
+        }, [
+            h('div', {
+                class: 'largedot'
+            })
+        ])
+    ])
+;
+const changetheme = ()=>document.getElementById('themechanger').classList.toggle('sun')
+;
+const gohome = ()=>window.location.replace('/')
+;
+const nav = (name)=>h('nav', {
+        id: 'navbar'
+    }, [
+        h('span', {
+            id: 'logopanel',
+            onclick: gohome
+        }, [
+            h('div', {
+                id: 'logo'
+            }),
+            h('label', {
+                id: 'logoname'
+            }, text(name))
+        ]),
+        h('span', {
+            id: 'themechanger',
+            class: 'moon',
+            onclick: changetheme
+        })
+    ])
+;
+const linktype = [
+    'Privacy Policy',
+    'Terms and Conditions',
+    'FAQ'
+];
+const links = (name)=>h('a', {
+        href: name
+    }, text(name))
+;
+const socialmedia = (name, medialink)=>h('a', {
+        href: medialink
+    }, [
+        h('div', {
+            class: 'socialmedia',
+            id: name
+        })
+    ])
+;
+const foot = (medialinks1)=>h('footer', {
+        id: 'footer'
+    }, [
+        h('div', {
+            id: 'legalpanel'
+        }, linktype.map((name)=>links(name)
+        )),
+        h('div', {
+            id: 'mediapanel'
+        }, Object.keys(medialinks1).map((name)=>socialmedia(name, medialinks1[name])
+        ))
+    ])
+;
 const layout = (medialinks1, describe1, examinfo1)=>[
-        nav(describe1.name),
-        landing(describe1.description),
-        exampanel(examinfo1),
-        foot(medialinks1)
+        wallpaper(),
+        h('span', {
+            id: 'columncontent'
+        }, [
+            nav(describe1.name),
+            landing(describe1.description),
+            exampanel(examinfo1),
+            foot(medialinks1)
+        ])
     ]
 ;
 app({

@@ -1,6 +1,7 @@
 import { h, text, app } from "https://unpkg.com/hyperapp"
 import { nav } from "./navbar.js"
 import { foot } from "./footer.js"
+import { wallpaper } from "./global.js"
 
 let describe = {
   name : 'Mock Exams',
@@ -74,10 +75,13 @@ const exampanel = (examinfo) =>
     )
 
 const layout = (medialinks, describe, examinfo) => [
-  nav(describe.name),
-  landing(describe.description),
-  exampanel(examinfo),
-  foot(medialinks)
+  wallpaper(),
+  h('span', {id : 'columncontent'}, [
+    nav(describe.name),
+    landing(describe.description),
+    exampanel(examinfo),
+    foot(medialinks)
+  ])
 ]  
 
 app({

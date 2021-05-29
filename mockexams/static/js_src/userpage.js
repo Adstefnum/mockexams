@@ -1,5 +1,5 @@
 import { h, text, app } from "https://unpkg.com/hyperapp"
-import { userinfo } from "./others.js"
+import { userinfo, wallpaper } from "./global.js"
 
 const userbuttons = ['CBT', 'Analytics', 'Leaderboard', 'Payments', 'Settings']
 const adminbuttons = ['CBT', 'Overview', 'Blog', 'New Questions', 'LogCat', 'Privilege']
@@ -119,20 +119,26 @@ const sidemenu = (baroptions) =>
     ])
 
 const adminlayout = (data) => [
-    sidemenu(adminbuttons),
-    h('span', {id : 'mainarea'}, [
-        //logcat(data.log),
-        //overview(data.overview),
-        privilege(data.privilege),
+    wallpaper(),
+    h('span', {id : 'content'}, [
+        sidemenu(adminbuttons),
+        h('span', {id : 'mainarea'}, [
+            //logcat(data.log),
+            //overview(data.overview),
+            privilege(data.privilege),
+        ])
     ])
 ]
 
 const userlayout = (data) => [
-    sidemenu(userbuttons),
-    h('span', {id : 'mainarea'}, [
-        //logcat(data.log),
-        overview(data.overview),
-        //privilege(data.privilege),
+    wallpaper(),
+    h('span', {id : 'content'}, [
+        sidemenu(userbuttons),
+        h('span', {id : 'mainarea'}, [
+            //logcat(data.log),
+            overview(data.overview),
+            //privilege(data.privilege),
+        ])
     ])
 ]
 
