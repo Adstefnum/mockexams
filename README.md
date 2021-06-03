@@ -1,12 +1,12 @@
 # mockexams
 A website to practice cbt examination
 
-##Urgent
+## Urgent
 - How do we link questions and their accompaniment with the populate_databade.py script?
 - Finish populate_database.py script
 - Publish a first release frontend
 
-##Timeline
+## Timeline
 - Publish a demo
 
 
@@ -24,7 +24,7 @@ A website to practice cbt examination
 - No lagging between questions, just show next question staight, no lazy loadings
 
 
-##Database
+## Database
 
 ### Getting the database
 The database has been created and will soon be populated but it will not be uploaded to github rather a ```populate_database.py``` file included in the github will populate the database on your local machine. Make sure not to upload the sqlite databse. It will be later changed to postgresql.
