@@ -1,21 +1,5 @@
 import { h, text, app } from "https://unpkg.com/hyperapp"
-
-const tel = (name) =>
-    h('span', {class : 'dual'}, [
-        /*h('select', {id : 'countrycode', name : 'countrycode'}, [
-            h('options', {}, text('+234')),
-            h('options', {}, text('+211')),
-            h('options', {}, text('+244'))
-        ]),*/
-        h('input', {class : 'phonenumber', name : name, type : 'tel', placeholder : '+2349044444433'}),
-        h('div', {class : 'show', id : 'telegram'})
-    ])
-
-const password = (name) =>
-    h('span', {class : 'dual'}, [
-        h('input', {name : name, placeholder : name, type : 'password'}),
-        h('div', {class : 'show'}, text('show'))
-    ])
+import {tel, password } from "./specialisedinputs.js"
 
 const signinpanel = () =>
     h('form', {id : 'panel', action : '/signup', method : 'POST', enctype : 'multipart/formdata'}, [

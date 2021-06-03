@@ -221,7 +221,6 @@ var h = (tag, props, children = EMPTY_ARR)=>createVNode(tag, props, isArray(chil
         children
     ])
 ;
-const h1 = h;
 var app = ({ init =EMPTY_OBJ , view , subscriptions , dispatch =id , node ,  })=>{
     var vdom = node && recycleNode(node);
     var subs = [];
@@ -245,7 +244,60 @@ var app = ({ init =EMPTY_OBJ , view , subscriptions , dispatch =id , node ,  })=
         , setState(action[0])) : action == null ? patchSubs(subs, EMPTY_ARR, dispatch = id) : setState(action)
     ))(init), dispatch;
 };
-const app1 = app;
+const slideopen = ()=>document.getElementById('sidebar').classList.toggle('opensidebar')
+;
+const burger1 = ()=>h('div', {
+        id: 'burger',
+        onclick: slideopen
+    }, [
+        h('div', {
+            id: 'upperburger'
+        }, [
+            h('div', {
+                class: 'line'
+            }),
+            h('div', {
+                class: 'line'
+            })
+        ]),
+        h('div', {
+            id: 'lowerburger'
+        }, [
+            h('div', {
+                class: 'line'
+            }),
+            h('div', {
+                class: 'line'
+            })
+        ])
+    ])
+;
+const burger2 = ()=>h('div', {
+        id: 'burger2',
+        onclick: slideopen
+    }, [
+        h('div', {
+            id: 'line1'
+        }),
+        h('div', {
+            id: 'line2'
+        })
+    ])
+;
+const userinfo = ()=>h('section', {
+        id: 'profilepic'
+    }, [
+        h('img', {
+            src: 'imgs/avatar.png'
+        }, []),
+        h('p', {
+            id: 'username'
+        }, text('username')),
+        h('p', {
+            id: 'id'
+        }, text('09838839BD'))
+    ])
+;
 const inc = (count, len)=>count === len - 1 ? count : count + 1
 ;
 const dec = (count)=>count === 0 ? count : count - 1
@@ -314,63 +366,11 @@ const question = (data, number)=>h('div', {
         ])
     ])
 ;
-const slideopen = ()=>document.getElementById('sidebar').classList.toggle('opensidebar')
-;
-const burger1 = ()=>h('div', {
-        id: 'burger',
-        onclick: slideopen
-    }, [
-        h('div', {
-            id: 'upperburger'
-        }, [
-            h('div', {
-                class: 'line'
-            }),
-            h('div', {
-                class: 'line'
-            })
-        ]),
-        h('div', {
-            id: 'lowerburger'
-        }, [
-            h('div', {
-                class: 'line'
-            }),
-            h('div', {
-                class: 'line'
-            })
-        ])
-    ])
-;
-const burger2 = ()=>h('div', {
-        id: 'burger2',
-        onclick: slideopen
-    }, [
-        h('div', {
-            id: 'line1'
-        }),
-        h('div', {
-            id: 'line2'
-        })
-    ])
-;
 const sidebar = ()=>h('navbar', {
         id: 'sidebar'
     }, [
         burger2(),
-        h('section', {
-            id: 'profilepic'
-        }, [
-            h('img', {
-                src: 'imgs/avatar.png'
-            }, []),
-            h('p', {
-                id: 'username'
-            }, text('username')),
-            h('p', {
-                id: 'id'
-            }, text('09838839BD'))
-        ]),
+        userinfo(),
         h('section', {
             id: 'subjects'
         }, [
@@ -418,7 +418,7 @@ const layout = (data, count)=>[
         burger1(),
         sidebar(),
         h('div', {
-            id: 'questionarea'
+            id: 'mainarea'
         }, [
             question(data[count], count + 1),
             h('section', {
@@ -427,25 +427,23 @@ const layout = (data, count)=>[
         ])
     ]
 ;
-var url = `http://0.0.0.0:3000/questions/english/2006.json`;
-const Http = new XMLHttpRequest();
-Http.open("GET", url);
-Http.send();
-var data = [];
-Http.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        data = JSON.parse(Http.responseText);
-        app1({
+var url = `http://0.0.0.0:3000/file/%2Fhome%2Fcnerd%2FDocuments%2FPython%2Fwebdev%2Fmockexams%2Fquestions%2Fchemistry%2F2001.json`;
+async function info() {
+    await fetch(url).then((data)=>data.json()
+    ).then((data)=>app({
             init: {
                 data: data,
                 count: 0
             },
-            view: ({ data: data1 , count  })=>h1('main', {
+            view: ({ data: data1 , count  })=>h('main', {
                     id: 'background'
                 }, layout(data1, count))
             ,
             node: document.getElementById("app")
-        });
-    }
-};
+        })
+    ).catch(function(error) {
+        console.error(error);
+    });
+}
+info();
 
