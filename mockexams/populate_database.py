@@ -18,24 +18,27 @@ BASE_DIR = "../questions"
 for _,folders,_ in os.walk(BASE_DIR):
     for folder in folders:
         SUB_DIR = BASE_DIR + '/' + folder
-        subject = folder
+        subject_ = folder
         for _,_,files in os.walk(SUB_DIR):
             for file in files:
                 with open(SUB_DIR + '/' + file,'r') as f:
                    data = json.loads(f.read())
-                   print(data[0])
-                   '''
 
-                   print(data[0]['option']['a'])
-                   print(data[0]['option']['b'])
-                   print(data[0]['option']['c'])
-                   print(data[0]['option']['d'])
-                   print(data[0]['image'])
-                   print(data[0]['answer'])
-                   print(data[0]['solution'])
-                   print(data[0]['examtype'])
-                   print(data[0]['examyear'])
-'''
+                   question = data[0]['question']
+                   option_A = data[0]['option']['a']
+                   option_B = data[0]['option']['b']
+                   option_C = data[0]['option']['c']
+                   option_D = data[0]['option']['d']
+                   option_E = data[0]['option']['e']
+                   correct_ans = data[0]['answer']
+                   explain = data[0]['solution']
+                   subject = subject_
+                   year = data[0]['examyear']
+                   acom_type = data[0]['image']
+                   exam_type = data[0]['examtype']
+                   accompany = data[0]['image']
+                   
+
         
 
 

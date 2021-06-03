@@ -27,8 +27,13 @@ class Accompany(models.Model):
 	acom_type = models.CharField(max_length = 100, choices= ACC_TYPE)
 	passage = models.TextField(null=True)
 	diagram = models.ImageField(upload_to ='media/images/', default =None,null=True)
+	subject = models.CharField(max_length = 100,choices= SUB_CHOICES, default ="English")
+
 
 	def __repr__(self):
+		pass
+
+	def __str__(self):
 		pass
 
 class Question(models.Model):
@@ -50,4 +55,5 @@ class Question(models.Model):
 	def __repr__(self):
 		pass
 
-
+	def __str__(self):
+		pass
