@@ -5,6 +5,8 @@ A website to practice cbt examination
 - How do we link questions and their accompaniment with the populate_databade.py script?
 - Finish populate_database.py script
 - Publish a first release frontend
+- database is now populated with over 1000 questions.
+- We need a way to take care of instructions for particular sections.
 
 ## Timeline
 - Publish a demo
