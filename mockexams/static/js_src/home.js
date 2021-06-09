@@ -1,92 +1,74 @@
-import { h, text, app } from "https://unpkg.com/hyperapp"
-import { nav } from "./navbar.js"
-import { foot } from "./footer.js"
-import { wallpaper } from "./global.js"
+import { h, text, app } from "https://unpkg.com/hyperapp";
+import { horizontal, foot } from "./global.js";
 
-let describe = {
-  name : 'Mock Exams',
-  description : `Hello guys welcome to mockexams, we are a group of inovators looking to make
-  studing for CBT exams easier and cheaper for all while abiding by the rules set by the examination
-  body`
+const info = `Mockexams is a Computer Based Test(CBT) platform which aims to assist students to
+  practice for common CBT exams like jamb and post utme. The platform provides exams past questions
+  coupled with answers, and aims to simulate the examination enviroment enabling students to get
+  accustomed to writing and passing CBT exams.
+  `
+const url = window.location.href
+let formdata = new FormData
+formdata.append('id', '')
+formdata.append('password', '')
+
+const param = {
+  method : 'POST',
+  headers: {
+    'Content-Type': 'multipart/form-data'
+  },
+  body : formdata
 }
 
-let medialinks = {
-  'youtube' : '/',
-  'twitter' : '/',
-  'mail' : '/'
-}
+const iconlinks = (name) =>
+  h('a', {href : `/${name}`}, [
+    h('div', {class : 'iconholders'}, [
+      h('div', {id : `${name}icon`, class : 'menuicon'}),
+    ])
+  ])
 
-let examinfo = [
-  {
-    name : 'utme',
-    image : `./imgs/jamb.png`, //'data:image;base64,'
-    description : 'Practice for the utme CBT exams by completing questions within a specified time'
-  },
-  {
-    name : 'unilorin post utme',
-    image : `./imgs/unilorin.png`,
-    description : 'Practice for the unilorin post utme CBT exams by completing questions within a specified time'
-  },
-  {
-    name : 'unilag post utme',
-    image : `./imgs/unilag.png`,
-    description : 'Practice for the unilorin post utme CBT exams by completing questions within a specified time'
-  },
-  {
-    name : 'Abu post utme',
-    image : `./imgs/abu.png`,
-    description : 'Practice for the unilorin post utme CBT exams by completing questions within a specified time'
-  }
+const menubar = (userinfo) => 
+  h('span', {id : 'menubar'}, [
+    h('div', {id : 'logo'}),
+    h('a', {href : `${userinfo.url}`}, [
+      h('img', {src : `${userinfo.image}`, class : 'profilepic'})
+    ]),
+    iconlinks('exam'),
+    iconlinks('ranking'),
+    iconlinks('blog')
+  ])
+
+const btn = (label, url) =>
+  h('a', {href : url}, [
+    h('div', {class : 'btn'}, text(label)),
+  ])
+
+const description = (info) => [
+  h('div', {id : 'wallpaper'}, [
+    h('div', {id : 'descriptionpanel'}, [
+      h('h2', {}, text('MockExams')),
+      h('p', {id : 'description'}, text(info)),
+    ]),
+    h('div', {id : 'fancyimage'})
+  ]),
+  foot()
 ]
 
-const landing = (describe) =>
-    h('span', {id : 'landing'}, [
-      h('div', {id : 'descriptionpanel'}, [
-        h('p', {id : 'description'}, text(describe)),
-        h('span', {id : 'signinpanel'}, [
-          h('a', {href : '/leaderboard'}, [
-            h('div', {class : 'btn'}, text('View leaderboard')),
-          ]),
-          h('a', {href : '/signup'}, [
-            h('div', {class : 'btn'}, text('Sign Up')),
-          ]),
-          h('a', {href : '/signup'}, [
-            h('div', {class : 'btn'}, text('Login'))
-          ])
-        ])
-      ]),
-      h('div', {id : 'fancyimage'})
-    ])
-
-const exams = (examinfo) =>
-    h('a', {class : 'examlinks', href : '/cbt/' + examinfo.name}, [
-      h('span', {id : examinfo.name, class : 'exam'}, [
-        h('img', {class : 'examimage', src : examinfo.image, alt : examinfo.name}),
-        h('h4', {class : 'examname'}, text(examinfo.name)),
-        h('p', {class : 'examdescription'}, text(examinfo.description))
-      ])
-    ])
-
-const exampanel = (examinfo) =>
-    h('span', {id : 'exampanel'}, 
-      examinfo.map(
-        (value) => exams(value)
-      )
-    )
-
-const layout = (medialinks, describe, examinfo) => [
-  wallpaper(),
-  h('span', {id : 'columncontent'}, [
-    nav(describe.name),
-    landing(describe.description),
-    exampanel(examinfo),
-    foot(medialinks)
-  ])
+const layout = (userinfo) => [
+  menubar(userinfo),
+  horizontal(description(info))
 ]  
 
-app({
-    init: {links : medialinks, info : describe, exams : examinfo},
+function run(userinfo) {
+  app({
+    init: {userinfo : userinfo},
     node: document.getElementById("app"),
-    view: ({links, info, exams}) =>
-        h("main", {id : "background"}, layout(links, info, exams))
-})
+    view: ({userinfo}) =>
+        h("main", {id : "background"}, layout(userinfo))
+  })
+}
+
+run({})
+/*fetch(url, param)
+  .then((x) => {
+    run(x.json())
+  })*/

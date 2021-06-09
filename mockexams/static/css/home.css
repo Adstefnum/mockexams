@@ -1,96 +1,84 @@
-#landing, #exampanel{
-  width: 90%;
-  padding: 50px 20px 50px 20px;
-  min-height: 100%;
+#menubar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: var(--sidemenuwidth);
+  height: 90%;
+  background: linear-gradient(var(--primary), var(--primarytint1));
+  box-shadow: 2px 2px 6px var(--dark);
+}
+
+.profilepic{
+  display: none;
+}
+
+.menuicon, .iconholders, #logo{
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.iconholders{
+  background-color: var(--light);
+}
+
+.menuicon:hover, .iconholders:hover{
+  border-radius: 10px;
+  border: 2px solid var(--primarytint4);
+  transition: ease-in-out 0.2s;
+}
+
+#examicon{
+  background: url('../imgs/cbt.svg') no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#rankingicon{
+  background: url('../imgs/leaderboard.svg') no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#blogicon{
+  background: url('../imgs/blog.svg') no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#wallpaper{
+  width: 100%;
+  height: var(--wallpaperwidth);
+  background-color: #fefefe;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  margin-bottom: 20px;
-}
-
-#exampanel{
-  display: block;
-  min-height: auto;
-}
-
-#descriptionpanel, #fancyimage{
-  height: inherit;
+  justify-content: flex-start;
 }
 
 #descriptionpanel{
-  width: 30%;
+  width: 50%;
+  height: 35%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
 
-#signinpanel{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-#signinpanel a{
-  width: 30%;
+#descriptionpanel h2{
+  font-weight: lighter;
 }
 
 #fancyimage{
-  width: 65%;
+  width: 50%;
   height: 100%;
   background: url('../imgs/fancyimage1.png') no-repeat;
   background-position: center;
   background-size: contain;
 }
 
-.exam{
-  width: 40%;
-  height: 400px;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 20px 20px 20px 20px;
-  border-radius: 6px;
-  box-shadow: 0px 0px 0px rgb(255, 255, 255),
-  2px 2px 6px rgb(100, 100, 100);
-  margin: 0 0 5% 5%;
-}
+/*@media screen and (max-width : 1024px), (min-height : 768px) {
 
-.exam img{
-  outline: none;
-  /*width: 300px;*/
-  height: 200px;
-  align-self: center;
-}
-
-#exams{
-  height: 800px;
-  background-color: aliceblue;
-  display: grid;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-@media screen and (max-width : 1024px), (min-height : 768px) {
-  #landing, #exampanel{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    font-size: xx-large;
-  }
-
-  #landing{
-    flex-direction: column-reverse;
-  }
-
-  #exampanel{
-    align-items: center;
-    justify-content: center;
-  }
-  
   #descriptionpanel{
     height: 30%;
   }
@@ -107,35 +95,4 @@
     width: 100%;
     height: 100%;
   }
-
-  .examlinks{
-    /*display: flex;
-    align-items: center;*/
-    width: 88%;
-    margin-bottom: 100px;
-    padding: 20px 20px 20px 20px;
-  }
-  
-  .exam{
-    width: 94%;
-    height: 800px;
-    /*padding: 0px 0px 0px 0px;*/
-    border-radius: 6px;
-    margin: 0 0 0 0;
-  }
-  
-  .exam img{
-    outline: none;
-    /*width: 300px;*/
-    height: 400px;
-    align-self: center;
-  }
-  
-  #exams{
-    height: 800px;
-    background-color: aliceblue;
-    display: grid;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-}
+}*/

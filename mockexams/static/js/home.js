@@ -244,207 +244,129 @@ var app = ({ init =EMPTY_OBJ , view , subscriptions , dispatch =id , node ,  })=
         , setState(action[0])) : action == null ? patchSubs(subs, EMPTY_ARR, dispatch = id) : setState(action)
     ))(init), dispatch;
 };
-let describe = {
-    name: 'Mock Exams',
-    description: `Hello guys welcome to mockexams, we are a group of inovators looking to make\n  studing for CBT exams easier and cheaper for all while abiding by the rules set by the examination\n  body`
+const linktype = {
+    'Authentication': [
+        'Login',
+        'Register'
+    ],
+    'Legal': [
+        'Terms and Conditions',
+        'Privacy Policy',
+        'FAQ'
+    ],
+    'Team': [
+        'Team'
+    ]
 };
-let medialinks = {
-    'youtube': '/',
-    'twitter': '/',
-    'mail': '/'
-};
-let examinfo = [
-    {
-        name: 'utme',
-        image: `./imgs/jamb.png`,
-        description: 'Practice for the utme CBT exams by completing questions within a specified time'
-    },
-    {
-        name: 'unilorin post utme',
-        image: `./imgs/unilorin.png`,
-        description: 'Practice for the unilorin post utme CBT exams by completing questions within a specified time'
-    },
-    {
-        name: 'unilag post utme',
-        image: `./imgs/unilag.png`,
-        description: 'Practice for the unilorin post utme CBT exams by completing questions within a specified time'
-    },
-    {
-        name: 'Abu post utme',
-        image: `./imgs/abu.png`,
-        description: 'Practice for the unilorin post utme CBT exams by completing questions within a specified time'
+function makefootdiv(name) {
+    var result = [
+        h('h4', {
+            class: 'titles'
+        }, text(name))
+    ];
+    const list = linktype[name];
+    for(var i = 0; i < list.length; i++){
+        result.push(links(list[i]));
     }
-];
-const landing = (describe1)=>h('span', {
-        id: 'landing'
-    }, [
-        h('div', {
-            id: 'descriptionpanel'
-        }, [
-            h('p', {
-                id: 'description'
-            }, text(describe1)),
-            h('span', {
-                id: 'signinpanel'
-            }, [
-                h('a', {
-                    href: '/leaderboard'
-                }, [
-                    h('div', {
-                        class: 'btn'
-                    }, text('View leaderboard')), 
-                ]),
-                h('a', {
-                    href: '/signup'
-                }, [
-                    h('div', {
-                        class: 'btn'
-                    }, text('Sign Up')), 
-                ]),
-                h('a', {
-                    href: '/signup'
-                }, [
-                    h('div', {
-                        class: 'btn'
-                    }, text('Login'))
-                ])
-            ])
-        ]),
-        h('div', {
-            id: 'fancyimage'
-        })
-    ])
-;
-const exams = (examinfo1)=>h('a', {
-        class: 'examlinks',
-        href: '/cbt/' + examinfo1.name
-    }, [
-        h('span', {
-            id: examinfo1.name,
-            class: 'exam'
-        }, [
-            h('img', {
-                class: 'examimage',
-                src: examinfo1.image,
-                alt: examinfo1.name
-            }),
-            h('h4', {
-                class: 'examname'
-            }, text(examinfo1.name)),
-            h('p', {
-                class: 'examdescription'
-            }, text(examinfo1.description))
-        ])
-    ])
-;
-const exampanel = (examinfo1)=>h('span', {
-        id: 'exampanel'
-    }, examinfo1.map((value)=>exams(value)
-    ))
-;
-const wallpaper = ()=>h('span', {
-        id: 'wallpaper'
-    }, [
-        h('span', {
-            class: 'pushright'
-        }, [
-            h('div', {
-                class: 'largedot'
-            })
-        ]),
-        h('span', {
-            class: 'pushleft'
-        }, [
-            h('div', {
-                class: 'smalldot'
-            })
-        ]),
-        h('span', {
-            class: 'pushright'
-        }, [
-            h('div', {
-                class: 'largedot'
-            })
-        ])
-    ])
-;
-const changetheme = ()=>document.getElementById('themechanger').classList.toggle('sun')
-;
-const gohome = ()=>window.location.replace('/')
-;
-const nav = (name)=>h('nav', {
-        id: 'navbar'
-    }, [
-        h('span', {
-            id: 'logopanel',
-            onclick: gohome
-        }, [
-            h('div', {
-                id: 'logo'
-            }),
-            h('label', {
-                id: 'logoname'
-            }, text(name))
-        ]),
-        h('span', {
-            id: 'themechanger',
-            class: 'moon',
-            onclick: changetheme
-        })
-    ])
-;
-const linktype = [
-    'Privacy Policy',
-    'Terms and Conditions',
-    'FAQ'
-];
+    return result;
+}
 const links = (name)=>h('a', {
         href: name
     }, text(name))
 ;
-const socialmedia = (name, medialink)=>h('a', {
-        href: medialink
-    }, [
-        h('div', {
-            class: 'socialmedia',
-            id: name
-        })
-    ])
-;
-const foot = (medialinks1)=>h('footer', {
+const foot = ()=>h('footer', {
         id: 'footer'
     }, [
         h('div', {
-            id: 'legalpanel'
-        }, linktype.map((name)=>links(name)
-        )),
+            id: 'auth',
+            class: 'footerdivs'
+        }, makefootdiv('Authentication')),
         h('div', {
-            id: 'mediapanel'
-        }, Object.keys(medialinks1).map((name)=>socialmedia(name, medialinks1[name])
-        ))
+            id: 'legal',
+            class: 'footerdivs'
+        }, makefootdiv('Legal')),
+        h('div', {
+            id: 'team',
+            class: 'footerdivs'
+        }, makefootdiv('Team'))
     ])
 ;
-const layout = (medialinks1, describe1, examinfo1)=>[
-        wallpaper(),
-        h('span', {
-            id: 'columncontent'
+const horizontal = (content)=>h('span', {
+        class: 'horizontalcontainer'
+    }, content)
+;
+const info = `Mockexams is a Computer Based Test(CBT) platform which aims to assist students to\n  practice for common CBT exams like jamb and post utme. The platform provides exams past questions\n  coupled with answers, and aims to simulate the examination enviroment enabling students to get\n  accustomed to writing and passing CBT exams.\n  `;
+let formdata = new FormData;
+formdata.append('id', '');
+formdata.append('password', '');
+const iconlinks = (name)=>h('a', {
+        href: `/${name}`
+    }, [
+        h('div', {
+            class: 'iconholders'
         }, [
-            nav(describe1.name),
-            landing(describe1.description),
-            exampanel(examinfo1),
-            foot(medialinks1)
+            h('div', {
+                id: `${name}icon`,
+                class: 'menuicon'
+            }), 
         ])
+    ])
+;
+const menubar = (userinfo)=>h('span', {
+        id: 'menubar'
+    }, [
+        h('div', {
+            id: 'logo'
+        }),
+        h('a', {
+            href: `${userinfo.url}`
+        }, [
+            h('img', {
+                src: `${userinfo.image}`,
+                class: 'profilepic'
+            })
+        ]),
+        iconlinks('exam'),
+        iconlinks('ranking'),
+        iconlinks('blog')
+    ])
+;
+const description = (info1)=>[
+        h('div', {
+            id: 'wallpaper'
+        }, [
+            h('div', {
+                id: 'descriptionpanel'
+            }, [
+                h('h2', {
+                }, text('MockExams')),
+                h('p', {
+                    id: 'description'
+                }, text(info1)), 
+            ]),
+            h('div', {
+                id: 'fancyimage'
+            })
+        ]),
+        foot()
     ]
 ;
-app({
-    init: {
-        links: medialinks,
-        info: describe,
-        exams: examinfo
-    },
-    node: document.getElementById("app"),
-    view: ({ links: links1 , info , exams: exams1  })=>h("main", {
-            id: "background"
-        }, layout(links1, info, exams1))
+const layout = (userinfo)=>[
+        menubar(userinfo),
+        horizontal(description(info))
+    ]
+;
+function run(userinfo) {
+    app({
+        init: {
+            userinfo: userinfo
+        },
+        node: document.getElementById("app"),
+        view: ({ userinfo: userinfo1  })=>h("main", {
+                id: "background"
+            }, layout(userinfo1))
+    });
+}
+run({
 });
 
