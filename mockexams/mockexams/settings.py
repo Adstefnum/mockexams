@@ -28,6 +28,7 @@ TEMPLATES = TEMPLATES
 
 WSGI_APPLICATION =  WSGI_APPLICATION
 
+REST_FRAMEWORK = REST_FRAMEWORK
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
