@@ -29,7 +29,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'mockexamsapp',
     'knox',
-    'user_auth'
+    'user_auth_api',
+    'questions_api'
 
 ]
 

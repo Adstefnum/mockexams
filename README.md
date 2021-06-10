@@ -14,10 +14,17 @@ A website to practice cbt examination
 
 ## Positons
 
-- Backend Engineer
-- Frontend Engineer
+- Backend Engineer -> Stephen Adesina
+- Frontend Engineer -> Abdulla Alaya
 - Question gathering team
 - Question verification Team
+
+## Tech Stack
+
+## Project Structre and Design
+- mockexamsapp
+- questions_api
+- user_auth_api
 
 ## Features
 - User Analyices dashboard
