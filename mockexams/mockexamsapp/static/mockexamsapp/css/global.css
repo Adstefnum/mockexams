@@ -1,0 +1,311 @@
+:root{
+    --primary : #558B6E;
+    --primarytint1 : #5D9878;
+    --primarytint2 : #67A282;
+    --primarytint3 : #cafbb8;
+    --primarytint4 : #00D373;
+    --dark : #202020;
+    --light : #fefefe;
+    --sidemenuwidth : 5%;
+    --containerwidth : 90%;
+    --wallpaperwidth : 100%;
+}
+
+html, body, #background{
+    width : 100%;
+    height : 100%;
+    margin : 0 0 0 0;
+}
+  
+body{
+    background-color : var(--light);
+    font-family : Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color : black;
+    overflow : hidden;
+}
+  
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#background{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.horizontalcontainer{
+    /*display: flex;
+    flex-direction: column;*/
+    width: var(--containerwidth);
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+#logo{
+    background: url('../imgs/logo.svg') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#footer{
+    width: 90%;
+    height: 30%;
+    padding: 5% 5% 5% 5%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-top: 1px solid black;
+}
+
+#footer div{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+
+}
+
+#footer div a{
+    margin-top: 8px;
+    width: fit-content;
+}
+
+#footer div a:hover{
+    color: var(--primarytint4);
+}
+
+/*#footer2{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*#wallpaper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#wallpaper span{
+    width: 80%;
+    height: 33%;
+    display: flex;
+    align-items: center;
+}
+
+#wallpaper .pushright{
+    justify-content: flex-end;
+}
+
+#wallpaper .pushleft{
+    justify-content: flex-start;
+}
+
+#wallpaper span div{
+    background: linear-gradient(rgba(45, 64, 236, 0.904), rgba(134, 74, 204, 0.801));
+}
+
+.largedot{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+
+.smalldot{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+#columncontent, #content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+#background, #columncontent{
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#profilepic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#profilepic img{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+    width: 100%;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid black;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+  
+.btn:active{
+    box-shadow: inset 0px 0px 0px rgb(255, 255, 255),
+    inset 2px 2px 6px rgb(100, 100, 100);
+}
+
+#mainarea{
+    width: 80%;
+    height: 100%;
+    /*background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 99%;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid black;
+    /*overflow-y: scroll;
+    background-color: inherit;
+}
+
+#sidebar section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#UserPage{
+    background: url('../imgs/user.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#Overview, #Analytics{
+    background: url('../imgs/analytics.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#Users{
+    background: url('../imgs/users.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#LogCat{
+    background: url('../imgs/log.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#Privilege, #Settings{
+    background: url('../imgs/settings.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#Payments{
+    background: url('../imgs/money.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#Leaderboard{
+    background: url('../imgs/leaderboard.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#CBT{
+    background: url('../imgs/cbt.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#Blog{
+    background: url('../imgs/blog.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+#New_Questions{
+    background: url('../imgs/question.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+@media screen and (max-width : 1024px), (min-height : 768px) {
+    .btn{
+        height: 100px;
+        margin: 25px 0 25px 0;
+    }
+
+    #mainarea{
+        width: 100%;
+    }
+
+    #sidebar{
+        /*display: none;
+        left: -300px;
+        width: 700px;
+        position: absolute;
+        left: -700px;
+        transition: .6s;
+    }
+}*/

@@ -1,0 +1,80 @@
+#navbar{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logopanel{
+    width: 200px;
+    height: 40px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+#logo{
+    width: 40px;
+    height: 40px;
+    background: url('../imgs/logo.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#themechanger{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/*#themechanger:active{
+    background: gray;
+}*/
+
+.moon{
+    background: url('../imgs/moon.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.sun{
+    background: url('../imgs/sun.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/*#logopanel label{
+
+}*/
+
+@media screen and (max-width : 1024px), (min-height : 768px) {
+    #navbar{
+        height: 120px;
+    }
+    
+    #logopanel{
+        width: 320px;
+        height: 100%;
+    }
+    
+    #logo{
+        width: 100px;
+        height: 100px;
+    }
+    
+    #themechanger{
+        width: 60px;
+        height: 60px;
+    }
+
+    #logopanel label{
+        font-size: xx-large;
+    }
+}
