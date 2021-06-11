@@ -2,9 +2,11 @@
 A website to practice cbt examination
 
 ## Urgent
-- How do we link questions and their accompaniment with the populate_databade.py script?
-- Finish populate_database.py script
-- Publish a first release frontend
+- Fix apis that don't return from the databas e.g like 
+	- questions/vi/id
+	- questions/v1/<int:accompany_id>
+- How do we link questions and their accompaniment with the populate_database.py script?
+- Work on login and signup pages
 - database is now populated with over 1000 questions.
 - We need a way to take care of instructions for particular sections.
 
