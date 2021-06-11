@@ -43,6 +43,67 @@ A website to practice cbt examination
 The database has been created and will soon be populated but it will not be uploaded to github rather a ```populate_database.py``` file included in the github will populate the database on your local machine. Make sure not to upload the sqlite databse. It will be later changed to postgresql.
 
 ### Database schema
+The following json Structre will represent the database schema feel free to debate on controversial fields
+```json
+{
+    "question" : {
+        "question" : "The question",
+        "paragraph" : "for all those comprehension questions",
+        "options" : [
+            {
+                "name" : "option name like option a, b, c etc.",
+                "option" : " the answer linked to the option",
+                "correct" : "boolean value to know if this is the correct option"
+            }
+        ]
+    },
+    "subject" : {
+        "name" : "subject name",
+        "subjectid" : "specific subject id for each exams",
+    },
+    "cbt" : {
+        "name" : "exam name",
+        "description" : "exam's description",
+        "image" : "exam's image"
+    },
+    "exam" : {
+        "exam" : cbtfield,
+        "examid" : "exam id",
+        "subjects" : [
+            subjectfield
+        ]
+    },
+    "score" : {
+        "name" : "exam name",
+        "subject_scores" : [
+            {
+                "name" : "subject name",
+                "score" : "subject score"
+            }
+        ]
+    },
+    "record" : {
+        "exam" : cbtfield,
+        "score" : scorefield,
+        "examscore" : "cummulative score of the particular cbt"
+    },
+    "user" : {
+        "id" : "user's id",
+        "name" : "The user's full name",
+        "email" : "user's email address",
+        "image" : "user image url or image base64 encoding",
+        "number" : "user's phone number",
+        "password" : "user's encoded password",
+        "record" : [
+            recordfield
+            ]
+    },
+    "superuser" : {
+        "user" : userfield,
+        "superuserid" : "sudo id"
+    }
+}
+```
 
 #### Questions 
 - question 
