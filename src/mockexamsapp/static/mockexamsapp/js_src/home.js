@@ -1,9 +1,10 @@
 import { h, text, app } from "https://unpkg.com/hyperapp";
 import { horizontal, foot } from "./global.js";
 
-const info = `Mockexams is a Computer Based Test(CBT) platform which aims to assist students to
-  practice for common CBT exams like jamb and post utme. The platform provides exams past questions
-  coupled with answers, and aims to simulate the examination enviroment enabling students to get
+const info = `Mockexams is a Computer Based Test(CBT) platform which aims 
+  to assist students to practice for common CBT exams like JAMB and post 
+  UTME. The platform provides exams past questions coupled with answers, 
+  and aims to simulate the examination enviroment enabling students to get
   accustomed to writing and passing CBT exams.
   `
 const url = window.location.href
@@ -46,7 +47,11 @@ const description = (info) => [
   h('div', {id : 'wallpaper'}, [
     h('div', {id : 'descriptionpanel'}, [
       h('h2', {}, text('MockExams')),
-      h('p', {id : 'description'}, text(info)),
+      h('span', {id : 'description'}, 
+        info.split('\n').map(
+          (x) => h('p', {class : 'description'}, text(x))
+        )
+      ),
     ]),
     h('div', {id : 'fancyimage'})
   ]),
@@ -65,6 +70,17 @@ function run(userinfo) {
     view: ({userinfo}) =>
         h("main", {id : "background"}, layout(userinfo))
   })
+}
+
+function typeWriter() {
+  let len = 0;
+  const txt = document.getElementById('description').innerText;
+
+  if (len < txt.length) {
+    document.getElementById("description").innerHTML += txt.charAt(len);
+    len++;
+    setTimeout(typeWriter, 100);
+  }
 }
 
 run({})

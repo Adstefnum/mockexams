@@ -69,6 +69,32 @@
   font-weight: lighter;
 }
 
+#descriptionpanel p{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.description {
+  height: 30%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .04em;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret 1s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--dark); }
+}
+
 #fancyimage{
   width: 50%;
   height: 100%;

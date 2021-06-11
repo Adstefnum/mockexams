@@ -295,7 +295,7 @@ const horizontal = (content)=>h('span', {
         class: 'horizontalcontainer'
     }, content)
 ;
-const info = `Mockexams is a Computer Based Test(CBT) platform which aims to assist students to\n  practice for common CBT exams like jamb and post utme. The platform provides exams past questions\n  coupled with answers, and aims to simulate the examination enviroment enabling students to get\n  accustomed to writing and passing CBT exams.\n  `;
+const info = `Mockexams is a Computer Based Test(CBT) platform which aims \n  to assist students to practice for common CBT exams like JAMB and post \n  UTME. The platform provides exams past questions coupled with answers, \n  and aims to simulate the examination enviroment enabling students to get\n  accustomed to writing and passing CBT exams.\n  `;
 let formdata = new FormData;
 formdata.append('id', '');
 formdata.append('password', '');
@@ -340,9 +340,12 @@ const description = (info1)=>[
             }, [
                 h('h2', {
                 }, text('MockExams')),
-                h('p', {
+                h('span', {
                     id: 'description'
-                }, text(info1)), 
+                }, info1.split('\n').map((x)=>h('p', {
+                        class: 'description'
+                    }, text(x))
+                )), 
             ]),
             h('div', {
                 id: 'fancyimage'
