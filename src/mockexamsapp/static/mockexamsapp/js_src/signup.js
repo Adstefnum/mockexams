@@ -1,5 +1,5 @@
 import { h, text, app } from "https://unpkg.com/hyperapp"
-import {tel, password } from "./specialisedinputs.js"
+import {tel, password } from "./global.css"
 
 const signinpanel = () =>
     h('form', {id : 'panel', action : '/signup', method : 'POST', enctype : 'multipart/formdata'}, [

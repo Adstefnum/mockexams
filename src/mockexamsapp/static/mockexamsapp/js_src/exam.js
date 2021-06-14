@@ -1,6 +1,5 @@
 import { h, text, app } from "https://unpkg.com/hyperapp"
-import { burger1, burger2 } from "./burger.js"
-import { userinfo } from "./global.js"
+import { userinfo, burger1, burger2 } from "./global.js"
 
 const inc = (count, len) =>
     count === len -1 ? count : count + 1
