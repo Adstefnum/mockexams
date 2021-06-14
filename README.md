@@ -10,6 +10,9 @@ A website to practice cbt examination
 - database is now populated with over 1000 questions.
 - We need a way to take care of instructions for particular sections.
 
+## Note
+- The user auth apis don't support GET requests intentionally becuase we just want information to be posted to it and then it returns the correct response either for login or registration. If we ever need to return a list of all users, we will create a seperate api app for that. 
+
 ## Timeline
 - Publish a demo
 
