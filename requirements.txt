@@ -3,3 +3,4 @@ djangorestframework
 pygments
 knox
 boto3
+django-rest-knox
