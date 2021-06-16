@@ -221,7 +221,7 @@ var h = (tag, props, children = EMPTY_ARR)=>createVNode(tag, props, isArray(chil
         children
     ])
 ;
-var app1 = ({ init =EMPTY_OBJ , view , subscriptions , dispatch =id , node ,  })=>{
+var app = ({ init =EMPTY_OBJ , view , subscriptions , dispatch =id , node ,  })=>{
     var vdom = node && recycleNode(node);
     var subs = [];
     var state;
@@ -244,63 +244,206 @@ var app1 = ({ init =EMPTY_OBJ , view , subscriptions , dispatch =id , node ,  })
         , setState(action[0])) : action == null ? patchSubs(subs, EMPTY_ARR, dispatch = id) : setState(action)
     ))(init), dispatch;
 };
-let examinfo = [
-    {
-        name: 'utme',
-        image: `./imgs/jamb.png`,
-        description: 'Practice for the utme CBT exams by completing questions within a specified time'
-    },
-    {
-        name: 'unilorin post utme',
-        image: `./imgs/unilorin.png`,
-        description: 'Practice for the unilorin post utme CBT exams by completing questions within a specified time'
-    },
-    {
-        name: 'unilag post utme',
-        image: `./imgs/unilag.png`,
-        description: 'Practice for the unilorin post utme CBT exams by completing questions within a specified time'
-    },
-    {
-        name: 'Abu post utme',
-        image: `./imgs/abu.png`,
-        description: 'Practice for the unilorin post utme CBT exams by completing questions within a specified time'
-    }
-];
-const exams = (examinfo1)=>h('a', {
-        class: 'examlinks',
-        href: '/cbt/' + examinfo1.name
+const slideopen = ()=>document.getElementById('sidebar').classList.toggle('opensidebar')
+;
+const burger1 = ()=>h('div', {
+        id: 'burger',
+        onclick: slideopen
     }, [
-        h('span', {
-            id: examinfo1.name,
-            class: 'exam'
+        h('div', {
+            id: 'upperburger'
         }, [
-            h('img', {
-                class: 'examimage',
-                src: examinfo1.image,
-                alt: examinfo1.name
+            h('div', {
+                class: 'line'
             }),
-            h('h4', {
-                class: 'examname'
-            }, text(examinfo1.name)),
-            h('p', {
-                class: 'examdescription'
-            }, text(examinfo1.description))
+            h('div', {
+                class: 'line'
+            })
+        ]),
+        h('div', {
+            id: 'lowerburger'
+        }, [
+            h('div', {
+                class: 'line'
+            }),
+            h('div', {
+                class: 'line'
+            })
         ])
     ])
 ;
-const exampanel = (examinfo1)=>h('span', {
-        id: 'exampanel'
-    }, examinfo1.map((value)=>exams(value)
-    ))
+const burger2 = ()=>h('div', {
+        id: 'burger2',
+        onclick: slideopen
+    }, [
+        h('div', {
+            id: 'line1'
+        }),
+        h('div', {
+            id: 'line2'
+        })
+    ])
 ;
-app({
-    init: {
-        data: examinfo
-    },
-    view: ({ data  })=>h('main', {
-            id: 'background'
-        }, exampanel(data))
-    ,
-    node: document.getElementById("app")
-});
+const userinfo = ()=>h('section', {
+        id: 'profilepic'
+    }, [
+        h('img', {
+            src: 'imgs/avatar.png'
+        }, []),
+        h('p', {
+            id: 'username'
+        }, text('username')),
+        h('p', {
+            id: 'id'
+        }, text('09838839BD'))
+    ])
+;
+const inc = (count, len)=>count === len - 1 ? count : count + 1
+;
+const dec = (count)=>count === 0 ? count : count - 1
+;
+const jump = (state, event)=>({
+        ...state,
+        count: parseInt(event.target.value) - 1
+    })
+;
+const increase = (state)=>({
+        ...state,
+        count: inc(state.count, state.data.length)
+    })
+;
+const decrease = (state)=>({
+        ...state,
+        count: dec(state.count)
+    })
+;
+const options = (options1, number)=>Object.keys(options1).map((key)=>h('li', {
+            class: 'options'
+        }, [
+            h('input', {
+                type: 'radio',
+                name: number,
+                value: key
+            }),
+            h('p', {
+            }, text(options1[key]))
+        ])
+    )
+;
+const question = (data, number)=>h('div', {
+        id: 'question'
+    }, [
+        h('section', {
+            class: 'paragraph'
+        }, text(data.section)),
+        h('section', {
+            class: 'question'
+        }, [
+            h('p', {
+                class: 'number'
+            }, text(number)),
+            h('p', {
+                class: 'qinfo'
+            }, text(data.question))
+        ]),
+        h('section', {
+            id: 'options'
+        }, [
+            h('ul', {
+            }, options(data.option, number))
+        ]),
+        h('section', {
+            id: 'buttons'
+        }, [
+            h('button', {
+                class: 'prev',
+                onclick: decrease
+            }, text('previous')),
+            h('button', {
+                class: 'next',
+                onclick: increase
+            }, text('next'))
+        ])
+    ])
+;
+const sidebar = ()=>h('navbar', {
+        id: 'sidebar'
+    }, [
+        burger2(),
+        userinfo(),
+        h('section', {
+            id: 'subjects'
+        }, [
+            h('button', {
+                class: 'subjects'
+            }, text('physics')),
+            h('button', {
+                class: 'subjects'
+            }, text('biology')),
+            h('button', {
+                class: 'subjects'
+            }, text('chemistry')),
+            h('button', {
+                class: 'subjects'
+            }, text('english'))
+        ]),
+        h('section', {
+            id: 'time'
+        }, [
+            h('p', {
+                id: 'timetitle'
+            }, text('Time left')),
+            h('div', {
+                class: 'time'
+            }, text('100:00'))
+        ]),
+        h('button', {
+            id: 'submit'
+        }, text('submit'))
+    ])
+;
+const range = (end)=>[
+        ...Array(end + 1).keys()
+    ].filter((x)=>x > 0
+    )
+;
+const panel = (number)=>range(number).map((x)=>h('button', {
+            class: 'btn',
+            value: x,
+            onclick: jump
+        }, text(x))
+    )
+;
+const layout = (data, count)=>[
+        burger1(),
+        sidebar(),
+        h('div', {
+            id: 'mainarea'
+        }, [
+            question(data[count], count + 1),
+            h('section', {
+                id: 'panel'
+            }, panel(data.length))
+        ])
+    ]
+;
+var url = `http://0.0.0.0:3000/file/%2Fhome%2Fcnerd%2FDocuments%2FPython%2Fwebdev%2Fmockexams%2Fquestions%2Fchemistry%2F2001.json`;
+async function info() {
+    await fetch(url).then((data)=>data.json()
+    ).then((data)=>app({
+            init: {
+                data: data,
+                count: 0
+            },
+            view: ({ data: data1 , count  })=>h('main', {
+                    id: 'background'
+                }, layout(data1, count))
+            ,
+            node: document.getElementById("app")
+        })
+    ).catch(function(error) {
+        console.error(error);
+    });
+}
+info();
 

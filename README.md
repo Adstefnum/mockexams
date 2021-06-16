@@ -43,6 +43,13 @@ A website to practice cbt examination
 - No lagging between questions, just show next question staight, no lazy loadings
 
 
+## Progress
+
+- #### Frontend:
+    - The home, cbt, login, signup and userpage have been implemented although some changes needs
+    to be done to them
+    - The page navigation has been implemented with the templating system
+
 ## Database
 
 ### Getting the database
