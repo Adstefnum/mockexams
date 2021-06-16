@@ -7,7 +7,10 @@ A website to practice cbt examination
 	- questions/v1/<int:accompany_id>
 - How do we link questions and their accompaniment with the populate_database.py script?
 - Work on login and signup pages
-- database is now populated with over 1000 questions.
+- setup OTP
+- setup correct json response for login
+    - get from user profile
+    - Should user profile contain user records or that can be queried separately when needed.
 - We need a way to take care of instructions for particular sections.
 
 ## Note
