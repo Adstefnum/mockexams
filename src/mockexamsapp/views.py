@@ -9,8 +9,12 @@ class IndexView(ListView):
 		static = {'js' : 'home', 'css' : 'home'}
 		return render(request, self.template_name, static)
 
-	def signup(self, request):
-		static = {'js' : 'signup', 'css' : 'signup'}
+	def register(self, request):
+		static = {'js' : 'register', 'css' : 'signup'}
+		return render(request, self.template_name, static)
+
+	def login(self, request):
+		static = {'js' : 'login', 'css' : 'signup'}
 		return render(request, self.template_name, static)
 
 	def get_queryset(self):

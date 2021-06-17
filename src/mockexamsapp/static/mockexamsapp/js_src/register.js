@@ -1,5 +1,5 @@
-import { h, text, app } from "https://unpkg.com/hyperapp"
-import {tel, password } from "./global.css"
+import { h, text, app } from "https://unpkg.com/hyperapp";
+import {tel, password } from "./global.js";
 
 const signinpanel = () =>
     h('form', {id : 'panel', action : '/signup', method : 'POST', enctype : 'multipart/formdata'}, [
@@ -12,13 +12,6 @@ const signinpanel = () =>
         h('input', {type : 'submit', value : 'Register'})
     ])
 
-const logininpanel = () =>
-    h('form', {id : 'panel', action : '/login', method : 'POST', enctype : 'multipart/formdata'}, [
-        h('label', {id : 'title'}, text('Login')),
-        h('input', {name : 'email', placeholder : 'email account', type : 'email'}),
-        password('password'),
-        h('input', {type : 'submit', value : 'Login'})
-    ])
 
 const layout = () =>
     signinpanel()

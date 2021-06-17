@@ -5,5 +5,6 @@ from mockexamsapp import views
 app_name = "mockexamsapp"
 urlpatterns = [
 	path('', views.IndexView().home, name = "index"),
-	path('Register', views.IndexView().signup, name = "index")
+	path('Register', views.IndexView().register, name = "register"),
+	path('Login', views.IndexView().login, name = "login")
 ]

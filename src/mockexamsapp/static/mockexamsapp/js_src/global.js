@@ -82,7 +82,7 @@ const tel = (name) =>
 const password = (name) =>
     h('span', {class : 'dual'}, [
         h('input', {name : name, placeholder : name, type : 'password'}),
-        h('div', {class : 'show', onclick : show}, text('show'))
+        h('div', {class : 'show'}, text('show'))
     ])
 
 export {userinfo, horizontal, foot, foot2, burger1, burger2, tel, password}
