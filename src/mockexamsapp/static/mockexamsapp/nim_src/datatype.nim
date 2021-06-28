@@ -16,3 +16,6 @@ type
         subjectnum*: int
         subjects*: seq[Subject]
         sessions*: seq[Session]
+
+    Note* = object
+        note*, page* : string

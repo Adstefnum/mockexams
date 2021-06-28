@@ -7,7 +7,7 @@ license       = "Proprietary"
 installExt    = @["nim"]
 srcDir        = "nim_src"
 binDir        = "js"
-bin           = @["home"]
+bin           = @["home", "note", "cbt"]
 backend       = "js"
 
 # Dependencies

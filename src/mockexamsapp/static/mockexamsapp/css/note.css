@@ -1,0 +1,44 @@
+body{
+    display: flex;
+    align-items: center;
+}
+
+body{
+    justify-content: center;
+}
+
+#app{
+    overflow-y: scroll;
+}
+
+#note{
+    width: 76%;
+    min-height: 90%;
+    padding: 30px 2% 30px 2%;
+    margin: 10px 10% 10px 10%;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    background: var(--lighttint2);
+}
+
+#note h1{
+    color: var(--primary);
+}
+
+#note h2{
+    color: var(--primarytint1);
+}
+
+#note h3{
+    color: var(--primarytint3);
+}
+
+#note p{
+    color: var(--dark);
+}
+
+#note a{
+    color: var(--link);
+    text-decoration: none;
+}
