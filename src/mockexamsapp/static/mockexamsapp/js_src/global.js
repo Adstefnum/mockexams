@@ -1,10 +1,11 @@
 import { h, text} from "https://unpkg.com/hyperapp"
 
+/*Temporary values*/
 const linktype = {
-    'Authentication' : ['Login', 'Register'],
     'Legal' : ['Terms and Conditions', 'Privacy Policy', 'FAQ'],
     'Team' : ['Team']
 }
+
 const slideopen = () => (
     document.getElementById('sidebar').classList.toggle('opensidebar')
 )
@@ -30,20 +31,15 @@ const socialmedia = (name, medialink) =>
 
 const foot = () =>
     h('footer', {id : 'footer'}, [
-        h('div', {id : 'auth', class : 'footerdivs'}, 
+        /*h('div', {id : 'auth', class : 'footerdivs'}, 
             makefootdiv('Authentication')
-        ),
+        ),*/
         h('div', {id : 'legal', class : 'footerdivs'}, 
             makefootdiv('Legal')
         ),
         h('div', {id : 'team', class : 'footerdivs'}, 
             makefootdiv('Team')
         )
-        /*h('div', {id : 'mediapanel'}, 
-            Object.keys(medialinks).map(
-                (name) => socialmedia(name, medialinks[name])
-            )
-        )*/
     ])
 
 const horizontal = (content) =>
@@ -85,4 +81,12 @@ const password = (name) =>
         h('div', {class : 'show'}, text('show'))
     ])
 
-export {userinfo, horizontal, foot, foot2, burger1, burger2, tel, password}
+const loginpanel = () =>
+    h('form', {id : 'panel', action : '/login', method : 'POST', enctype : 'multipart/formdata'}, [
+        h('label', {id : 'title'}, text('Login')),
+        h('input', {name : 'email', placeholder : 'email account', type : 'email'}),
+        password('password'),
+        h('input', {type : 'submit', value : 'Login'})
+    ])
+
+export {userinfo, horizontal, foot, foot2, burger1, burger2, tel, password, loginpanel}

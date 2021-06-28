@@ -17,5 +17,9 @@ class IndexView(ListView):
 		static = {'js' : 'login', 'css' : 'signup'}
 		return render(request, self.template_name, static)
 
+	def exam(self, request):
+		static = {'js' : 'exam', 'css' : 'exam'}
+		return render(request, self.template_name, static)
+
 	def get_queryset(self):
 		pass

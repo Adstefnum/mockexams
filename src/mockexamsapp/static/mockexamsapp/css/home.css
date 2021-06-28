@@ -1,125 +1,102 @@
-#menubar{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: var(--sidemenuwidth);
-  height: 90%;
-  background: linear-gradient(var(--primary), var(--primarytint1));
-  box-shadow: 2px 2px 6px var(--dark);
+body{
+    display: flex;
+    align-items: center;
 }
 
-.profilepic{
-  display: none;
+body{
+    justify-content: center;
 }
 
-.menuicon, .iconholders, #logo{
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
+#app{
+    overflow-y: scroll;
 }
 
-.iconholders{
-  background-color: var(--light);
-}
-
-.menuicon:hover, .iconholders:hover{
-  border-radius: 10px;
-  border: 2px solid var(--primarytint4);
-  transition: ease-in-out 0.2s;
-}
-
-#examicon{
-  background: url('../imgs/cbt.svg') no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
-#rankingicon{
-  background: url('../imgs/leaderboard.svg') no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
-#blogicon{
-  background: url('../imgs/blog.svg') no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
-#wallpaper{
-  width: 100%;
-  height: var(--wallpaperwidth);
-  background-color: #fefefe;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-#descriptionpanel{
-  width: 50%;
-  height: 35%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-#descriptionpanel h2{
-  font-weight: lighter;
-  color: var(--primary);
-}
-
-#descriptionpanel p{
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.description {
-  height: 30%;
-  overflow: hidden;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .01em;
-  animation: 
-    typing 3.5s steps(40, end),
-    blink-caret 1s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--dark); }
-}
-
-#fancyimage{
-  width: 50%;
-  height: 100%;
-  background: url('../imgs/fancyimage1.png') no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
-/*@media screen and (max-width : 1024px), (min-height : 768px) {
-
-  #descriptionpanel{
-    height: 30%;
-  }
-  
-  #descriptionpanel{
-    width: 100%;
-  }
-  
-  #signinpanel a{
-    width: 50%;
-  }
-  
-  #fancyimage{
+.background{
     width: 100%;
     height: 100%;
-  }
-}*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#topbackground{
+    background: url("../imgs/background.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.background span{
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    color: var(--light);
+}
+
+.background span h2{
+    color: var(--primary);
+}
+
+.background span li{
+    color: var(--primarytint3);
+}
+
+.background span li{
+    list-style: none;
+    margin: 5px 0 5px 0;
+}
+
+.btn{
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background: var(--primarytint4);
+    color: var(--light);
+    width: 200px;
+    height: 50px;
+    padding: 5px 2px 5px 2px;
+    font-size: larger;
+    box-shadow: 2px 2px 6px var(--dark);
+    cursor: pointer;
+}
+
+.btn:active{
+    box-shadow: inset 2px 2px 6px var(--dark);
+}
+
+#middlebackground{
+    display: block;
+    min-height: 90%;
+    padding: 50px 0 50px 0;
+}
+
+.exams{
+    float: left;
+    width: 400px;
+    height: 300px;
+    padding: 50px 0 50px 0;
+    margin: 0 0 50px 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    justify-content: space-between;
+    box-shadow: 2px 2px 6px var(--dark);
+}
+
+.exams img{
+    height: 60%;
+}
+
+.exams span{
+    width: 90%;
+    height: 50%;
+    padding: 0 5% 0 5%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    color: var(--dark);
+}
