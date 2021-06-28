@@ -24,16 +24,15 @@ proc navbar*(): VNode =
                 text "Register"]#
             #burger()
 
-proc exam*(exam: Exam): VNode =
-    result = buildHtml(a(href = exam.url)):
-        tdiv(class = "exams"):
-            img(alt = "examimage", src = exam.image)
+proc exam*(exam: Exam, action: proc(ev: Event, n: VNode)): VNode =
+    result = buildHtml(tdiv(class = "exams", onclick = action)):
+        img(alt = "examimage", src = exam.image)
 
-            span:
-                h4:
-                    text exam.name
-                p:
-                    text exam.description
+        span:
+            h4:
+                text exam.name
+            p:
+                text exam.description
 
 proc footbar*(): VNode =
     proc column(data: tuple[name: string, content: seq[tuple[name,
@@ -162,9 +161,11 @@ proc configexam*(exam: ConfigExam, cancelproc: proc(ev: Event,
                     text exam.exam.name
 
                 p:
+                    text "Time : " & exam.time
+                p:
                     text exam.exam.description
 
-                button(`type` = "button"):
+                button(`type` = "button", class = "btn"):
                     text "Start Exam"
 
             if exam.multipleexams:

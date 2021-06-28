@@ -19,6 +19,24 @@ proc home(): VNode =
     canvas.appendChild(nextchild.vnodeToDom())
     canvas.removeChild(prevchild)
 
+  proc examConfig(ev : Event, n : VNode) {.closure.} =
+    var
+      testconfig : ConfigExam = ConfigExam(exam : Exam(name: "UTME", description: """
+      Practice utme computer based tests by using
+      mockexams tools
+      """, image: "/static/mockexamsapp/imgs/jamb.png", url: "/"),
+      multipleexams : true,
+      time : "120 min")
+      nextchild = buildHtml(span(id = "authcontainer")):
+        configexam(testconfig, cancel)
+
+    let
+      canvas = document.getElementById("app")
+      prevchild = document.getElementById("authcontainer")
+
+    canvas.appendChild(nextchild.vnodeToDom())
+    canvas.removeChild(prevchild)
+
   result = buildHtml(main):
     span(class = "background", id = "topbackground"):
       navbar()
@@ -42,22 +60,22 @@ proc home(): VNode =
       exam(Exam(name: "UTME", description: """
       Practice utme computer based tests by using
       mockexams tools
-      """, image: "/static/mockexamsapp/imgs/jamb.png", url: "/"))
+      """, image: "/static/mockexamsapp/imgs/jamb.png", url: "/"), examConfig)
 
       exam(Exam(name: "UTME", description: """
       Practice utme computer based tests by using
       mockexams tools
-      """, image: "/static/mockexamsapp/imgs/abu.png", url: "/"))
+      """, image: "/static/mockexamsapp/imgs/abu.png", url: "/"), examConfig)
 
       exam(Exam(name: "UTME", description: """
       Practice utme computer based tests by using
       mockexams tools
-      """, image: "/static/mockexamsapp/imgs/unilorin.png", url: "/"))
+      """, image: "/static/mockexamsapp/imgs/unilorin.png", url: "/"), examConfig)
 
       exam(Exam(name: "UTME", description: """
       Practice utme computer based tests by using
       mockexams tools
-      """, image: "/static/mockexamsapp/imgs/unilag.png", url: "/"))
+      """, image: "/static/mockexamsapp/imgs/unilag.png", url: "/"), examConfig)
 
     footbar()
     footbar2()

@@ -2,6 +2,9 @@
 var framePtr = null;
 var excHandler = 0;
 var lastJSError = null;
+var NTI1194621 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI1194643 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI1194653 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI10500125 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
 var NTI10897211 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
 var NTI10417083 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
@@ -887,6 +890,15 @@ var NNI10897211 = {kind: 2, len: 3, offset: 0, typ: null, name: null, sons: [{ki
 {kind: 1, offset: "pos", len: 0, typ: NTI1188044, name: "pos", sons: null}]};
 NTI10897211.node = NNI10897211;
 NTI10500125.base = NTI1188015;
+var NNI1194653 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
+NTI1194653.node = NNI1194653;
+NTI1194653.base = NTI1194619;
+var NNI1194643 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
+NTI1194643.node = NNI1194643;
+var NNI1194621 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
+NTI1194621.node = NNI1194621;
+NTI1194621.base = NTI1194617;
+NTI1194643.base = NTI1194621;
 function cstrToNimstr(c_1455079) {
       var ln = c_1455079.length;
   var result = new Array(ln);
@@ -1183,6 +1195,69 @@ function nimMin(a_1460803, b_1460804) {
   return result_1460805;
 
 }
+function mnewString(len_1460044) {
+        return new Array(len_1460044);
+  
+
+  
+}
+function chckRange(i_1485016, a_1485017, b_1485018) {
+      var Tmp1;
+
+  var result_1485019 = 0;
+
+  BeforeRet: do {
+      if (!(a_1485017 <= i_1485016)) Tmp1 = false; else {        Tmp1 = (i_1485016 <= b_1485018);      }    if (Tmp1) {
+    result_1485019 = i_1485016;
+    break BeforeRet;
+    }
+    else {
+    raiseRangeError();
+    }
+    
+  } while (false);
+
+  return result_1485019;
+
+}
+function addChar(x_1505031, c_1505032) {
+    x_1505031.push(c_1505032);
+
+  
+}
+var ConstSet2 = setConstr([48, 57]);
+function mulInt(a_1460455, b_1460456) {
+        var result = a_1460455 * b_1460456;
+    checkOverflowInt(result);
+    return result;
+  
+
+  
+}
+var ConstSet3 = setConstr(0, 125);
+var ConstSet4 = setConstr([48, 57]);
+var ConstSet5 = setConstr([65, 90]);
+function nimMax(a_1460821, b_1460822) {
+    var Tmp1;
+
+  var result_1460823 = 0;
+
+  BeforeRet: do {
+    if ((b_1460822 <= a_1460821)) {
+    Tmp1 = a_1460821;
+    }
+    else {
+    Tmp1 = b_1460822;
+    }
+    
+    result_1460823 = Tmp1;
+    break BeforeRet;
+  } while (false);
+
+  return result_1460823;
+
+}
+var ConstSet6 = setConstr([97, 122], [65, 90], [48, 57], [128, 255], 95);
 if (!Math.trunc) {
   Math.trunc = function(v) {
     v = +v;
@@ -4700,13 +4775,13 @@ function auxWriteStackTrace_1380038(f_1380040) {
     
     L6: do {
       var j_1395236 = 0;
-      var colontmp__11630249 = 0;
-      colontmp__11630249 = (i_1380053 - 1);
-      var res_11630254 = colontmp__11630249;
+      var colontmp__11635249 = 0;
+      colontmp__11635249 = (i_1380053 - 1);
+      var res_11635254 = colontmp__11635249;
       L7: do {
           L8: while (true) {
-          if (!(0 <= res_11630254)) break L8;
-            j_1395236 = res_11630254;
+          if (!(0 <= res_11635254)) break L8;
+            j_1395236 = res_11635254;
             result_1380041[0].push.apply(result_1380041[0], cstrToNimstr(tempFrames_1380062[j_1395236].Field2));;
             if ((0 < tempFrames_1380062[j_1395236].Field1)) {
             result_1380041[0].push.apply(result_1380041[0], makeNimstrLit("("));;
@@ -4722,7 +4797,7 @@ function auxWriteStackTrace_1380038(f_1380040) {
             result_1380041[0].push.apply(result_1380041[0], makeNimstrLit(" at "));;
             add_1357211(result_1380041, 0, tempFrames_1380062[j_1395236].Field0);
             result_1380041[0].push.apply(result_1380041[0], makeNimstrLit("\x0A"));;
-            res_11630254 -= 1;
+            res_11635254 -= 1;
           }
       } while(false);
     } while(false);
@@ -5083,21 +5158,21 @@ function applyEvents_11010073(n_11010075) {
       F.line = 146;
       var i_11010089 = 0;
       F.line = 104;
-      var colontmp__11630300 = 0;
+      var colontmp__11635300 = 0;
       F.line = 146;
-      colontmp__11630300 = (n_11010075.events).length;
+      colontmp__11635300 = (n_11010075.events).length;
       F.line = 106;
-      var i_11630301 = 0;
+      var i_11635301 = 0;
       L2: do {
         F.line = 107;
           L3: while (true) {
-          if (!(i_11630301 < colontmp__11630300)) break L3;
+          if (!(i_11635301 < colontmp__11635300)) break L3;
             F.line = 146;
-            i_11010089 = i_11630301;
+            i_11010089 = i_11635301;
             F.line = 147;
             n_11010075.events[chckIndx(i_11010089, 0, (n_11010075.events).length-1)]["Field2"] = wrapEvent_10900097(dest_11010076, n_11010075, n_11010075.events[chckIndx(i_11010089, 0, (n_11010075.events).length-1)]["Field0"], n_11010075.events[chckIndx(i_11010089, 0, (n_11010075.events).length-1)]["Field1"]);
             F.line = 109;
-            i_11630301 = addInt(i_11630301, 1);
+            i_11635301 = addInt(i_11635301, 1);
           }
       } while(false);
     } while(false);
@@ -5114,21 +5189,21 @@ function applyStyle_10455628(n_10455630, s_10455631) {
       F.line = 325;
       var i_10455664 = 0;
       F.line = 39;
-      var colontmp__11630311 = 0;
+      var colontmp__11635311 = 0;
       F.line = 325;
-      colontmp__11630311 = subInt(s_10455631.length, 1);
+      colontmp__11635311 = subInt(s_10455631.length, 1);
       F.line = 56;
-      var res_11630312 = 0;
+      var res_11635312 = 0;
       L2: do {
         F.line = 57;
           L3: while (true) {
-          if (!(res_11630312 <= colontmp__11630311)) break L3;
+          if (!(res_11635312 <= colontmp__11635311)) break L3;
             F.line = 325;
-            i_10455664 = res_11630312;
+            i_10455664 = res_11635312;
             F.line = 326;
             n_10455630.style[s_10455631[i_10455664]] = s_10455631[addInt(i_10455664, 1)];
             F.line = 59;
-            res_11630312 = addInt(res_11630312, 2);
+            res_11635312 = addInt(res_11635312, 2);
           }
       } while(false);
     } while(false);
@@ -5272,25 +5347,25 @@ function toDom_11010154(n_11010156, useAttachedNode_11010157, kxi_11010158) {
         var k_11135016 = null;
         L2: do {
           F.line = 293;
-          var i_11630269 = 0;
+          var i_11635269 = 0;
           F.line = 104;
-          var colontmp__11630270 = 0;
+          var colontmp__11635270 = 0;
           F.line = 293;
-          colontmp__11630270 = (n_11010156.kids).length;
+          colontmp__11635270 = (n_11010156.kids).length;
           F.line = 106;
-          var i_11630271 = 0;
+          var i_11635271 = 0;
           L3: do {
             F.line = 107;
               L4: while (true) {
-              if (!(i_11630271 < colontmp__11630270)) break L4;
+              if (!(i_11635271 < colontmp__11635270)) break L4;
                 F.line = 293;
-                i_11630269 = i_11630271;
+                i_11635269 = i_11635271;
                 F.line = 194;
-                k_11135016 = n_11010156.kids[chckIndx(i_11630269, 0, (n_11010156.kids).length-1)];
+                k_11135016 = n_11010156.kids[chckIndx(i_11635269, 0, (n_11010156.kids).length-1)];
                 F.line = 195;
                 result_11010159.appendChild(toDom_11010154(k_11135016, useAttachedNode_11010157, kxi_11010158));
                 F.line = 109;
-                i_11630271 = addInt(i_11630271, 1);
+                i_11635271 = addInt(i_11635271, 1);
               }
           } while(false);
         } while(false);
@@ -5319,30 +5394,30 @@ function toDom_11010154(n_11010156, useAttachedNode_11010157, kxi_11010158) {
       var v_11150002 = null;
       L6: do {
         F.line = 296;
-        var i_11630282 = 0;
+        var i_11635282 = 0;
         F.line = 39;
-        var colontmp__11630283 = 0;
+        var colontmp__11635283 = 0;
         F.line = 296;
-        colontmp__11630283 = subInt((n_11010156.attrs).length, 2);
+        colontmp__11635283 = subInt((n_11010156.attrs).length, 2);
         F.line = 56;
-        var res_11630284 = 0;
+        var res_11635284 = 0;
         L7: do {
           F.line = 57;
             L8: while (true) {
-            if (!(res_11630284 <= colontmp__11630283)) break L8;
+            if (!(res_11635284 <= colontmp__11635283)) break L8;
               F.line = 296;
-              i_11630282 = res_11630284;
+              i_11635282 = res_11635284;
               F.line = 205;
-              k_11150001 = n_11010156.attrs[chckIndx(i_11630282, 0, (n_11010156.attrs).length-1)];
+              k_11150001 = n_11010156.attrs[chckIndx(i_11635282, 0, (n_11010156.attrs).length-1)];
               F.line = 297;
-              v_11150002 = n_11010156.attrs[chckIndx(addInt(i_11630282, 1), 0, (n_11010156.attrs).length-1)];
+              v_11150002 = n_11010156.attrs[chckIndx(addInt(i_11635282, 1), 0, (n_11010156.attrs).length-1)];
               if (!((v_11150002 == null))) {
               F.line = 207;
               result_11010159.setAttribute(k_11150001, v_11150002);
               }
               
               F.line = 59;
-              res_11630284 = addInt(res_11630284, 2);
+              res_11635284 = addInt(res_11635284, 2);
             }
         } while(false);
       } while(false);
@@ -5448,17 +5523,17 @@ function same_11160072(n_11160074, e_11160075, nesting_11160076) {
       F.line = 229;
       var i_11175024 = 0;
       F.line = 104;
-      var colontmp__11630318 = 0;
+      var colontmp__11635318 = 0;
       F.line = 229;
-      colontmp__11630318 = len_10550014(n_11160074);
+      colontmp__11635318 = len_10550014(n_11160074);
       F.line = 106;
-      var i_11630319 = 0;
+      var i_11635319 = 0;
       L4: do {
         F.line = 107;
           L5: while (true) {
-          if (!(i_11630319 < colontmp__11630318)) break L5;
+          if (!(i_11635319 < colontmp__11635318)) break L5;
             F.line = 229;
-            i_11175024 = i_11630319;
+            i_11175024 = i_11635319;
             if (!(same_11160072(HEX5BHEX5D_10550036(n_11160074, i_11175024), e_11160075.childNodes[i_11175024], addInt(nesting_11160076, 1)))) {
             F.line = 230;
             result_11160078 = false;
@@ -5466,7 +5541,7 @@ function same_11160072(n_11160074, e_11160075, nesting_11160076) {
             }
             
             F.line = 109;
-            i_11630319 = addInt(i_11630319, 1);
+            i_11635319 = addInt(i_11635319, 1);
           }
       } while(false);
     } while(false);
@@ -5520,17 +5595,17 @@ function eq_10420229(a_10420231, b_10420232) {
       F.line = 237;
       var i_10425083 = 0;
       F.line = 104;
-      var colontmp__11630358 = 0;
+      var colontmp__11635358 = 0;
       F.line = 237;
-      colontmp__11630358 = a_10420231.length;
+      colontmp__11635358 = a_10420231.length;
       F.line = 106;
-      var i_11630359 = 0;
+      var i_11635359 = 0;
       L2: do {
         F.line = 107;
           L3: while (true) {
-          if (!(i_11630359 < colontmp__11630358)) break L3;
+          if (!(i_11635359 < colontmp__11635358)) break L3;
             F.line = 237;
-            i_10425083 = i_11630359;
+            i_10425083 = i_11635359;
             if (!((a_10420231[i_10425083] == b_10420232[i_10425083]))) {
             F.line = 238;
             result_10420233 = false;
@@ -5538,7 +5613,7 @@ function eq_10420229(a_10420231, b_10420232) {
             }
             
             F.line = 109;
-            i_11630359 = addInt(i_11630359, 1);
+            i_11635359 = addInt(i_11635359, 1);
           }
       } while(false);
     } while(false);
@@ -5564,17 +5639,17 @@ function sameAttrs_10561079(a_10561081, b_10561082) {
       F.line = 302;
       var i_10561106 = 0;
       F.line = 104;
-      var colontmp__11630362 = 0;
+      var colontmp__11635362 = 0;
       F.line = 302;
-      colontmp__11630362 = (a_10561081.attrs).length;
+      colontmp__11635362 = (a_10561081.attrs).length;
       F.line = 106;
-      var i_11630363 = 0;
+      var i_11635363 = 0;
       L2: do {
         F.line = 107;
           L3: while (true) {
-          if (!(i_11630363 < colontmp__11630362)) break L3;
+          if (!(i_11635363 < colontmp__11635362)) break L3;
             F.line = 302;
-            i_10561106 = i_11630363;
+            i_10561106 = i_11635363;
             if (!((a_10561081.attrs[chckIndx(i_10561106, 0, (a_10561081.attrs).length-1)] == b_10561082.attrs[chckIndx(i_10561106, 0, (b_10561082.attrs).length-1)]))) {
             F.line = 303;
             result_10561083 = false;
@@ -5582,7 +5657,7 @@ function sameAttrs_10561079(a_10561081, b_10561082) {
             }
             
             F.line = 109;
-            i_11630363 = addInt(i_11630363, 1);
+            i_11635363 = addInt(i_11635363, 1);
           }
       } while(false);
     } while(false);
@@ -5649,17 +5724,17 @@ function eq_11175214(a_11175216, b_11175217, recursive_11175218) {
       F.line = 274;
       var i_11205008 = 0;
       F.line = 104;
-      var colontmp__11630350 = 0;
+      var colontmp__11635350 = 0;
       F.line = 274;
-      colontmp__11630350 = len_10550014(a_11175216);
+      colontmp__11635350 = len_10550014(a_11175216);
       F.line = 106;
-      var i_11630351 = 0;
+      var i_11635351 = 0;
       L2: do {
         F.line = 107;
           L3: while (true) {
-          if (!(i_11630351 < colontmp__11630350)) break L3;
+          if (!(i_11635351 < colontmp__11635350)) break L3;
             F.line = 274;
-            i_11205008 = i_11630351;
+            i_11205008 = i_11635351;
             if ((eq_11175214(HEX5BHEX5D_10550036(a_11175216, i_11205008), HEX5BHEX5D_10550036(b_11175217, i_11205008), recursive_11175218) == 1)) {
             F.line = 275;
             result_11175219 = 1;
@@ -5667,7 +5742,7 @@ function eq_11175214(a_11175216, b_11175217, recursive_11175218) {
             }
             
             F.line = 109;
-            i_11630351 = addInt(i_11630351, 1);
+            i_11635351 = addInt(i_11635351, 1);
           }
       } while(false);
     } while(false);
@@ -5731,17 +5806,17 @@ function eq_11175214(a_11175216, b_11175217, recursive_11175218) {
       F.line = 306;
       var i_11230008 = 0;
       F.line = 104;
-      var colontmp__11630354 = 0;
+      var colontmp__11635354 = 0;
       F.line = 306;
-      colontmp__11630354 = len_10550014(a_11175216);
+      colontmp__11635354 = len_10550014(a_11175216);
       F.line = 106;
-      var i_11630355 = 0;
+      var i_11635355 = 0;
       L7: do {
         F.line = 107;
           L8: while (true) {
-          if (!(i_11630355 < colontmp__11630354)) break L8;
+          if (!(i_11635355 < colontmp__11635354)) break L8;
             F.line = 306;
-            i_11230008 = i_11630355;
+            i_11230008 = i_11635355;
             if (!((eq_11175214(HEX5BHEX5D_10550036(a_11175216, i_11230008), HEX5BHEX5D_10550036(b_11175217, i_11230008), true) == 3))) {
             F.line = 308;
             result_11175219 = 1;
@@ -5749,7 +5824,7 @@ function eq_11175214(a_11175216, b_11175217, recursive_11175218) {
             }
             
             F.line = 109;
-            i_11630355 = addInt(i_11630355, 1);
+            i_11635355 = addInt(i_11635355, 1);
           }
       } while(false);
     } while(false);
@@ -5808,27 +5883,27 @@ function updateAttributes_11245052(newNode_11245054, oldNode_11245055) {
       var __11250010 = null;
       L2: do {
         F.line = 296;
-        var i_11630368 = 0;
+        var i_11635368 = 0;
         F.line = 39;
-        var colontmp__11630369 = 0;
+        var colontmp__11635369 = 0;
         F.line = 296;
-        colontmp__11630369 = subInt((oldNode_11245055.attrs).length, 2);
+        colontmp__11635369 = subInt((oldNode_11245055.attrs).length, 2);
         F.line = 56;
-        var res_11630370 = 0;
+        var res_11635370 = 0;
         L3: do {
           F.line = 57;
             L4: while (true) {
-            if (!(res_11630370 <= colontmp__11630369)) break L4;
+            if (!(res_11635370 <= colontmp__11635369)) break L4;
               F.line = 296;
-              i_11630368 = res_11630370;
+              i_11635368 = res_11635370;
               F.line = 325;
-              k_11250009 = oldNode_11245055.attrs[chckIndx(i_11630368, 0, (oldNode_11245055.attrs).length-1)];
+              k_11250009 = oldNode_11245055.attrs[chckIndx(i_11635368, 0, (oldNode_11245055.attrs).length-1)];
               F.line = 297;
-              __11250010 = oldNode_11245055.attrs[chckIndx(addInt(i_11630368, 1), 0, (oldNode_11245055.attrs).length-1)];
+              __11250010 = oldNode_11245055.attrs[chckIndx(addInt(i_11635368, 1), 0, (oldNode_11245055.attrs).length-1)];
               F.line = 326;
               oldNode_11245055.dom.removeAttribute(k_11250009);
               F.line = 59;
-              res_11630370 = addInt(res_11630370, 2);
+              res_11635370 = addInt(res_11635370, 2);
             }
         } while(false);
       } while(false);
@@ -5840,30 +5915,30 @@ function updateAttributes_11245052(newNode_11245054, oldNode_11245055) {
       var v_11250012 = null;
       L6: do {
         F.line = 296;
-        var i_11630376 = 0;
+        var i_11635376 = 0;
         F.line = 39;
-        var colontmp__11630377 = 0;
+        var colontmp__11635377 = 0;
         F.line = 296;
-        colontmp__11630377 = subInt((newNode_11245054.attrs).length, 2);
+        colontmp__11635377 = subInt((newNode_11245054.attrs).length, 2);
         F.line = 56;
-        var res_11630378 = 0;
+        var res_11635378 = 0;
         L7: do {
           F.line = 57;
             L8: while (true) {
-            if (!(res_11630378 <= colontmp__11630377)) break L8;
+            if (!(res_11635378 <= colontmp__11635377)) break L8;
               F.line = 296;
-              i_11630376 = res_11630378;
+              i_11635376 = res_11635378;
               F.line = 327;
-              k_11250011 = newNode_11245054.attrs[chckIndx(i_11630376, 0, (newNode_11245054.attrs).length-1)];
+              k_11250011 = newNode_11245054.attrs[chckIndx(i_11635376, 0, (newNode_11245054.attrs).length-1)];
               F.line = 297;
-              v_11250012 = newNode_11245054.attrs[chckIndx(addInt(i_11630376, 1), 0, (newNode_11245054.attrs).length-1)];
+              v_11250012 = newNode_11245054.attrs[chckIndx(addInt(i_11635376, 1), 0, (newNode_11245054.attrs).length-1)];
               if (!((v_11250012 == null))) {
               F.line = 329;
               oldNode_11245055.dom.setAttribute(k_11250011, v_11250012);
               }
               
               F.line = 59;
-              res_11630378 = addInt(res_11630378, 2);
+              res_11635378 = addInt(res_11635378, 2);
             }
         } while(false);
       } while(false);
@@ -5884,21 +5959,21 @@ function removeAllEventHandlers_10897436(d_10897438) {
       F.line = 96;
       var i_10900041 = 0;
       F.line = 104;
-      var colontmp__11630383 = 0;
+      var colontmp__11635383 = 0;
       F.line = 96;
-      colontmp__11630383 = d_10897438.karaxEvents.length;
+      colontmp__11635383 = d_10897438.karaxEvents.length;
       F.line = 106;
-      var i_11630384 = 0;
+      var i_11635384 = 0;
       L2: do {
         F.line = 107;
           L3: while (true) {
-          if (!(i_11630384 < colontmp__11630383)) break L3;
+          if (!(i_11635384 < colontmp__11635383)) break L3;
             F.line = 96;
-            i_10900041 = i_11630384;
+            i_10900041 = i_11635384;
             F.line = 97;
             d_10897438.removeEventListener(d_10897438.karaxEvents[i_10900041]["Field0"], d_10897438.karaxEvents[i_10900041]["Field1"]);
             F.line = 109;
-            i_11630384 = addInt(i_11630384, 1);
+            i_11635384 = addInt(i_11635384, 1);
           }
       } while(false);
     } while(false);
@@ -6056,21 +6131,21 @@ function diff_11310215(newNode_11310217, oldNode_11310218, parent_11310219, curr
         F.line = 511;
         var i_11340024 = 0;
         F.line = 66;
-        var colontmp__11630325 = 0;
+        var colontmp__11635325 = 0;
         F.line = 511;
-        colontmp__11630325 = subInt(pos_11340018, 1);
+        colontmp__11635325 = subInt(pos_11340018, 1);
         F.line = 77;
-        var res_11630326 = commonPrefix_11330202;
+        var res_11635326 = commonPrefix_11330202;
         L8: do {
           F.line = 78;
             L9: while (true) {
-            if (!(res_11630326 <= colontmp__11630325)) break L9;
+            if (!(res_11635326 <= colontmp__11635325)) break L9;
               F.line = 511;
-              i_11340024 = res_11630326;
+              i_11340024 = res_11635326;
               F.line = 512;
               diff_11310215(HEX5BHEX5D_10550036(newNode_11310217, i_11340024), HEX5BHEX5D_10550036(oldNode_11310218, i_11340024), current_11310220, current_11310220.childNodes[chckIndx(i_11340024, 0, (current_11310220.childNodes).length-1)], kxi_11310221);
               F.line = 80;
-              res_11630326 = addInt(res_11630326, 1);
+              res_11635326 = addInt(res_11635326, 1);
             }
         } while(false);
       } while(false);
@@ -6079,17 +6154,17 @@ function diff_11310215(newNode_11310217, oldNode_11310218, parent_11310219, curr
         F.line = 515;
         var i_11340030 = 0;
         F.line = 77;
-        var res_11630332 = pos_11340018;
+        var res_11635332 = pos_11340018;
         L11: do {
           F.line = 78;
             L12: while (true) {
-            if (!(res_11630332 <= newPos_11330215)) break L12;
+            if (!(res_11635332 <= newPos_11330215)) break L12;
               F.line = 515;
-              i_11340030 = res_11630332;
+              i_11340030 = res_11635332;
               F.line = 516;
               addPatch_11260414(kxi_11310221, 2, current_11310220, null, HEX5BHEX5D_10550036(newNode_11310217, i_11340030), null);
               F.line = 80;
-              res_11630332 = addInt(res_11630332, 1);
+              res_11635332 = addInt(res_11635332, 1);
             }
         } while(false);
       } while(false);
@@ -6101,17 +6176,17 @@ function diff_11310215(newNode_11310217, oldNode_11310218, parent_11310219, curr
           F.line = 519;
           var i_11340037 = 0;
           F.line = 77;
-          var res_11630338 = pos_11340018;
+          var res_11635338 = pos_11340018;
           L14: do {
             F.line = 78;
               L15: while (true) {
-              if (!(res_11630338 <= newPos_11330215)) break L15;
+              if (!(res_11635338 <= newPos_11330215)) break L15;
                 F.line = 519;
-                i_11340037 = res_11630338;
+                i_11340037 = res_11635338;
                 F.line = 520;
                 addPatch_11260414(kxi_11310221, 3, current_11310220, before_11340031, HEX5BHEX5D_10550036(newNode_11310217, i_11340037), null);
                 F.line = 80;
-                res_11630338 = addInt(res_11630338, 1);
+                res_11635338 = addInt(res_11635338, 1);
               }
           } while(false);
         } while(false);
@@ -6121,19 +6196,19 @@ function diff_11310215(newNode_11310217, oldNode_11310218, parent_11310219, curr
         F.line = 522;
         var i_11340043 = 0;
         F.line = 77;
-        var res_11630344 = pos_11340018;
+        var res_11635344 = pos_11340018;
         L17: do {
           F.line = 78;
             L18: while (true) {
-            if (!(res_11630344 <= oldPos_11330214)) break L18;
+            if (!(res_11635344 <= oldPos_11330214)) break L18;
               F.line = 522;
-              i_11340043 = res_11630344;
+              i_11340043 = res_11635344;
               F.line = 523;
               addPatch_11260414(kxi_10897284[0], 4, null, null, null, HEX5BHEX5D_10550036(oldNode_11310218, i_11340043));
               F.line = 525;
               addPatch_11260414(kxi_11310221, 1, current_11310220, current_11310220.childNodes[chckIndx(i_11340043, 0, (current_11310220.childNodes).length-1)], null, null);
               F.line = 80;
-              res_11630344 = addInt(res_11630344, 1);
+              res_11635344 = addInt(res_11635344, 1);
             }
         } while(false);
       } while(false);
@@ -6230,21 +6305,21 @@ function moveDom_11270048(dest_11270050, src_11270051) {
       F.line = 391;
       var i_11285208 = 0;
       F.line = 104;
-      var colontmp__11630395 = 0;
+      var colontmp__11635395 = 0;
       F.line = 391;
-      colontmp__11630395 = len_10550014(dest_11270050);
+      colontmp__11635395 = len_10550014(dest_11270050);
       F.line = 106;
-      var i_11630396 = 0;
+      var i_11635396 = 0;
       L2: do {
         F.line = 107;
           L3: while (true) {
-          if (!(i_11630396 < colontmp__11630395)) break L3;
+          if (!(i_11635396 < colontmp__11635395)) break L3;
             F.line = 391;
-            i_11285208 = i_11630396;
+            i_11285208 = i_11635396;
             F.line = 392;
             moveDom_11270048(HEX5BHEX5D_10550036(dest_11270050, i_11285208), HEX5BHEX5D_10550036(src_11270051, i_11285208));
             F.line = 109;
-            i_11630396 = addInt(i_11630396, 1);
+            i_11635396 = addInt(i_11635396, 1);
           }
       } while(false);
     } while(false);
@@ -6268,13 +6343,13 @@ function applyPatch_11285222(kxi_11285224) {
       F.line = 395;
       var i_11285232 = 0;
       F.line = 106;
-      var i_11630389 = 0;
+      var i_11635389 = 0;
       L2: do {
         F.line = 107;
           L3: while (true) {
-          if (!(i_11630389 < kxi_11285224.patchLen)) break L3;
+          if (!(i_11635389 < kxi_11285224.patchLen)) break L3;
             F.line = 395;
-            i_11285232 = i_11630389;
+            i_11285232 = i_11635389;
             F.line = 396;
             var p_11285233 = nimCopy(null, kxi_11285224.patches[chckIndx(i_11285232, 0, (kxi_11285224.patches).length-1)], NTI10897209);
             F.line = 397;
@@ -6345,7 +6420,7 @@ function applyPatch_11285222(kxi_11285224) {
               break;
             }
             F.line = 109;
-            i_11630389 = addInt(i_11630389, 1);
+            i_11635389 = addInt(i_11635389, 1);
           }
       } while(false);
     } while(false);
@@ -6355,13 +6430,13 @@ function applyPatch_11285222(kxi_11285224) {
       F.line = 426;
       var i_11295013 = 0;
       F.line = 106;
-      var i_11630392 = 0;
+      var i_11635392 = 0;
       L5: do {
         F.line = 107;
           L6: while (true) {
-          if (!(i_11630392 < kxi_11285224.patchLenV)) break L6;
+          if (!(i_11635392 < kxi_11285224.patchLenV)) break L6;
             F.line = 426;
-            i_11295013 = i_11630392;
+            i_11295013 = i_11635392;
             F.line = 427;
             var p_11295014 = nimCopy(null, kxi_11285224.patchesV[chckIndx(i_11295013, 0, (kxi_11285224.patchesV).length-1)], NTI10897211);
             F.line = 428;
@@ -6372,7 +6447,7 @@ function applyPatch_11285222(kxi_11285224) {
             }
             
             F.line = 109;
-            i_11630392 = addInt(i_11630392, 1);
+            i_11635392 = addInt(i_11635392, 1);
           }
       } while(false);
     } while(false);
@@ -6593,17 +6668,17 @@ function tree_10560445(kind_10560447, kids_10560449) {
       var k_10560483 = null;
       var k_10560483_Idx = 0;
       F.line = 8;
-      var i_11630415 = 0;
+      var i_11635418 = 0;
       L2: do {
         F.line = 9;
           L3: while (true) {
-          if (!(i_11630415 < (kids_10560449).length)) break L3;
+          if (!(i_11635418 < (kids_10560449).length)) break L3;
             F.line = 274;
-            k_10560483 = kids_10560449; k_10560483_Idx = chckIndx(i_11630415, 0, (kids_10560449).length-1);
+            k_10560483 = kids_10560449; k_10560483_Idx = chckIndx(i_11635418, 0, (kids_10560449).length-1);
             F.line = 274;
             add_10550072(result_10560450, k_10560483[k_10560483_Idx]);
             F.line = 11;
-            i_11630415 = addInt(i_11630415, 1);
+            i_11635418 = addInt(i_11635418, 1);
           }
       } while(false);
     } while(false);
@@ -6625,17 +6700,17 @@ function setAttr_10500105(n_10500107, key_10500108, val_10500109) {
         F.line = 229;
         var i_10500138 = 0;
         F.line = 39;
-        var colontmp__11630422 = 0;
+        var colontmp__11635425 = 0;
         F.line = 229;
-        colontmp__11630422 = subInt((n_10500107.attrs).length, 2);
+        colontmp__11635425 = subInt((n_10500107.attrs).length, 2);
         F.line = 56;
-        var res_11630423 = 0;
+        var res_11635426 = 0;
         L2: do {
           F.line = 57;
             L3: while (true) {
-            if (!(res_11630423 <= colontmp__11630422)) break L3;
+            if (!(res_11635426 <= colontmp__11635425)) break L3;
               F.line = 229;
-              i_10500138 = res_11630423;
+              i_10500138 = res_11635426;
               if ((n_10500107.attrs[chckIndx(i_10500138, 0, (n_10500107.attrs).length-1)] == key_10500108)) {
               F.line = 231;
               n_10500107.attrs[chckIndx(addInt(i_10500138, 1), 0, (n_10500107.attrs).length-1)] = val_10500109;
@@ -6644,7 +6719,7 @@ function setAttr_10500105(n_10500107, key_10500108, val_10500109) {
               }
               
               F.line = 59;
-              res_11630423 = addInt(res_11630423, 2);
+              res_11635426 = addInt(res_11635426, 2);
             }
         } while(false);
       } while(false);
@@ -6750,58 +6825,58 @@ function login_11590029() {
 
   var F={procname:"auth.login",prev:framePtr,filename:"/home/cnerd/Documents/Python/webdev/mockexams/src/mockexamsapp/static/mockexamsapp/nim_src/global.nim",line:0};
   framePtr = F;
-    F.line = 82;
-    F.line = 82;
+    F.line = 81;
+    F.line = 81;
     var tmp_11590032 = tree_10560445(43, []);
-    F.line = 82;
+    F.line = 81;
     tmp_11590032.id = "authmode";
-    F.line = 83;
+    F.line = 82;
     var tmp_11590033 = tree_10560445(43, []);
-    F.line = 83;
+    F.line = 82;
     tmp_11590033.class = "authcapsule";
-    F.line = 84;
+    F.line = 83;
     var tmp_11590034 = tree_10560445(104, []);
-    F.line = 85;
+    F.line = 84;
     add_10550072(tmp_11590034, text_10560582(makeNimstrLit("Username")));
-    F.line = 85;
+    F.line = 84;
     add_10550072(tmp_11590033, tmp_11590034);
-    F.line = 86;
+    F.line = 85;
     var tmp_11590035 = tree_10560445(105, []);
-    F.line = 86;
+    F.line = 85;
     setAttr_10500105(tmp_11590035, "type", "text");
-    F.line = 86;
+    F.line = 85;
     setAttr_10500105(tmp_11590035, "placeholder", "username");
-    F.line = 86;
+    F.line = 85;
     add_10550072(tmp_11590033, tmp_11590035);
-    F.line = 86;
+    F.line = 85;
     add_10550072(tmp_11590032, tmp_11590033);
-    F.line = 88;
+    F.line = 87;
     var tmp_11590036 = tree_10560445(43, []);
-    F.line = 88;
+    F.line = 87;
     tmp_11590036.class = "authcapsule";
-    F.line = 89;
+    F.line = 88;
     var tmp_11590037 = tree_10560445(104, []);
-    F.line = 90;
+    F.line = 89;
     add_10550072(tmp_11590037, text_10560582(makeNimstrLit("Password")));
-    F.line = 90;
+    F.line = 89;
     add_10550072(tmp_11590036, tmp_11590037);
-    F.line = 91;
+    F.line = 90;
     var tmp_11590038 = tree_10560445(105, []);
-    F.line = 91;
+    F.line = 90;
     setAttr_10500105(tmp_11590038, "type", "password");
-    F.line = 91;
+    F.line = 90;
     setAttr_10500105(tmp_11590038, "placeholder", "password");
-    F.line = 91;
+    F.line = 90;
     add_10550072(tmp_11590036, tmp_11590038);
-    F.line = 91;
+    F.line = 90;
     add_10550072(tmp_11590032, tmp_11590036);
-    F.line = 93;
+    F.line = 92;
     var tmp_11590039 = tree_10560445(106, []);
-    F.line = 93;
+    F.line = 92;
     setAttr_10500105(tmp_11590039, "type", "button");
-    F.line = 94;
+    F.line = 93;
     add_10550072(tmp_11590039, text_10560582(makeNimstrLit("Login")));
-    F.line = 94;
+    F.line = 93;
     add_10550072(tmp_11590032, tmp_11590039);
     result_11590031 = tmp_11590032;
   framePtr = F.prev;
@@ -6812,11 +6887,11 @@ function login_11590029() {
     function showLogin_11600082(ev_11600084, n_11600085) {
       var F={procname:"auth.showLogin",prev:framePtr,filename:"/home/cnerd/Documents/Python/webdev/mockexams/src/mockexamsapp/static/mockexamsapp/nim_src/global.nim",line:0};
       framePtr = F;
-        F.line = 127;
+        F.line = 126;
         var canvas_11600086 = document.getElementById("auth");
-        F.line = 128;
+        F.line = 127;
         var previtem_11600087 = document.getElementById("authmode");
-        F.line = 130;
+        F.line = 129;
         canvas_11600086.replaceChild(vnodeToDom_11470073(login_11590029(), null), previtem_11600087);
       framePtr = F.prev;
 
@@ -6827,120 +6902,120 @@ function register_11595046() {
 
   var F={procname:"auth.register",prev:framePtr,filename:"/home/cnerd/Documents/Python/webdev/mockexams/src/mockexamsapp/static/mockexamsapp/nim_src/global.nim",line:0};
   framePtr = F;
-    F.line = 97;
-    F.line = 97;
+    F.line = 96;
+    F.line = 96;
     var tmp_11595049 = tree_10560445(43, []);
-    F.line = 97;
+    F.line = 96;
     tmp_11595049.id = "authmode";
-    F.line = 98;
+    F.line = 97;
     var tmp_11595050 = tree_10560445(43, []);
-    F.line = 98;
+    F.line = 97;
     tmp_11595050.class = "authcapsule";
-    F.line = 99;
+    F.line = 98;
     var tmp_11595051 = tree_10560445(104, []);
-    F.line = 100;
+    F.line = 99;
     add_10550072(tmp_11595051, text_10560582(makeNimstrLit("Username")));
-    F.line = 100;
+    F.line = 99;
     add_10550072(tmp_11595050, tmp_11595051);
-    F.line = 101;
+    F.line = 100;
     var tmp_11595052 = tree_10560445(105, []);
-    F.line = 101;
+    F.line = 100;
     setAttr_10500105(tmp_11595052, "type", "text");
-    F.line = 101;
+    F.line = 100;
     setAttr_10500105(tmp_11595052, "placeholder", "username");
-    F.line = 101;
+    F.line = 100;
     add_10550072(tmp_11595050, tmp_11595052);
-    F.line = 101;
+    F.line = 100;
     add_10550072(tmp_11595049, tmp_11595050);
-    F.line = 103;
+    F.line = 102;
     var tmp_11595053 = tree_10560445(43, []);
-    F.line = 103;
+    F.line = 102;
     tmp_11595053.class = "imgcapsule";
-    F.line = 104;
+    F.line = 103;
     var tmp_11595054 = tree_10560445(104, []);
-    F.line = 104;
+    F.line = 103;
     tmp_11595054.id = "whatsapp";
-    F.line = 104;
+    F.line = 103;
     tmp_11595054.class = "formimg";
-    F.line = 104;
+    F.line = 103;
     add_10550072(tmp_11595053, tmp_11595054);
-    F.line = 105;
+    F.line = 104;
     var tmp_11595055 = tree_10560445(105, []);
-    F.line = 105;
+    F.line = 104;
     setAttr_10500105(tmp_11595055, "type", "tel");
-    F.line = 105;
+    F.line = 104;
     setAttr_10500105(tmp_11595055, "placeholder", "whatsapp number");
-    F.line = 105;
+    F.line = 104;
     add_10550072(tmp_11595053, tmp_11595055);
-    F.line = 105;
+    F.line = 104;
     add_10550072(tmp_11595049, tmp_11595053);
-    F.line = 107;
+    F.line = 106;
     var tmp_11595056 = tree_10560445(43, []);
-    F.line = 107;
+    F.line = 106;
     tmp_11595056.class = "authcapsule";
-    F.line = 108;
+    F.line = 107;
     var tmp_11595057 = tree_10560445(104, []);
-    F.line = 109;
+    F.line = 108;
     add_10550072(tmp_11595057, text_10560582(makeNimstrLit("Email")));
-    F.line = 109;
+    F.line = 108;
     add_10550072(tmp_11595056, tmp_11595057);
-    F.line = 110;
+    F.line = 109;
     var tmp_11595058 = tree_10560445(105, []);
-    F.line = 110;
+    F.line = 109;
     setAttr_10500105(tmp_11595058, "type", "email");
-    F.line = 110;
+    F.line = 109;
     setAttr_10500105(tmp_11595058, "placeholder", "email");
-    F.line = 110;
+    F.line = 109;
     add_10550072(tmp_11595056, tmp_11595058);
-    F.line = 110;
+    F.line = 109;
     add_10550072(tmp_11595049, tmp_11595056);
-    F.line = 112;
+    F.line = 111;
     var tmp_11595059 = tree_10560445(43, []);
-    F.line = 112;
+    F.line = 111;
     tmp_11595059.class = "authcapsule";
-    F.line = 113;
+    F.line = 112;
     var tmp_11595060 = tree_10560445(104, []);
-    F.line = 114;
+    F.line = 113;
     add_10550072(tmp_11595060, text_10560582(makeNimstrLit("Password")));
-    F.line = 114;
+    F.line = 113;
     add_10550072(tmp_11595059, tmp_11595060);
-    F.line = 115;
+    F.line = 114;
     var tmp_11595061 = tree_10560445(105, []);
-    F.line = 115;
+    F.line = 114;
     setAttr_10500105(tmp_11595061, "type", "password");
-    F.line = 115;
+    F.line = 114;
     setAttr_10500105(tmp_11595061, "placeholder", "password");
-    F.line = 115;
+    F.line = 114;
     add_10550072(tmp_11595059, tmp_11595061);
-    F.line = 115;
+    F.line = 114;
     add_10550072(tmp_11595049, tmp_11595059);
-    F.line = 117;
+    F.line = 116;
     var tmp_11595062 = tree_10560445(43, []);
-    F.line = 117;
+    F.line = 116;
     tmp_11595062.class = "authcapsule";
-    F.line = 118;
+    F.line = 117;
     var tmp_11595063 = tree_10560445(104, []);
-    F.line = 119;
+    F.line = 118;
     add_10550072(tmp_11595063, text_10560582(makeNimstrLit("Retype Password")));
-    F.line = 119;
+    F.line = 118;
     add_10550072(tmp_11595062, tmp_11595063);
-    F.line = 120;
+    F.line = 119;
     var tmp_11595064 = tree_10560445(105, []);
-    F.line = 120;
+    F.line = 119;
     setAttr_10500105(tmp_11595064, "type", "password");
-    F.line = 120;
+    F.line = 119;
     setAttr_10500105(tmp_11595064, "placeholder", "retype password");
-    F.line = 120;
+    F.line = 119;
     add_10550072(tmp_11595062, tmp_11595064);
-    F.line = 120;
+    F.line = 119;
     add_10550072(tmp_11595049, tmp_11595062);
-    F.line = 122;
+    F.line = 121;
     var tmp_11595065 = tree_10560445(106, []);
-    F.line = 122;
+    F.line = 121;
     setAttr_10500105(tmp_11595065, "type", "button");
-    F.line = 123;
+    F.line = 122;
     add_10550072(tmp_11595065, text_10560582(makeNimstrLit("Register")));
-    F.line = 123;
+    F.line = 122;
     add_10550072(tmp_11595049, tmp_11595065);
     result_11595048 = tmp_11595049;
   framePtr = F.prev;
@@ -6951,11 +7026,11 @@ function register_11595046() {
     function showRegister_11600101(ev_11600103, n_11600104) {
       var F={procname:"auth.showRegister",prev:framePtr,filename:"/home/cnerd/Documents/Python/webdev/mockexams/src/mockexamsapp/static/mockexamsapp/nim_src/global.nim",line:0};
       framePtr = F;
-        F.line = 134;
+        F.line = 133;
         var canvas_11600105 = document.getElementById("auth");
-        F.line = 135;
+        F.line = 134;
         var previtem_11600106 = document.getElementById("authmode");
-        F.line = 137;
+        F.line = 136;
         canvas_11600105.replaceChild(vnodeToDom_11470073(register_11595046(), null), previtem_11600106);
       framePtr = F.prev;
 
@@ -6966,52 +7041,52 @@ function register_11595046() {
 
   var F={procname:"global.auth",prev:framePtr,filename:"/home/cnerd/Documents/Python/webdev/mockexams/src/mockexamsapp/static/mockexamsapp/nim_src/global.nim",line:0};
   framePtr = F;
-    F.line = 139;
-    F.line = 139;
+    F.line = 138;
+    F.line = 138;
     var tmp_11600120 = tree_10560445(70, []);
-    F.line = 139;
+    F.line = 138;
     tmp_11600120.id = "auth";
-    F.line = 140;
+    F.line = 139;
     var tmp_11600121 = tree_10560445(43, []);
-    F.line = 140;
+    F.line = 139;
     tmp_11600121.class = "cancelcontainer";
-    F.line = 141;
+    F.line = 140;
     var tmp_11600122 = tree_10560445(43, []);
-    F.line = 141;
+    F.line = 140;
     tmp_11600122.id = "cancel";
-    F.line = 141;
+    F.line = 140;
     addEventHandler_11460118(tmp_11600122, 0, cancelproc_11590027, kxi_10897284[0]);
-    F.line = 141;
+    F.line = 140;
     add_10550072(tmp_11600121, tmp_11600122);
-    F.line = 141;
+    F.line = 140;
     add_10550072(tmp_11600120, tmp_11600121);
-    F.line = 142;
+    F.line = 141;
     var tmp_11600123 = tree_10560445(43, []);
-    F.line = 142;
+    F.line = 141;
     tmp_11600123.id = "authswap";
-    F.line = 143;
+    F.line = 142;
     var tmp_11600124 = tree_10560445(70, []);
-    F.line = 143;
+    F.line = 142;
     tmp_11600124.class = "authbtns";
-    F.line = 143;
+    F.line = 142;
     addEventHandler_11460118(tmp_11600124, 0, showLogin_11600082, kxi_10897284[0]);
-    F.line = 144;
+    F.line = 143;
     add_10550072(tmp_11600124, text_10560582(makeNimstrLit("Login")));
-    F.line = 144;
+    F.line = 143;
     add_10550072(tmp_11600123, tmp_11600124);
-    F.line = 146;
+    F.line = 145;
     var tmp_11600125 = tree_10560445(70, []);
-    F.line = 146;
+    F.line = 145;
     tmp_11600125.class = "authbtns";
-    F.line = 146;
+    F.line = 145;
     addEventHandler_11460118(tmp_11600125, 0, showRegister_11600101, kxi_10897284[0]);
-    F.line = 147;
+    F.line = 146;
     add_10550072(tmp_11600125, text_10560582(makeNimstrLit("Register")));
-    F.line = 147;
+    F.line = 146;
     add_10550072(tmp_11600123, tmp_11600125);
-    F.line = 147;
+    F.line = 146;
     add_10550072(tmp_11600120, tmp_11600123);
-    F.line = 150;
+    F.line = 149;
     add_10550072(tmp_11600120, register_11595046());
     result_11590028 = tmp_11600120;
   framePtr = F.prev;
@@ -7019,93 +7094,936 @@ function register_11595046() {
   return result_11590028;
 
 }
-function exam_11550026(exam_11550028) {
-  var result_11550029 = null;
+function exam_11550026(exam_11550028, action_11550033) {
+  var result_11550034 = null;
 
   var F={procname:"global.exam",prev:framePtr,filename:"/home/cnerd/Documents/Python/webdev/mockexams/src/mockexamsapp/static/mockexamsapp/nim_src/global.nim",line:0};
   framePtr = F;
     F.line = 28;
     F.line = 28;
-    var tmp_11550030 = tree_10560445(44, []);
+    var tmp_11550035 = tree_10560445(43, []);
     F.line = 28;
-    setAttr_10500105(tmp_11550030, "href", toJSStr(exam_11550028.url));
+    tmp_11550035.class = "exams";
+    F.line = 28;
+    addEventHandler_11460118(tmp_11550035, 0, action_11550033, kxi_10897284[0]);
     F.line = 29;
-    var tmp_11550031 = tree_10560445(43, []);
+    var tmp_11550036 = tree_10560445(75, []);
     F.line = 29;
-    tmp_11550031.class = "exams";
-    F.line = 30;
-    var tmp_11550032 = tree_10560445(75, []);
-    F.line = 30;
-    setAttr_10500105(tmp_11550032, "alt", "examimage");
-    F.line = 30;
-    setAttr_10500105(tmp_11550032, "src", toJSStr(exam_11550028.image));
-    F.line = 30;
-    add_10550072(tmp_11550031, tmp_11550032);
+    setAttr_10500105(tmp_11550036, "alt", "examimage");
+    F.line = 29;
+    setAttr_10500105(tmp_11550036, "src", toJSStr(exam_11550028.image));
+    F.line = 29;
+    add_10550072(tmp_11550035, tmp_11550036);
+    F.line = 31;
+    var tmp_11550037 = tree_10560445(70, []);
     F.line = 32;
-    var tmp_11550033 = tree_10560445(70, []);
+    var tmp_11550038 = tree_10560445(24, []);
     F.line = 33;
-    var tmp_11550034 = tree_10560445(24, []);
+    add_10550072(tmp_11550038, text_10560582(exam_11550028.name));
+    F.line = 33;
+    add_10550072(tmp_11550037, tmp_11550038);
     F.line = 34;
-    add_10550072(tmp_11550034, text_10560582(exam_11550028.name));
-    F.line = 34;
-    add_10550072(tmp_11550033, tmp_11550034);
+    var tmp_11550039 = tree_10560445(31, []);
     F.line = 35;
-    var tmp_11550035 = tree_10560445(31, []);
-    F.line = 36;
-    add_10550072(tmp_11550035, text_10560582(exam_11550028.description));
-    F.line = 36;
-    add_10550072(tmp_11550033, tmp_11550035);
-    F.line = 36;
-    add_10550072(tmp_11550031, tmp_11550033);
-    F.line = 36;
-    add_10550072(tmp_11550030, tmp_11550031);
-    result_11550029 = tmp_11550030;
+    add_10550072(tmp_11550039, text_10560582(exam_11550028.description));
+    F.line = 35;
+    add_10550072(tmp_11550037, tmp_11550039);
+    F.line = 35;
+    add_10550072(tmp_11550035, tmp_11550037);
+    result_11550034 = tmp_11550035;
   framePtr = F.prev;
 
-  return result_11550029;
+  return result_11550034;
 
 }
-function footbar_11555038() {
-    function column_11555041(data_11555050) {
-      var result_11555051 = null;
+function raiseRangeError() {
+    raiseException({message: makeNimstrLit("value out of range"), parent: null, m_type: NTI1194653, name: null, trace: [], up: null}, "RangeDefect");
+
+  
+}
+function invalidFormatString_10315046() {
+  var F={procname:"strutils.invalidFormatString",prev:framePtr,filename:"/home/cnerd/.choosenim/toolchains/nim-1.4.6/lib/pure/strutils.nim",line:0};
+  framePtr = F;
+    F.line = 2746;
+    raiseException({message: makeNimstrLit("invalid format string"), parent: null, m_type: NTI1194643, name: null, trace: [], up: null}, "ValueError");
+  framePtr = F.prev;
+
+  
+}
+function nsuToLowerAsciiChar(c_9410023) {
+  var result_9410024 = 0;
+
+  var F={procname:"strutils.toLowerAscii",prev:framePtr,filename:"/home/cnerd/.choosenim/toolchains/nim-1.4.6/lib/pure/strutils.nim",line:0};
+  framePtr = F;
+    if ((ConstSet5[c_9410023] != undefined)) {
+    F.line = 212;
+    result_9410024 = chckRange(addInt(c_9410023, 32), 0, 255);
+    }
+    else {
+      F.line = 214;
+      result_9410024 = c_9410023;
+    }
+    
+  framePtr = F.prev;
+
+  return result_9410024;
+
+}
+function nsuCmpIgnoreStyle(a_9490022, b_9490023) {
+          var Tmp7;
+          var Tmp8;
+
+  var result_9490024 = 0;
+
+  BeforeRet: do {
+    var i_9490026 = 0;
+    var j_9490028 = 0;
+    L1: do {
+        L2: while (true) {
+        if (!true) break L2;
+          L3: do {
+              L4: while (true) {
+              if (!((i_9490026 < (a_9490022).length) && (a_9490022[i_9490026] == 95))) break L4;
+                i_9490026 += 1;
+              }
+          } while(false);
+          L5: do {
+              L6: while (true) {
+              if (!((j_9490028 < (b_9490023).length) && (b_9490023[j_9490028] == 95))) break L6;
+                j_9490028 += 1;
+              }
+          } while(false);
+          if ((i_9490026 < (a_9490022).length)) {
+          Tmp7 = nsuToLowerAsciiChar(a_9490022[i_9490026]);
+          }
+          else {
+          Tmp7 = 0;
+          }
+          
+          var aa_9490041 = Tmp7;
+          if ((j_9490028 < (b_9490023).length)) {
+          Tmp8 = nsuToLowerAsciiChar(b_9490023[j_9490028]);
+          }
+          else {
+          Tmp8 = 0;
+          }
+          
+          var bb_9490042 = Tmp8;
+          result_9490024 = (aa_9490041 - bb_9490042);
+          if (!((result_9490024 == 0))) {
+          break BeforeRet;
+          }
+          
+          if (((a_9490022).length <= i_9490026)) {
+          if (((b_9490023).length <= j_9490028)) {
+          result_9490024 = 0;
+          break BeforeRet;
+          }
+          
+          result_9490024 = -1;
+          break BeforeRet;
+          }
+          else {
+          if (((b_9490023).length <= j_9490028)) {
+          result_9490024 = 1;
+          break BeforeRet;
+          }
+          }
+          i_9490026 += 1;
+          j_9490028 += 1;
+        }
+    } while(false);
+  } while (false);
+
+  return result_9490024;
+
+}
+function findNormalized_10315014(x_10315016, inArray_10315018) {
+  var result_10315019 = 0;
+
+  var F={procname:"strutils.findNormalized",prev:framePtr,filename:"/home/cnerd/.choosenim/toolchains/nim-1.4.6/lib/pure/strutils.nim",line:0};
+  framePtr = F;
+  BeforeRet: do {
+    F.line = 2738;
+    var i_10315021 = 0;
+    L1: do {
+      F.line = 2739;
+        L2: while (true) {
+        if (!(i_10315021 < (inArray_10315018).length - 1)) break L2;
+          if ((nsuCmpIgnoreStyle(x_10315016, inArray_10315018[chckIndx(i_10315021, 0, (inArray_10315018).length-1)]) == 0)) {
+          F.line = 2740;
+          result_10315019 = i_10315021;
+          break BeforeRet;
+          }
+          
+          F.line = 2741;
+          i_10315021 = addInt(i_10315021, 2);
+        }
+    } while(false);
+    F.line = 2743;
+    result_10315019 = -1;
+    break BeforeRet;
+  } while (false);
+  framePtr = F.prev;
+
+  return result_10315019;
+
+}
+function substr_1571022(s_1571024, first_1571025, last_1571026) {
+  var result_1571027 = [];
+
+  var F={procname:"system.substr",prev:framePtr,filename:"/home/cnerd/.choosenim/toolchains/nim-1.4.6/lib/system.nim",line:0};
+  framePtr = F;
+    F.line = 3017;
+    var first_1571028 = nimMax(first_1571025, 0);
+    F.line = 3018;
+    var L_1571030 = nimMax(addInt(subInt(nimMin(last_1571026, (s_1571024).length - 1), first_1571028), 1), 0);
+    F.line = 3019;
+    result_1571027 = nimCopy(null, mnewString(chckRange(L_1571030, 0, 2147483647)), NTI1188013);
+    L1: do {
+      F.line = 3020;
+      var i_1571039 = 0;
+      F.line = 66;
+      var colontmp__10462693 = 0;
+      F.line = 3020;
+      colontmp__10462693 = subInt(L_1571030, 1);
+      F.line = 77;
+      var res_10462694 = 0;
+      L2: do {
+        F.line = 78;
+          L3: while (true) {
+          if (!(res_10462694 <= colontmp__10462693)) break L3;
+            F.line = 3020;
+            i_1571039 = res_10462694;
+            F.line = 3021;
+            result_1571027[chckIndx(i_1571039, 0, (result_1571027).length-1)] = s_1571024[chckIndx(addInt(i_1571039, first_1571028), 0, (s_1571024).length-1)];
+            F.line = 80;
+            res_10462694 = addInt(res_10462694, 1);
+          }
+      } while(false);
+    } while(false);
+  framePtr = F.prev;
+
+  return result_1571027;
+
+}
+function nsuAddf(s_10320018, s_10320018_Idx, formatstr_10320019, a_10320021) {
+                  var Tmp5;
+            var Tmp6;
+              var Tmp7;
+            var Tmp10;
+              var Tmp11;
+                var Tmp12;
+                  var Tmp15;
+              var Tmp16;
+
+  var F={procname:"strutils.addf",prev:framePtr,filename:"/home/cnerd/.choosenim/toolchains/nim-1.4.6/lib/pure/strutils.nim",line:0};
+  framePtr = F;
+    F.line = 2752;
+    var i_10320025 = 0;
+    F.line = 2753;
+    var num_10320027 = 0;
+    L1: do {
+      F.line = 2754;
+        L2: while (true) {
+        if (!(i_10320025 < (formatstr_10320019).length)) break L2;
+          if (((formatstr_10320019[chckIndx(i_10320025, 0, (formatstr_10320019).length-1)] == 36) && (addInt(i_10320025, 1) < (formatstr_10320019).length))) {
+          F.line = 2756;
+          switch (formatstr_10320019[chckIndx(addInt(i_10320025, 1), 0, (formatstr_10320019).length-1)]) {
+          case 35:
+            if (((a_10320021).length - 1 < num_10320027)) {
+            F.line = 2758;
+            invalidFormatString_10315046();
+            }
+            
+            F.line = 2759;
+            s_10320018[s_10320018_Idx].push.apply(s_10320018[s_10320018_Idx], a_10320021[chckIndx(num_10320027, 0, (a_10320021).length-1)]);;
+            F.line = 2760;
+            i_10320025 = addInt(i_10320025, 2);
+            F.line = 2761;
+            num_10320027 = addInt(num_10320027, 1);
+            break;
+          case 36:
+            F.line = 2763;
+            addChar(s_10320018[s_10320018_Idx], 36);;
+            F.line = 2764;
+            i_10320025 = addInt(i_10320025, 2);
+            break;
+          case 49:
+          case 50:
+          case 51:
+          case 52:
+          case 53:
+          case 54:
+          case 55:
+          case 56:
+          case 57:
+          case 45:
+            F.line = 2766;
+            var j_10325025 = 0;
+            F.line = 2767;
+            i_10320025 = addInt(i_10320025, 1);
+            F.line = 2768;
+            var negative_10325032 = (formatstr_10320019[chckIndx(i_10320025, 0, (formatstr_10320019).length-1)] == 45);
+            if (negative_10325032) {
+            F.line = 2769;
+            i_10320025 = addInt(i_10320025, 1);
+            }
+            
+            L3: do {
+              F.line = 2770;
+                L4: while (true) {
+                  if (!(i_10320025 < (formatstr_10320019).length)) Tmp5 = false; else {                    Tmp5 = (ConstSet2[formatstr_10320019[chckIndx(i_10320025, 0, (formatstr_10320019).length-1)]] != undefined);                  }                if (!Tmp5) break L4;
+                  F.line = 2771;
+                  j_10325025 = subInt(addInt(mulInt(j_10325025, 10), formatstr_10320019[chckIndx(i_10320025, 0, (formatstr_10320019).length-1)]), 48);
+                  F.line = 2772;
+                  i_10320025 = addInt(i_10320025, 1);
+                }
+            } while(false);
+            F.line = 2773;
+            if (!(negative_10325032)) {
+            Tmp6 = subInt(j_10325025, 1);
+            }
+            else {
+            Tmp6 = subInt((a_10320021).length, j_10325025);
+            }
+            
+            var idx_10330025 = Tmp6;
+              if ((idx_10330025 < 0)) Tmp7 = true; else {                Tmp7 = ((a_10320021).length - 1 < idx_10330025);              }            if (Tmp7) {
+            F.line = 2774;
+            invalidFormatString_10315046();
+            }
+            
+            F.line = 2775;
+            s_10320018[s_10320018_Idx].push.apply(s_10320018[s_10320018_Idx], a_10320021[chckIndx(idx_10330025, 0, (a_10320021).length-1)]);;
+            break;
+          case 123:
+            F.line = 2777;
+            var j_10335006 = addInt(i_10320025, 2);
+            F.line = 2778;
+            var k_10335008 = 0;
+            F.line = 2779;
+            var negative_10335009 = (formatstr_10320019[chckIndx(j_10335006, 0, (formatstr_10320019).length-1)] == 45);
+            if (negative_10335009) {
+            F.line = 2780;
+            j_10335006 = addInt(j_10335006, 1);
+            }
+            
+            F.line = 2781;
+            var isNumber_10335017 = 0;
+            L8: do {
+              F.line = 2782;
+                L9: while (true) {
+                if (!((j_10335006 < (formatstr_10320019).length) && !((ConstSet3[formatstr_10320019[chckIndx(j_10335006, 0, (formatstr_10320019).length-1)]] != undefined)))) break L9;
+                  if ((ConstSet4[formatstr_10320019[chckIndx(j_10335006, 0, (formatstr_10320019).length-1)]] != undefined)) {
+                  F.line = 2784;
+                  k_10335008 = subInt(addInt(mulInt(k_10335008, 10), formatstr_10320019[chckIndx(j_10335006, 0, (formatstr_10320019).length-1)]), 48);
+                  if ((isNumber_10335017 == 0)) {
+                  F.line = 2785;
+                  isNumber_10335017 = 1;
+                  }
+                  
+                  }
+                  else {
+                    F.line = 2787;
+                    isNumber_10335017 = -1;
+                  }
+                  
+                  F.line = 2788;
+                  j_10335006 = addInt(j_10335006, 1);
+                }
+            } while(false);
+            if ((isNumber_10335017 == 1)) {
+            F.line = 2790;
+            if (!(negative_10335009)) {
+            Tmp10 = subInt(k_10335008, 1);
+            }
+            else {
+            Tmp10 = subInt((a_10320021).length, k_10335008);
+            }
+            
+            var idx_10345025 = Tmp10;
+              if ((idx_10345025 < 0)) Tmp11 = true; else {                Tmp11 = ((a_10320021).length - 1 < idx_10345025);              }            if (Tmp11) {
+            F.line = 2791;
+            invalidFormatString_10315046();
+            }
+            
+            F.line = 2792;
+            s_10320018[s_10320018_Idx].push.apply(s_10320018[s_10320018_Idx], a_10320021[chckIndx(idx_10345025, 0, (a_10320021).length-1)]);;
+            }
+            else {
+              F.line = 2794;
+              var x_10350006 = findNormalized_10315014(substr_1571022(formatstr_10320019, addInt(i_10320025, 2), subInt(j_10335006, 1)), a_10320021);
+                if (!(0 <= x_10350006)) Tmp12 = false; else {                  Tmp12 = (x_10350006 < (a_10320021).length - 1);                }              if (Tmp12) {
+              F.line = 2795;
+              s_10320018[s_10320018_Idx].push.apply(s_10320018[s_10320018_Idx], a_10320021[chckIndx(addInt(x_10350006, 1), 0, (a_10320021).length-1)]);;
+              }
+              else {
+                F.line = 2796;
+              invalidFormatString_10315046();
+              }
+              
+            }
+            
+            F.line = 2797;
+            i_10320025 = addInt(j_10335006, 1);
+            break;
+          case 97:
+          case 98:
+          case 99:
+          case 100:
+          case 101:
+          case 102:
+          case 103:
+          case 104:
+          case 105:
+          case 106:
+          case 107:
+          case 108:
+          case 109:
+          case 110:
+          case 111:
+          case 112:
+          case 113:
+          case 114:
+          case 115:
+          case 116:
+          case 117:
+          case 118:
+          case 119:
+          case 120:
+          case 121:
+          case 122:
+          case 65:
+          case 66:
+          case 67:
+          case 68:
+          case 69:
+          case 70:
+          case 71:
+          case 72:
+          case 73:
+          case 74:
+          case 75:
+          case 76:
+          case 77:
+          case 78:
+          case 79:
+          case 80:
+          case 81:
+          case 82:
+          case 83:
+          case 84:
+          case 85:
+          case 86:
+          case 87:
+          case 88:
+          case 89:
+          case 90:
+          case 128:
+          case 129:
+          case 130:
+          case 131:
+          case 132:
+          case 133:
+          case 134:
+          case 135:
+          case 136:
+          case 137:
+          case 138:
+          case 139:
+          case 140:
+          case 141:
+          case 142:
+          case 143:
+          case 144:
+          case 145:
+          case 146:
+          case 147:
+          case 148:
+          case 149:
+          case 150:
+          case 151:
+          case 152:
+          case 153:
+          case 154:
+          case 155:
+          case 156:
+          case 157:
+          case 158:
+          case 159:
+          case 160:
+          case 161:
+          case 162:
+          case 163:
+          case 164:
+          case 165:
+          case 166:
+          case 167:
+          case 168:
+          case 169:
+          case 170:
+          case 171:
+          case 172:
+          case 173:
+          case 174:
+          case 175:
+          case 176:
+          case 177:
+          case 178:
+          case 179:
+          case 180:
+          case 181:
+          case 182:
+          case 183:
+          case 184:
+          case 185:
+          case 186:
+          case 187:
+          case 188:
+          case 189:
+          case 190:
+          case 191:
+          case 192:
+          case 193:
+          case 194:
+          case 195:
+          case 196:
+          case 197:
+          case 198:
+          case 199:
+          case 200:
+          case 201:
+          case 202:
+          case 203:
+          case 204:
+          case 205:
+          case 206:
+          case 207:
+          case 208:
+          case 209:
+          case 210:
+          case 211:
+          case 212:
+          case 213:
+          case 214:
+          case 215:
+          case 216:
+          case 217:
+          case 218:
+          case 219:
+          case 220:
+          case 221:
+          case 222:
+          case 223:
+          case 224:
+          case 225:
+          case 226:
+          case 227:
+          case 228:
+          case 229:
+          case 230:
+          case 231:
+          case 232:
+          case 233:
+          case 234:
+          case 235:
+          case 236:
+          case 237:
+          case 238:
+          case 239:
+          case 240:
+          case 241:
+          case 242:
+          case 243:
+          case 244:
+          case 245:
+          case 246:
+          case 247:
+          case 248:
+          case 249:
+          case 250:
+          case 251:
+          case 252:
+          case 253:
+          case 254:
+          case 255:
+          case 95:
+            F.line = 2799;
+            var j_10355006 = addInt(i_10320025, 1);
+            L13: do {
+              F.line = 2800;
+                L14: while (true) {
+                  if (!(j_10355006 < (formatstr_10320019).length)) Tmp15 = false; else {                    Tmp15 = (ConstSet6[formatstr_10320019[chckIndx(j_10355006, 0, (formatstr_10320019).length-1)]] != undefined);                  }                if (!Tmp15) break L14;
+                  F.line = 2800;
+                  j_10355006 = addInt(j_10355006, 1);
+                }
+            } while(false);
+            F.line = 2801;
+            var x_10360013 = findNormalized_10315014(substr_1571022(formatstr_10320019, addInt(i_10320025, 1), subInt(j_10355006, 1)), a_10320021);
+              if (!(0 <= x_10360013)) Tmp16 = false; else {                Tmp16 = (x_10360013 < (a_10320021).length - 1);              }            if (Tmp16) {
+            F.line = 2802;
+            s_10320018[s_10320018_Idx].push.apply(s_10320018[s_10320018_Idx], a_10320021[chckIndx(addInt(x_10360013, 1), 0, (a_10320021).length-1)]);;
+            }
+            else {
+              F.line = 2803;
+            invalidFormatString_10315046();
+            }
+            
+            F.line = 2804;
+            i_10320025 = j_10355006;
+            break;
+          default: 
+            F.line = 2806;
+            invalidFormatString_10315046();
+            break;
+          }
+          }
+          else {
+            F.line = 2808;
+            addChar(s_10320018[s_10320018_Idx], formatstr_10320019[chckIndx(i_10320025, 0, (formatstr_10320019).length-1)]);;
+            F.line = 2809;
+            i_10320025 = addInt(i_10320025, 1);
+          }
+          
+        }
+    } while(false);
+  framePtr = F.prev;
+
+  
+}
+function nsuFormatVarargs(formatstr_10365094, a_10365096) {
+  var result_10365097 = [[]];
+
+  var F={procname:"strutils.format",prev:framePtr,filename:"/home/cnerd/.choosenim/toolchains/nim-1.4.6/lib/pure/strutils.nim",line:0};
+  framePtr = F;
+    F.line = 2874;
+    result_10365097[0] = nimCopy(null, mnewString(0), NTI1188013);
+    F.line = 2875;
+    nsuAddf(result_10365097, 0, formatstr_10365094, a_10365096);
+  framePtr = F.prev;
+
+  return result_10365097[0];
+
+}
+function addInt_1555201(result_1555204, result_1555204_Idx, x_1555205) {
+  var F={procname:"system.addInt",prev:framePtr,filename:"/home/cnerd/.choosenim/toolchains/nim-1.4.6/lib/system.nim",line:0};
+  framePtr = F;
+    F.line = 2418;
+    result_1555204[result_1555204_Idx].push.apply(result_1555204[result_1555204_Idx], cstrToNimstr((x_1555205)+""));;
+  framePtr = F.prev;
+
+  
+}
+function addQuoted_11620801(s_11620804, s_11620804_Idx, x_11620805) {
+  var F={procname:"addQuoted.addQuoted",prev:framePtr,filename:"/home/cnerd/.choosenim/toolchains/nim-1.4.6/lib/system.nim",line:0};
+  framePtr = F;
+    F.line = 2872;
+    addInt_1555201(s_11620804, s_11620804_Idx, x_11620805);
+  framePtr = F.prev;
+
+  
+}
+function collectionToString_11620671(x_11620674, prefix_11620675, separator_11620676, suffix_11620677) {
+  var result_11620678 = [[]];
+
+  var F={procname:"collectionToString.collectionToString",prev:framePtr,filename:"/home/cnerd/.choosenim/toolchains/nim-1.4.6/lib/system/dollars.nim",line:0};
+  framePtr = F;
+    F.line = 138;
+    result_11620678[0] = nimCopy(null, prefix_11620675, NTI1188013);
+    F.line = 139;
+    var firstElement_11620679 = true;
+    L1: do {
+      F.line = 140;
+      var value_11620725 = 0;
+      F.line = 32;
+      var i_11635520 = 0;
+      if ((i_11635520 <= 1)) {
+      L2: do {
+        F.line = 34;
+          L3: while (true) {
+          if (!true) break L3;
+            F.line = 140;
+            value_11620725 = x_11620674[i_11635520];
+            if (firstElement_11620679) {
+            F.line = 142;
+            firstElement_11620679 = false;
+            }
+            else {
+              F.line = 144;
+            result_11620678[0].push.apply(result_11620678[0], separator_11620676);;
+            }
+            
+            F.line = 153;
+            addQuoted_11620801(result_11620678, 0, value_11620725);
+            if ((1 <= i_11635520)) {
+            F.line = 36;
+            break L2;
+            }
+            
+            F.line = 37;
+            i_11635520 += 1;
+          }
+      } while(false);
+      }
+      
+    } while(false);
+    F.line = 154;
+    result_11620678[0].push.apply(result_11620678[0], suffix_11620677);;
+  framePtr = F.prev;
+
+  return result_11620678[0];
+
+}
+function HEX24_11620664(x_11620669) {
+  var result_11620670 = [];
+
+  var F={procname:"$.$",prev:framePtr,filename:"/home/cnerd/.choosenim/toolchains/nim-1.4.6/lib/system/dollars.nim",line:0};
+  framePtr = F;
+    F.line = 185;
+    result_11620670 = nimCopy(null, collectionToString_11620671(x_11620669, makeNimstrLit("["), makeNimstrLit(", "), makeNimstrLit("]")), NTI1188013);
+  framePtr = F.prev;
+
+  return result_11620670;
+
+}
+function configexam_11605041(exam_11605043, cancelproc_11605048) {
+  var result_11605049 = null;
+
+  var F={procname:"global.configexam",prev:framePtr,filename:"/home/cnerd/Documents/Python/webdev/mockexams/src/mockexamsapp/static/mockexamsapp/nim_src/global.nim",line:0};
+  framePtr = F;
+    F.line = 153;
+    F.line = 153;
+    var tmp_11605050 = tree_10560445(70, []);
+    F.line = 153;
+    tmp_11605050.id = "auth";
+    F.line = 154;
+    var tmp_11605051 = tree_10560445(43, []);
+    F.line = 154;
+    tmp_11605051.class = "cancelcontainer";
+    F.line = 155;
+    var tmp_11605052 = tree_10560445(43, []);
+    F.line = 155;
+    tmp_11605052.id = "cancel";
+    F.line = 155;
+    addEventHandler_11460118(tmp_11605052, 0, cancelproc_11605048, kxi_10897284[0]);
+    F.line = 155;
+    add_10550072(tmp_11605051, tmp_11605052);
+    F.line = 155;
+    add_10550072(tmp_11605050, tmp_11605051);
+    F.line = 157;
+    var tmp_11605053 = tree_10560445(43, []);
+    F.line = 157;
+    tmp_11605053.id = "configexam";
+    F.line = 158;
+    var tmp_11605054 = tree_10560445(70, []);
+    F.line = 158;
+    tmp_11605054.id = "examstab";
+    F.line = 159;
+    var tmp_11605055 = tree_10560445(75, []);
+    F.line = 159;
+    setAttr_10500105(tmp_11605055, "src", toJSStr(exam_11605043.exam.image));
+    F.line = 159;
+    add_10550072(tmp_11605054, tmp_11605055);
+    F.line = 160;
+    var tmp_11605056 = tree_10560445(23, []);
+    F.line = 161;
+    add_10550072(tmp_11605056, text_10560582(exam_11605043.exam.name));
+    F.line = 161;
+    add_10550072(tmp_11605054, tmp_11605056);
+    F.line = 163;
+    var tmp_11605057 = tree_10560445(31, []);
+    F.line = 164;
+    add_10550072(tmp_11605057, text_10560582((makeNimstrLit("Time : ") || []).concat(exam_11605043.time || [])));
+    F.line = 164;
+    add_10550072(tmp_11605054, tmp_11605057);
+    F.line = 165;
+    var tmp_11605058 = tree_10560445(31, []);
+    F.line = 166;
+    add_10550072(tmp_11605058, text_10560582(exam_11605043.exam.description));
+    F.line = 166;
+    add_10550072(tmp_11605054, tmp_11605058);
+    F.line = 168;
+    var tmp_11605059 = tree_10560445(106, []);
+    F.line = 168;
+    setAttr_10500105(tmp_11605059, "type", "button");
+    F.line = 168;
+    tmp_11605059.class = "btn";
+    F.line = 169;
+    add_10550072(tmp_11605059, text_10560582(makeNimstrLit("Start Exam")));
+    F.line = 169;
+    add_10550072(tmp_11605054, tmp_11605059);
+    F.line = 169;
+    add_10550072(tmp_11605053, tmp_11605054);
+    if (exam_11605043.multipleexams) {
+    F.line = 172;
+    var tmp_11605060 = tree_10560445(70, []);
+    F.line = 172;
+    tmp_11605060.id = "subjectstab";
+    F.line = 174;
+    var tmp_11605061 = tree_10560445(43, []);
+    F.line = 174;
+    tmp_11605061.class = "selectcontainer";
+    F.line = 175;
+    var tmp_11605062 = tree_10560445(104, []);
+    F.line = 176;
+    add_10550072(tmp_11605062, text_10560582(makeNimstrLit("Subjects")));
+    F.line = 176;
+    add_10550072(tmp_11605061, tmp_11605062);
+    L1: do {
+      F.line = 178;
+      var each_11610062 = 0;
+      F.line = 77;
+      var res_11635489 = 1;
+      L2: do {
+        F.line = 78;
+          L3: while (true) {
+          if (!(res_11635489 <= exam_11605043.subjectnum)) break L3;
+            F.line = 178;
+            each_11610062 = res_11635489;
+            F.line = 179;
+            var tmp_11605063 = tree_10560445(107, []);
+            F.line = 179;
+            tmp_11605063.class = "spinner";
+            F.line = 179;
+            tmp_11605063.id = toJSStr((makeNimstrLit("subject") || []).concat(cstrToNimstr((each_11610062)+"") || []));
+            L4: do {
+              F.line = 180;
+              var each2_11620214 = null;
+              F.line = 199;
+              var i_11635486 = 0;
+              F.line = 200;
+              var L_11635487 = (exam_11605043.subjects).length;
+              L5: do {
+                F.line = 201;
+                  L6: while (true) {
+                  if (!(i_11635486 < L_11635487)) break L6;
+                    F.line = 180;
+                    each2_11620214 = exam_11605043.subjects[chckIndx(i_11635486, 0, (exam_11605043.subjects).length-1)];
+                    F.line = 181;
+                    var tmp_11605064 = tree_10560445(110, []);
+                    F.line = 182;
+                    add_10550072(tmp_11605064, text_10560582(each2_11620214.name));
+                    F.line = 182;
+                    add_10550072(tmp_11605063, tmp_11605064);
+                    F.line = 203;
+                    i_11635486 = addInt(i_11635486, 1);
+                    if (!(((exam_11605043.subjects).length == L_11635487))) {
+                    F.line = 204;
+                    failedAssertImpl_1305480(makeNimstrLit("/home/cnerd/.choosenim/toolchains/nim-1.4.6/lib/system/iterators.nim(204, 11) `len(a) == L` the length of the seq changed while iterating over it"));
+                    }
+                    
+                  }
+              } while(false);
+            } while(false);
+            F.line = 182;
+            add_10550072(tmp_11605061, tmp_11605063);
+            F.line = 80;
+            res_11635489 = addInt(res_11635489, 1);
+          }
+      } while(false);
+    } while(false);
+    F.line = 182;
+    add_10550072(tmp_11605060, tmp_11605061);
+    F.line = 184;
+    var tmp_11605065 = tree_10560445(43, []);
+    F.line = 184;
+    tmp_11605065.class = "selectcontainer";
+    F.line = 185;
+    var tmp_11605066 = tree_10560445(104, []);
+    F.line = 186;
+    add_10550072(tmp_11605066, text_10560582(makeNimstrLit("Session")));
+    F.line = 186;
+    add_10550072(tmp_11605065, tmp_11605066);
+    F.line = 188;
+    var tmp_11605067 = tree_10560445(107, []);
+    F.line = 188;
+    tmp_11605067.class = "spinner";
+    F.line = 188;
+    tmp_11605067.id = "session";
+    L7: do {
+      F.line = 189;
+      var index_11620242 = 0;
+      F.line = 6;
+      var colontmp__11635499 = 0;
+      F.line = 189;
+      colontmp__11635499 = subInt((exam_11605043.sessions).length, 1);
+      F.line = 28;
+      var res_11635500 = colontmp__11635499;
+      L8: do {
+        F.line = 29;
+          L9: while (true) {
+          if (!(0 <= res_11635500)) break L9;
+            F.line = 189;
+            index_11620242 = res_11635500;
+            F.line = 190;
+            var tmp_11605068 = tree_10560445(110, []);
+            F.line = 191;
+            add_10550072(tmp_11605068, text_10560582(nsuFormatVarargs(makeNimstrLit("$1/$2"), [HEX24_11620664([exam_11605043.sessions[chckIndx(index_11620242, 0, (exam_11605043.sessions).length-1)].start, exam_11605043.sessions[chckIndx(index_11620242, 0, (exam_11605043.sessions).length-1)].to])])));
+            F.line = 191;
+            add_10550072(tmp_11605067, tmp_11605068);
+            F.line = 31;
+            res_11635500 = subInt(res_11635500, 1);
+          }
+      } while(false);
+    } while(false);
+    F.line = 191;
+    add_10550072(tmp_11605065, tmp_11605067);
+    F.line = 191;
+    add_10550072(tmp_11605060, tmp_11605065);
+    F.line = 191;
+    add_10550072(tmp_11605053, tmp_11605060);
+    }
+    
+    F.line = 191;
+    add_10550072(tmp_11605050, tmp_11605053);
+    result_11605049 = tmp_11605050;
+  framePtr = F.prev;
+
+  return result_11605049;
+
+}
+function footbar_11555035() {
+    function column_11555038(data_11555047) {
+      var result_11555048 = null;
 
       var F={procname:"footbar.column",prev:framePtr,filename:"/home/cnerd/Documents/Python/webdev/mockexams/src/mockexamsapp/static/mockexamsapp/nim_src/global.nim",line:0};
       framePtr = F;
+        F.line = 40;
+        F.line = 40;
+        var tmp_11555049 = tree_10560445(35, []);
+        F.line = 40;
+        tmp_11555049.class = "footcolumn";
         F.line = 41;
-        F.line = 41;
-        var tmp_11555052 = tree_10560445(35, []);
-        F.line = 41;
-        tmp_11555052.class = "footcolumn";
+        var tmp_11555050 = tree_10560445(24, []);
         F.line = 42;
-        var tmp_11555053 = tree_10560445(24, []);
-        F.line = 43;
-        add_10550072(tmp_11555053, text_10560582(data_11555050.Field0));
-        F.line = 43;
-        add_10550072(tmp_11555052, tmp_11555053);
+        add_10550072(tmp_11555050, text_10560582(data_11555047.Field0));
+        F.line = 42;
+        add_10550072(tmp_11555049, tmp_11555050);
         L1: do {
-          F.line = 45;
+          F.line = 44;
           var each_11570214 = null;
           F.line = 199;
-          var i_11630472 = 0;
+          var i_11635528 = 0;
           F.line = 200;
-          var L_11630473 = (data_11555050.Field1).length;
+          var L_11635529 = (data_11555047.Field1).length;
           L2: do {
             F.line = 201;
               L3: while (true) {
-              if (!(i_11630472 < L_11630473)) break L3;
+              if (!(i_11635528 < L_11635529)) break L3;
+                F.line = 44;
+                each_11570214 = data_11555047.Field1[chckIndx(i_11635528, 0, (data_11555047.Field1).length-1)];
                 F.line = 45;
-                each_11570214 = data_11555050.Field1[chckIndx(i_11630472, 0, (data_11555050.Field1).length-1)];
+                var tmp_11555051 = tree_10560445(44, []);
+                F.line = 45;
+                setAttr_10500105(tmp_11555051, "href", toJSStr(each_11570214.Field1));
                 F.line = 46;
-                var tmp_11555054 = tree_10560445(44, []);
+                add_10550072(tmp_11555051, text_10560582(each_11570214.Field0));
                 F.line = 46;
-                setAttr_10500105(tmp_11555054, "href", toJSStr(each_11570214.Field1));
-                F.line = 47;
-                add_10550072(tmp_11555054, text_10560582(each_11570214.Field0));
-                F.line = 47;
-                add_10550072(tmp_11555052, tmp_11555054);
+                add_10550072(tmp_11555049, tmp_11555051);
                 F.line = 203;
-                i_11630472 = addInt(i_11630472, 1);
-                if (!(((data_11555050.Field1).length == L_11630473))) {
+                i_11635528 = addInt(i_11635528, 1);
+                if (!(((data_11555047.Field1).length == L_11635529))) {
                 F.line = 204;
                 failedAssertImpl_1305480(makeNimstrLit("/home/cnerd/.choosenim/toolchains/nim-1.4.6/lib/system/iterators.nim(204, 11) `len(a) == L` the length of the seq changed while iterating over it"));
                 }
@@ -7113,30 +8031,30 @@ function footbar_11555038() {
               }
           } while(false);
         } while(false);
-        result_11555051 = tmp_11555052;
+        result_11555048 = tmp_11555049;
       framePtr = F.prev;
 
-      return result_11555051;
+      return result_11555048;
 
     }
 
-  var result_11555040 = null;
+  var result_11555037 = null;
 
   var F={procname:"global.footbar",prev:framePtr,filename:"/home/cnerd/Documents/Python/webdev/mockexams/src/mockexamsapp/static/mockexamsapp/nim_src/global.nim",line:0};
   framePtr = F;
-    F.line = 49;
-    F.line = 49;
+    F.line = 48;
+    F.line = 48;
     var tmp_11570247 = tree_10560445(28, []);
-    F.line = 49;
+    F.line = 48;
     tmp_11570247.id = "footbar";
-    F.line = 50;
-    add_10550072(tmp_11570247, column_11555041({Field0: makeNimstrLit("Legal"), Field1: [{Field0: makeNimstrLit("Terms and Conditions"), Field1: makeNimstrLit("/terms")}, {Field0: makeNimstrLit("Privacy policy"), Field1: makeNimstrLit("/policy")}]}));
-    F.line = 55;
-    add_10550072(tmp_11570247, column_11555041({Field0: makeNimstrLit("Site"), Field1: [{Field0: makeNimstrLit("Developers"), Field1: makeNimstrLit("/devs")}, {Field0: makeNimstrLit("FAQ"), Field1: makeNimstrLit("/faq")}]}));
-    result_11555040 = tmp_11570247;
+    F.line = 49;
+    add_10550072(tmp_11570247, column_11555038({Field0: makeNimstrLit("Legal"), Field1: [{Field0: makeNimstrLit("Terms and Conditions"), Field1: makeNimstrLit("/terms")}, {Field0: makeNimstrLit("Privacy policy"), Field1: makeNimstrLit("/policy")}]}));
+    F.line = 54;
+    add_10550072(tmp_11570247, column_11555038({Field0: makeNimstrLit("Site"), Field1: [{Field0: makeNimstrLit("Developers"), Field1: makeNimstrLit("/devs")}, {Field0: makeNimstrLit("FAQ"), Field1: makeNimstrLit("/faq")}]}));
+    result_11555037 = tmp_11570247;
   framePtr = F.prev;
 
-  return result_11555040;
+  return result_11555037;
 
 }
 function footbar2_11575061() {
@@ -7144,12 +8062,12 @@ function footbar2_11575061() {
 
   var F={procname:"global.footbar2",prev:framePtr,filename:"/home/cnerd/Documents/Python/webdev/mockexams/src/mockexamsapp/static/mockexamsapp/nim_src/global.nim",line:0};
   framePtr = F;
-    F.line = 61;
-    F.line = 61;
+    F.line = 60;
+    F.line = 60;
     var tmp_11575064 = tree_10560445(28, []);
-    F.line = 61;
+    F.line = 60;
     tmp_11575064.id = "footbar2";
-    F.line = 62;
+    F.line = 61;
     add_10550072(tmp_11575064, text_10560582(makeNimstrLit("Copyright \xC2\xA9 2021 Mockexams.com All Rights Reserved")));
     result_11575063 = tmp_11575064;
   framePtr = F.prev;
@@ -7194,89 +8112,114 @@ function cancel_11622017(ev_11622019, n_11622020) {
 
       
     }
+    function examConfig_11625019(ev_11625021, n_11625022) {
+      var F={procname:"home.examConfig",prev:framePtr,filename:"/home/cnerd/Documents/Python/webdev/mockexams/src/mockexamsapp/static/mockexamsapp/nim_src/home.nim",line:0};
+      framePtr = F;
+        F.line = 24;
+        var testconfig_11625023 = {exam: {name: makeNimstrLit("UTME"), description: makeNimstrLit("      Practice utme computer based tests by using\x0A      mockexams tools\x0A      "), image: makeNimstrLit("/static/mockexamsapp/imgs/jamb.png"), url: makeNimstrLit("/")}, multipleexams: true, time: makeNimstrLit("120 min"), subjectnum: 0, subjects: [], sessions: []};
+        F.line = 30;
+        F.line = 30;
+        var tmp_11625024 = tree_10560445(70, []);
+        F.line = 30;
+        tmp_11625024.id = "authcontainer";
+        F.line = 31;
+        add_10550072(tmp_11625024, configexam_11605041(testconfig_11625023, cancel_11622017));
+        var nextchild_11630005 = tmp_11625024;
+        F.line = 34;
+        var canvas_11630006 = document.getElementById("app");
+        F.line = 35;
+        var prevchild_11630007 = document.getElementById("authcontainer");
+        F.line = 37;
+        canvas_11630006.appendChild(vnodeToDom_11470073(nextchild_11630005, null));
+        F.line = 38;
+        canvas_11630006.removeChild(prevchild_11630007);
+      framePtr = F.prev;
+
+      
+    }
 
   var result_11622016 = null;
 
   var F={procname:"home.home",prev:framePtr,filename:"/home/cnerd/Documents/Python/webdev/mockexams/src/mockexamsapp/static/mockexamsapp/nim_src/home.nim",line:0};
   framePtr = F;
-    F.line = 22;
-    F.line = 22;
-    var tmp_11625019 = tree_10560445(30, []);
-    F.line = 23;
-    var tmp_11625020 = tree_10560445(70, []);
-    F.line = 23;
-    tmp_11625020.class = "background";
-    F.line = 23;
-    tmp_11625020.id = "topbackground";
-    F.line = 24;
-    add_10550072(tmp_11625020, navbar_11545057());
-    F.line = 26;
-    var tmp_11625021 = tree_10560445(70, []);
-    F.line = 27;
-    var tmp_11625022 = tree_10560445(43, []);
-    F.line = 28;
-    var tmp_11625023 = tree_10560445(22, []);
-    F.line = 29;
-    add_10550072(tmp_11625023, text_10560582(makeNimstrLit("Ace your exams on the first try")));
-    F.line = 29;
-    add_10550072(tmp_11625022, tmp_11625023);
-    F.line = 31;
-    var tmp_11625024 = tree_10560445(37, []);
-    F.line = 32;
-    add_10550072(tmp_11625024, text_10560582(makeNimstrLit("practice authentic CBT past questions in a controlled enviroment")));
-    F.line = 32;
-    add_10550072(tmp_11625022, tmp_11625024);
-    F.line = 33;
-    var tmp_11625025 = tree_10560445(37, []);
-    F.line = 34;
-    add_10550072(tmp_11625025, text_10560582(makeNimstrLit("familiarize yourself with the test enviroment")));
-    F.line = 34;
-    add_10550072(tmp_11625022, tmp_11625025);
-    F.line = 35;
-    var tmp_11625026 = tree_10560445(37, []);
-    F.line = 36;
-    add_10550072(tmp_11625026, text_10560582(makeNimstrLit("get better with every attempt")));
-    F.line = 36;
-    add_10550072(tmp_11625022, tmp_11625026);
-    F.line = 36;
-    add_10550072(tmp_11625021, tmp_11625022);
-    F.line = 38;
-    var tmp_11625027 = tree_10560445(106, []);
-    F.line = 38;
-    setAttr_10500105(tmp_11625027, "type", "button");
-    F.line = 38;
-    tmp_11625027.class = "btn";
-    F.line = 38;
-    addEventHandler_11460118(tmp_11625027, 0, showAuth_11622036, kxi_10897284[0]);
-    F.line = 39;
-    add_10550072(tmp_11625027, text_10560582(makeNimstrLit("Get Started")));
-    F.line = 39;
-    add_10550072(tmp_11625021, tmp_11625027);
-    F.line = 39;
-    add_10550072(tmp_11625020, tmp_11625021);
-    F.line = 39;
-    add_10550072(tmp_11625019, tmp_11625020);
+    F.line = 40;
+    F.line = 40;
+    var tmp_11630051 = tree_10560445(30, []);
     F.line = 41;
-    var tmp_11625028 = tree_10560445(70, []);
+    var tmp_11630052 = tree_10560445(70, []);
     F.line = 41;
-    tmp_11625028.class = "background";
+    tmp_11630052.class = "background";
     F.line = 41;
-    tmp_11625028.id = "middlebackground";
+    tmp_11630052.id = "topbackground";
     F.line = 42;
-    add_10550072(tmp_11625028, exam_11550026({name: makeNimstrLit("UTME"), description: makeNimstrLit("      Practice utme computer based tests by using\x0A      mockexams tools\x0A      "), image: makeNimstrLit("/static/mockexamsapp/imgs/jamb.png"), url: makeNimstrLit("/")}));
+    add_10550072(tmp_11630052, navbar_11545057());
+    F.line = 44;
+    var tmp_11630053 = tree_10560445(70, []);
+    F.line = 45;
+    var tmp_11630054 = tree_10560445(43, []);
+    F.line = 46;
+    var tmp_11630055 = tree_10560445(22, []);
     F.line = 47;
-    add_10550072(tmp_11625028, exam_11550026({name: makeNimstrLit("UTME"), description: makeNimstrLit("      Practice utme computer based tests by using\x0A      mockexams tools\x0A      "), image: makeNimstrLit("/static/mockexamsapp/imgs/abu.png"), url: makeNimstrLit("/")}));
+    add_10550072(tmp_11630055, text_10560582(makeNimstrLit("Ace your exams on the first try")));
+    F.line = 47;
+    add_10550072(tmp_11630054, tmp_11630055);
+    F.line = 49;
+    var tmp_11630056 = tree_10560445(37, []);
+    F.line = 50;
+    add_10550072(tmp_11630056, text_10560582(makeNimstrLit("practice authentic CBT past questions in a controlled enviroment")));
+    F.line = 50;
+    add_10550072(tmp_11630054, tmp_11630056);
+    F.line = 51;
+    var tmp_11630057 = tree_10560445(37, []);
     F.line = 52;
-    add_10550072(tmp_11625028, exam_11550026({name: makeNimstrLit("UTME"), description: makeNimstrLit("      Practice utme computer based tests by using\x0A      mockexams tools\x0A      "), image: makeNimstrLit("/static/mockexamsapp/imgs/unilorin.png"), url: makeNimstrLit("/")}));
+    add_10550072(tmp_11630057, text_10560582(makeNimstrLit("familiarize yourself with the test enviroment")));
+    F.line = 52;
+    add_10550072(tmp_11630054, tmp_11630057);
+    F.line = 53;
+    var tmp_11630058 = tree_10560445(37, []);
+    F.line = 54;
+    add_10550072(tmp_11630058, text_10560582(makeNimstrLit("get better with every attempt")));
+    F.line = 54;
+    add_10550072(tmp_11630054, tmp_11630058);
+    F.line = 54;
+    add_10550072(tmp_11630053, tmp_11630054);
+    F.line = 56;
+    var tmp_11630059 = tree_10560445(106, []);
+    F.line = 56;
+    setAttr_10500105(tmp_11630059, "type", "button");
+    F.line = 56;
+    tmp_11630059.class = "btn";
+    F.line = 56;
+    addEventHandler_11460118(tmp_11630059, 0, showAuth_11622036, kxi_10897284[0]);
     F.line = 57;
-    add_10550072(tmp_11625028, exam_11550026({name: makeNimstrLit("UTME"), description: makeNimstrLit("      Practice utme computer based tests by using\x0A      mockexams tools\x0A      "), image: makeNimstrLit("/static/mockexamsapp/imgs/unilag.png"), url: makeNimstrLit("/")}));
+    add_10550072(tmp_11630059, text_10560582(makeNimstrLit("Get Started")));
     F.line = 57;
-    add_10550072(tmp_11625019, tmp_11625028);
-    F.line = 62;
-    add_10550072(tmp_11625019, footbar_11555038());
+    add_10550072(tmp_11630053, tmp_11630059);
+    F.line = 57;
+    add_10550072(tmp_11630052, tmp_11630053);
+    F.line = 57;
+    add_10550072(tmp_11630051, tmp_11630052);
+    F.line = 59;
+    var tmp_11630060 = tree_10560445(70, []);
+    F.line = 59;
+    tmp_11630060.class = "background";
+    F.line = 59;
+    tmp_11630060.id = "middlebackground";
     F.line = 63;
-    add_10550072(tmp_11625019, footbar2_11575061());
-    result_11622016 = tmp_11625019;
+    add_10550072(tmp_11630060, exam_11550026({name: makeNimstrLit("UTME"), description: makeNimstrLit("      Practice utme computer based tests by using\x0A      mockexams tools\x0A      "), image: makeNimstrLit("/static/mockexamsapp/imgs/jamb.png"), url: makeNimstrLit("/")}, examConfig_11625019));
+    F.line = 68;
+    add_10550072(tmp_11630060, exam_11550026({name: makeNimstrLit("UTME"), description: makeNimstrLit("      Practice utme computer based tests by using\x0A      mockexams tools\x0A      "), image: makeNimstrLit("/static/mockexamsapp/imgs/abu.png"), url: makeNimstrLit("/")}, examConfig_11625019));
+    F.line = 73;
+    add_10550072(tmp_11630060, exam_11550026({name: makeNimstrLit("UTME"), description: makeNimstrLit("      Practice utme computer based tests by using\x0A      mockexams tools\x0A      "), image: makeNimstrLit("/static/mockexamsapp/imgs/unilorin.png"), url: makeNimstrLit("/")}, examConfig_11625019));
+    F.line = 78;
+    add_10550072(tmp_11630060, exam_11550026({name: makeNimstrLit("UTME"), description: makeNimstrLit("      Practice utme computer based tests by using\x0A      mockexams tools\x0A      "), image: makeNimstrLit("/static/mockexamsapp/imgs/unilag.png"), url: makeNimstrLit("/")}, examConfig_11625019));
+    F.line = 78;
+    add_10550072(tmp_11630051, tmp_11630060);
+    F.line = 80;
+    add_10550072(tmp_11630051, footbar_11555035());
+    F.line = 81;
+    add_10550072(tmp_11630051, footbar2_11575061());
+    result_11622016 = tmp_11630051;
   framePtr = F.prev;
 
   return result_11622016;

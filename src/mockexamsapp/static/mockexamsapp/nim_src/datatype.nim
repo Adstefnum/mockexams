@@ -11,6 +11,7 @@ type
 
     ConfigExam* = object
         exam*: Exam
+        time* : string
         multipleexams*: bool
         subjectnum*: int
         subjects*: seq[Subject]
