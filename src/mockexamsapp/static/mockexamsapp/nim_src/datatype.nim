@@ -19,3 +19,10 @@ type
 
     Note* = object
         note*, page* : string
+
+    Option* = object
+        a*, b*, c*, d* : string
+
+    Question* = object
+        question*, instructions*, image*, answer* : string
+        options* : Option
