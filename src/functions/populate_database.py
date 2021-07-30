@@ -9,7 +9,7 @@ import json
 BASE_DIR = "../questions"
 
 
-conn = sqlite3.connect('./db.sqlite3')
+conn = sqlite3.connect('../db.sqlite3')
 c = conn.cursor()
 
 '''write a stament to chcek if there is an accompany if so put it first in their

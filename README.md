@@ -1,10 +1,10 @@
 # mockexams
 A website to practice cbt examination
 
+## Example of questions endpoint
+host/questions/v1/?sub=english&year=2008&exam=utme&rand=True&num=1&acom=pass
+
 ## Urgent
-- Fix apis that don't return from the databas e.g like 
-	- questions/vi/id
-	- questions/v1/<int:accompany_id>
 - How do we link questions and their accompaniment with the populate_database.py script?
 - Work on login and signup pages
 - setup OTP
