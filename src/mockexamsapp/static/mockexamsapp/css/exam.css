@@ -1,0 +1,93 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.btn{
+    height: 40px;
+    margin: 5px 0 5px 0;
+}
+
+#app{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#burgerholder{
+    width: 2%;
+    height: 96%;
+    padding: 2% 2% 2% 2%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+} 
+
+#mainarea{
+    width: 94%;
+    height: 98%;
+    padding: 1% 1% 1% 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#questionpanel{
+    width: 80%;
+    height: 70%;
+    padding: 10px 5% 10px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#questionnavpanel{
+    width: 70%;
+    height: 20%;
+    padding: 10px 5% 10px 5%;
+    background: var(--lighttint2);
+}
+
+#navbtnspanel{
+    width: 80%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#sidebar{
+    width: 200px;
+    height: 90%;
+    padding: 5% 20px 5% 20px;
+    border-right: 2px solid var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#userinfo{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#profilepic{
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+    /*border: 1px solid var(--dark);*/
+    box-shadow: 2px 2px 6px var(--darktint1);
+}
+
+/*@media screen and (max-width :1024px){
+    
+}*/

@@ -24,7 +24,7 @@ proc home(): VNode =
       testconfig : ConfigExam = ConfigExam(exam : Exam(name: "UTME", description: """
       Practice utme computer based tests by using
       mockexams tools
-      """, image: "/static/mockexamsapp/imgs/jamb.png", url: "/"),
+      """, image: "/static/mockexamsapp/imgs/jamb.png"),
       multipleexams : true,
       time : "120 min")
       nextchild = buildHtml(span(id = "authcontainer")):
@@ -47,11 +47,11 @@ proc home(): VNode =
             text "Ace your exams on the first try"
 
           li:
-            text """practice authentic CBT past questions in a controlled enviroment"""
+            text """Practice authentic CBT past questions in a controlled enviroment"""
           li:
-            text """familiarize yourself with the test enviroment"""
+            text """Familiarize yourself with the test enviroment"""
           li:
-            text """get better with every attempt"""
+            text """Get better with every attempt"""
 
         button(`type` = "button", class = "btn", onclick = showAuth):
           text "Get Started"
@@ -60,27 +60,25 @@ proc home(): VNode =
       exam(Exam(name: "UTME", description: """
       Practice utme computer based tests by using
       mockexams tools
-      """, image: "/static/mockexamsapp/imgs/jamb.png", url: "/"), examConfig)
+      """, image: "/static/mockexamsapp/imgs/jamb.png"), examConfig)
 
       exam(Exam(name: "UTME", description: """
       Practice utme computer based tests by using
       mockexams tools
-      """, image: "/static/mockexamsapp/imgs/abu.png", url: "/"), examConfig)
+      """, image: "/static/mockexamsapp/imgs/abu.png"), examConfig)
 
       exam(Exam(name: "UTME", description: """
       Practice utme computer based tests by using
       mockexams tools
-      """, image: "/static/mockexamsapp/imgs/unilorin.png", url: "/"), examConfig)
+      """, image: "/static/mockexamsapp/imgs/unilorin.png"), examConfig)
 
       exam(Exam(name: "UTME", description: """
       Practice utme computer based tests by using
       mockexams tools
-      """, image: "/static/mockexamsapp/imgs/unilag.png", url: "/"), examConfig)
+      """, image: "/static/mockexamsapp/imgs/unilag.png"), examConfig)
 
     footbar()
     footbar2()
-    #[span(id = "authcontainer", class = "hidden"):
-      span(id = "auth", class = "hidden")]#
 
 when isMainModule:
   setRenderer(home, "app")

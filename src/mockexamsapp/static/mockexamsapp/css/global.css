@@ -7,10 +7,10 @@
     --primarytint5 : #3e6e54;
     --primarytint6 : #44B78B;
     --dark : #202020;
-    --darktint1 : #202020c0;
+    --darktint1 : #2020207e;
     --light : #fefefe;
     --lighttint1 : #fefefe9b;
-    --lighttint2 : #d2d2d2;
+    --lighttint2 : #f7f7f8;
     --link : #1800ec;
 }
 
@@ -48,7 +48,7 @@ a{
     height: 50px;
     padding: 5px 2px 5px 2px;
     font-size: larger;
-    box-shadow: 2px 2px 6px var(--dark);
+    box-shadow: 2px 2px 6px var(--darktint1);
     cursor: pointer;
 }
 
@@ -85,17 +85,23 @@ a{
     box-shadow: inset 2px 2px 6px var(--dark);
 }
 
-#burger, #upperburger, #lowerburger{
+#burger, #upperburger, #lowerburger, #cancel{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
-#burger{
+#burger, #cancel{
     width: 30px;
     height: 30px;
-    flex-direction: column;
     cursor: pointer;
+}
+
+#burger{
+    flex-direction: column;
+}
+
+#cancel{
+    justify-content: center;
 }
 
 #upperburger, #lowerburger{
@@ -107,6 +113,20 @@ a{
     width: 40%;
     height: 80%;
     background: var(--primarytint4);
+}
+
+#cancelline1, #cancelline2{
+    width: 10%;
+    height: 100%;
+    background: var(--primarytint4);
+}
+
+#cancelline1{
+    transform: rotate(45deg) translate(2px);
+}
+
+#cancelline2{
+    transform: rotate(-45deg) translate(-2px);
 }
 
 .navbar{
@@ -189,14 +209,14 @@ a{
 }
 
 .cancelcontainer{
-    width: 100;
+    width: 100%;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
-.cancelcontainer #cancel{
+/*.cancelcontainer #cancel{
     width: 30px;
     height: 30px;
     border: 1px solid var(--dark);
@@ -208,7 +228,7 @@ a{
 
 .cancelcontainer #cancel:active{
     border: 1px solid var(--primarytint4);
-}
+}*/
 
 #auth #authswap{
     width: 100%;
@@ -236,7 +256,6 @@ a{
 }
 
 #auth #authswap span:active{
-    /*box-shadow: inset 2px 2px 6px var(--dark);*/
     color: var(--primary);
 }
 

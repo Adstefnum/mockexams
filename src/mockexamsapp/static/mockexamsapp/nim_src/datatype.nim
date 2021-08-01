@@ -1,13 +1,31 @@
 type
 
-    Exam* = object
-        name*, description*, image*, url * : string
+    Session* = object
+        `from`*, to*: int
+        random* : bool
+
+    Option* = object
+        a*, b*, c*, d* : string
+        answer* : char
+
+    Question* = object
+        instruction*, question* : string
+        images* : seq[string]
+        options* : Option
 
     Subject* = object
         name*, id*: string
+        session* : Session
+        questions* : seq[Question]
 
-    Session* = object
-        start*, to*: int
+    User = object
+        name*, image*, id* : string
+
+    Exam* = object
+        name*, description*, image* : string
+        time* : int
+        user* : User
+        subjects* : seq[Subject]
 
     ConfigExam* = object
         exam*: Exam
@@ -16,13 +34,3 @@ type
         subjectnum*: int
         subjects*: seq[Subject]
         sessions*: seq[Session]
-
-    Note* = object
-        note*, page* : string
-
-    Option* = object
-        a*, b*, c*, d* : string
-
-    Question* = object
-        question*, instructions*, image*, answer* : string
-        options* : Option

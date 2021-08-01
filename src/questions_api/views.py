@@ -35,19 +35,10 @@ def questions_api(request):
         return JsonResponse(question_serializer.data, safe=False)
 
 
-
-
 def filter_questions(**args):
 
     if sub:
         pass
-
-
-
-
-
-
-
 
 
 '''def questions_api(request, **kwargs):
@@ -64,7 +55,6 @@ def filter_questions(**args):
             serializer.save()
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
-
 
 
 @csrf_exempt

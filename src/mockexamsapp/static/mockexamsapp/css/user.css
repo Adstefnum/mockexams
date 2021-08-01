@@ -1,0 +1,62 @@
+#app{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navbar{
+    width: 50px;
+    height: 90%;
+    padding: 5% 5px 5% 5px;
+    background: var(--primarytint4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#userbtns{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.usermenubtns{
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#usersettings{
+    background: url("./../imgs/settings.svg") no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#userrecord{
+    background: url("./../imgs/log.svg") no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#sudoopt{
+    background: url("./../imgs/user.svg") no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/*#usersettings #settingsicon:active{
+    fill: var(--primarytint1);
+}*/
+
+#profilepic{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid var(--dark);
+}
