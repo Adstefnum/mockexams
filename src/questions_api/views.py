@@ -14,16 +14,16 @@ def questions_api(request):
     if request.method == 'GET':
         subject = request.GET.get("sub","all")
         year = request.GET.get("year","all")
-        exam_type = request.GET.get("exam","all")
-        acom_type = request.GET.get("acom","all")
+        #exam_type = request.GET.get("exam","all")
+        #acom_type = request.GET.get("acom","all")
         rand = request.GET.get("rand","all")
         number = int(request.GET.get("num","10"))
 
         questions = list(Question.objects.filter(
                 subject=subject,
                 year = year,
-                exam_type=exam_type,
-                acom_type=acom_type
+                #exam_type=exam_type,
+                #acom_type=acom_type
 
             ))# returns empty list if other args are empty
 
@@ -33,19 +33,6 @@ def questions_api(request):
 
         question_serializer = questionSerializer(questions, many=True)
         return JsonResponse(question_serializer.data, safe=False)
-
-
-
-
-def filter_questions(**args):
-
-    if sub:
-        pass
-
-
-
-
-
 
 
 
