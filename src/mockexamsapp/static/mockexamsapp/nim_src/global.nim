@@ -9,6 +9,11 @@ proc cancel*(action : proc(e : Event, n : VNode) = fluke) : VNode =
         tdiv(id = "cancelline1")
         tdiv(id = "cancelline2")
 
+proc add*(action : proc(e : Event, n : VNode) = fluke) : VNode =
+    result = buildHtml(tdiv(id = "add", onclick = action)):
+        tdiv(class = "addline1")
+        tdiv(class = "addline2")
+
 proc burger*(action : proc(e : Event, n : VNode) = fluke): VNode =
     result = buildHtml(tdiv(id = "burger", onclick = action)):
         tdiv(id = "upperburger"):

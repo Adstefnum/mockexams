@@ -1,3 +1,7 @@
+/*body{
+    overflow-y: scroll;
+}*/
+
 #app{
     display: flex;
     align-items: center;
@@ -8,7 +12,7 @@
     width: 50px;
     height: 90%;
     padding: 5% 5px 5% 5px;
-    background: var(--primarytint4);
+    background: var(--secondary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,4 +63,144 @@
     border-radius: 20px;
     cursor: pointer;
     border: 1px solid var(--dark);
+}
+
+#userpage{
+    width: 94%;
+    height: 100%;
+    padding: 0 5px 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#usernav{
+    width: 96%;
+    height: 4%;
+    padding: 2% 2% 2% 2%;
+    border-bottom: 1px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#usernav p{
+    font-size: larger;
+    color: var(--secondary);
+    cursor: pointer;
+}
+
+#usernav p:active{
+    color: var(--onprimary);
+}
+
+#userlogarea{
+    width: 100%;
+    height: 90%;
+    padding: 5% 0 5% 0;
+    display: block;
+    overflow-y: scroll;
+}
+
+.log{
+    width: 500px;
+    height: 100px;
+    padding: 10px 20px 10px 20px;
+    margin: 0 10px 40px 10px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 6px var(--ondark);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    background: var(--tetiary);
+}
+
+.log p{
+    margin: 0 0 10px 0;
+}
+
+.log:active{
+    box-shadow: inset 2px 2px 6px var(--ondark);
+}
+
+.examname{
+    font-weight: bolder;
+}
+
+.examdate{
+    font-weight: lighter;
+    font-style: italic;
+}
+
+#usersettingsarea{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addcontainer{
+    width: 80%;
+    height: 30px;
+    padding: 10px 10% 10px 10%;
+    border-bottom: 1px solid var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#note{
+    width: 80%;
+    height: 75%;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 50px;
+    outline: none;
+    border: none;
+    background: var(--onlight);
+    resize: none;
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+}
+
+.inputandlabel{
+    width: 100%;
+    height: 50px;
+    margin: 0 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.inputandlabel label{
+    font-size: larger;
+    font-weight: lighter;
+    color: var(--primary);
+}
+
+.inputandlabel input[type="text"]{
+    width: 60%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--dark);
+    /*font-size: large;*/
+}
+
+.inputandlabel input[type="text"]:focus{
+    border-bottom: 2px solid var(--primary);
+}
+
+.addcontainer p{
+    color: var(--secondary);
+    cursor: pointer;
+}
+
+.addcontainer p:active{
+    color: var(--onprimary)
 }

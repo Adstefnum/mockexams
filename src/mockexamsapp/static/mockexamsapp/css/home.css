@@ -41,7 +41,7 @@ body{
 }
 
 .background span li{
-    color: var(--primarytint3);
+    color: var(--onsecondary);
 }
 
 .background span li{
@@ -50,7 +50,7 @@ body{
 }
 
 #examstab p{
-    color: var(--primarytint2);
+    color: var(--onprimary);
 }
 
 #middlebackground{

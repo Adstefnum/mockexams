@@ -1,16 +1,13 @@
 :root{
-    --primary : #558B6E;
-    --primarytint1 : #5D9878;
-    --primarytint2 : #0C4B33;
-    --primarytint3 : #cdf6bd;
-    --primarytint4 : #00D373;
-    --primarytint5 : #3e6e54;
-    --primarytint6 : #44B78B;
+    --primary : #0C4B33;
+    --secondary : #00D373;
+    --onprimary : #0b5f3f;
+    --onsecondary : #7dbb9a;
+    --tetiary : #caffe242;
     --dark : #202020;
-    --darktint1 : #2020207e;
+    --ondark : #2020207e;
     --light : #fefefe;
-    --lighttint1 : #fefefe9b;
-    --lighttint2 : #f7f7f8;
+    --onlight : #f7f7f8;
     --link : #1800ec;
 }
 
@@ -42,13 +39,13 @@ a{
     outline: none;
     border: none;
     border-radius: 4px;
-    background: var(--primarytint4);
+    background: var(--secondary);
     color: var(--light);
     width: 200px;
     height: 50px;
     padding: 5px 2px 5px 2px;
     font-size: larger;
-    box-shadow: 2px 2px 6px var(--darktint1);
+    box-shadow: 2px 2px 6px var(--ondark);
     cursor: pointer;
 }
 
@@ -75,7 +72,7 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--primarytint4);
+    background: var(--secondary);
     color: var(--light);
     box-shadow: 2px 2px 6px var(--dark);
     cursor: pointer;
@@ -85,12 +82,12 @@ a{
     box-shadow: inset 2px 2px 6px var(--dark);
 }
 
-#burger, #upperburger, #lowerburger, #cancel{
+#burger, #upperburger, #lowerburger, #cancel, #add{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-#burger, #cancel{
+#burger, #cancel, #add{
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -100,7 +97,7 @@ a{
     flex-direction: column;
 }
 
-#cancel{
+#cancel, #add{
     justify-content: center;
 }
 
@@ -112,14 +109,18 @@ a{
 .line{
     width: 40%;
     height: 80%;
-    background: var(--primarytint4);
+    background: var(--secondary);
 }
 
-#cancelline1, #cancelline2{
+#cancelline1, #cancelline2, .addline1, .addline2{
     width: 10%;
     height: 100%;
-    background: var(--primarytint4);
+    background: var(--secondary);
 }
+
+/*#add .addline1:active, .addline2:active{
+    background: var(--primary);
+}*/
 
 #cancelline1{
     transform: rotate(45deg) translate(2px);
@@ -127,6 +128,14 @@ a{
 
 #cancelline2{
     transform: rotate(-45deg) translate(-2px);
+}
+
+.addline1{
+    transform: translate(4px);
+}
+
+.addline2{
+    transform: rotate(-90deg);
 }
 
 .navbar{
@@ -158,7 +167,7 @@ a{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    background: var(--primarytint6);
+    background: var(--onprimary);
 }
 
 #footbar ol{
@@ -174,7 +183,7 @@ a{
 }
 
 #footbar a:hover{
-    color: var(--primarytint2);
+    color: var(--primary);
 }
 
 #footbar2{
@@ -184,8 +193,8 @@ a{
     align-items: center;
     justify-content: center;
     /*border-top: 2px solid var(--dark);*/
-    background: var(--primarytint2);
-    color: var(--primary);
+    background: var(--primary);
+    color: var(--onsecondary);
 }
 
 #authcontainer{
@@ -227,7 +236,7 @@ a{
 }
 
 .cancelcontainer #cancel:active{
-    border: 1px solid var(--primarytint4);
+    border: 1px solid var(--secondary);
 }*/
 
 #auth #authswap{
@@ -251,8 +260,8 @@ a{
 }
 
 #auth #authswap span:hover{
-    border-bottom: 2px solid var(--primarytint4);
-    color: var(--primarytint4);
+    border-bottom: 2px solid var(--secondary);
+    color: var(--secondary);
 }
 
 #auth #authswap span:active{
@@ -309,7 +318,7 @@ a{
     cursor: pointer;
     font-size: larger;
     color: var(--light);
-    background: var(--primarytint4);
+    background: var(--secondary);
     border-radius: 6px;
     box-shadow: 2px 2px 6px var(--dark);
 }
