@@ -13,8 +13,12 @@ class IndexView(ListView):
 		static = {'js' : 'note', 'css' : 'note'}
 		return render(request, self.template_name, static)
 
-	def cbt(self, request):
-		static = {'js' : 'cbt', 'css' : 'cbt'}
+	def exam(self, request, examid, userid):
+		static = {'js' : 'exam', 'css' : 'exam'}
+		return render(request, self.template_name, static)
+
+	def user(self, request, userid):
+		static = {'js' : 'user', 'css' : 'user'}
 		return render(request, self.template_name, static)
 
 	def get_queryset(self):

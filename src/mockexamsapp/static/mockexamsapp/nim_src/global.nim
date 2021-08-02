@@ -1,8 +1,16 @@
 import karax / [karax, karaxdsl, vdom, kdom], datatype
 from strutils import format
 
-proc burger*(): VNode =
-    result = buildHtml(tdiv(id = "burger")):
+proc fluke(e : Event, n : VNode) =
+    discard
+
+proc cancel*(action : proc(e : Event, n : VNode) = fluke) : VNode =
+    result = buildHtml(tdiv(id = "cancel", onclick = action)):
+        tdiv(id = "cancelline1")
+        tdiv(id = "cancelline2")
+
+proc burger*(action : proc(e : Event, n : VNode) = fluke): VNode =
+    result = buildHtml(tdiv(id = "burger", onclick = action)):
         tdiv(id = "upperburger"):
             tdiv(class = "line")
             tdiv(class = "line")
@@ -137,7 +145,7 @@ proc auth*(cancelproc: proc(ev: Event, n: VNode)): VNode =
 
     result = buildHtml(span(id = "auth")):
         tdiv(class = "cancelcontainer"):
-            tdiv(id = "cancel", onclick = cancelproc)
+            cancel(cancelproc)
         tdiv(id = "authswap"):
             span(class = "authbtns", onclick = showLogin):
                 text "Login"
@@ -152,7 +160,7 @@ proc configexam*(exam: ConfigExam, cancelproc: proc(ev: Event,
         n: VNode)): VNode =
     result = buildHtml(span(id = "auth")):
         tdiv(class = "cancelcontainer"):
-            tdiv(id = "cancel", onclick = cancelproc)
+            cancel(cancelproc)
 
         tdiv(id = "configexam"):
             span(id = "examstab"):
@@ -189,7 +197,6 @@ proc configexam*(exam: ConfigExam, cancelproc: proc(ev: Event,
                             for index in countdown((exam.sessions.len - 1), 0):
                                 option:
                                     text "$1/$2".format([
-                                        exam.sessions[index].start,
+                                        exam.sessions[index].`from`,
                                         exam.sessions[index].to
                                     ])
-
