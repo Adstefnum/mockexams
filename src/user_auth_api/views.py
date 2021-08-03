@@ -47,4 +47,11 @@ class LoginAPI(KnoxLoginView):
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data['user']
         login(request, user)
-        return super(LoginAPI, self).post(request, format=None)
+        temp_list = super(LoginAPI, self).post(request, format=None)
+        return_fields = [f.name for f in User._meta.fields]
+        return_fields.remove("password")
+        return_fields.remove("id")
+
+        for i in return_fields:
+            temp_list.data[i] = getattr(user,i)
+        return Response({"data":temp_list.data})

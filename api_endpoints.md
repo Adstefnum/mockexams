@@ -28,6 +28,15 @@ http://127.0.0.1:8000/users/register/v1/
 
 # login registered user
 http://127.0.0.1:8000/users/login/v1/
+```JSON
+{
+    "password": "chuchu",
+ "username": "ola",
+    "groups": [],
+    "user_permissions": []
+}
+
+```
 
 # logout specific user
 http://127.0.0.1:8000/users/logout/v1/
