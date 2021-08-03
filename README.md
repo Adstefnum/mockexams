@@ -1,8 +1,6 @@
 # mockexams
 A website to practice cbt examination
 
-## Example of questions endpoint
-host/questions/v1/?sub=english&year=2008&exam=utme&rand=True&num=1&acom=pass
 
 ## Urgent
 - How do we link questions and their accompaniment with the populate_database.py script?
@@ -16,8 +14,6 @@ host/questions/v1/?sub=english&year=2008&exam=utme&rand=True&num=1&acom=pass
 ## Note
 - The user auth apis don't support GET requests intentionally becuase we just want information to be posted to it and then it returns the correct response either for login or registration. If we ever need to return a list of all users, we will create a seperate api app for that. 
 
-## Timeline
-- Publish a demo
 
 
 ## Positons
@@ -28,8 +24,8 @@ host/questions/v1/?sub=english&year=2008&exam=utme&rand=True&num=1&acom=pass
 - Question verification Team
 
 ## Tech Stack
-- Hyperapp
-- Django
+- Karax
+- Django and DRF
 
 ## Project Structre and Design
 - mockexamsapp
@@ -37,7 +33,7 @@ host/questions/v1/?sub=english&year=2008&exam=utme&rand=True&num=1&acom=pass
 - user_auth_api
 
 ## Features
-- User Analyices dashboard
+- User Analytics dashboard
 - Admin page(Default django or custom?)
 - Quiz page
 - No lagging between questions, just show next question staight, no lazy loadings
