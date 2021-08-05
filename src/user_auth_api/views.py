@@ -1,4 +1,4 @@
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions,authentication
 from rest_framework.response import Response
 from django.http import HttpResponse, JsonResponse
 from rest_framework.authtoken.serializers import AuthTokenSerializer
@@ -7,10 +7,12 @@ from knox.models import AuthToken
 from user_auth_api.serializers import UserSerializer, RegisterSerializer
 from django.contrib.auth import login
 from user_auth_api.models import User
+from rest_framework.decorators import api_view, permission_classes,authentication_classes
+from rest_framework.permissions import IsAdminUser
 
-
-
-
+@api_view(['GET',])
+@permission_classes([IsAdminUser,])
+@authentication_classes([authentication.TokenAuthentication,])
 def user_detail(request,uuid):
     try:
         user = User.objects.filter(uuid=uuid)
@@ -26,6 +28,8 @@ def user_detail(request,uuid):
 # Register API
 class RegisterAPI(generics.GenericAPIView):
     serializer_class = RegisterSerializer
+    permission_classes = [IsAdminUser]
+    authentication_classes = [authentication.TokenAuthentication]
 
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -40,7 +44,8 @@ class RegisterAPI(generics.GenericAPIView):
 
 #Login API
 class LoginAPI(KnoxLoginView):
-    permission_classes = (permissions.AllowAny,)
+    permission_classes = (IsAdminUser,)
+    authentication_classes = [authentication.TokenAuthentication]
 
     def post(self, request, format=None):
         serializer = AuthTokenSerializer(data=request.data)

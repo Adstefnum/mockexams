@@ -20,15 +20,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+
+    #Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #Third party Apps
     'rest_framework',
-    'mockexamsapp',
+    'rest_framework.authtoken',
     'knox',
+
+    #My core apps
+    'mockexamsapp',
     'user_auth_api',
     'questions_api'
 
@@ -71,7 +78,12 @@ REST_FRAMEWORK = {
         # 'rest_framework.authentication.BasicAuthentication',
         # 'rest_framework.authentication.SessionAuthentication',
         'knox.auth.TokenAuthentication',
-    ]
+        #'rest_framework.authentication.TokenAuthentication',
+    ],
+
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAdminUser',
+    )
 }
 
 # Database

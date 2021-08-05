@@ -6,17 +6,22 @@ from rest_framework import generics
 from questions_api.models import *
 from questions_api.serializers import *
 import random
+from rest_framework.decorators import api_view, permission_classes,authentication_classes
+from rest_framework.permissions import IsAdminUser
+from rest_framework import authentication
 
 
-
+@api_view(['GET',])
+@permission_classes([IsAdminUser])
+@authentication_classes([authentication.TokenAuthentication])
 def questions_api(request):
     
     if request.method == 'GET':
-        subject = request.GET.get("sub","all")
-        year = request.GET.get("year","all")
-        #exam_type = request.GET.get("exam","all")
-        #acom_type = request.GET.get("acom","all")
-        rand = request.GET.get("rand","all")
+        subject = request.GET.get("sub","english")
+        year = request.GET.get("year","2001")
+        #exam_type = request.GET.get("exam","utme")
+        #acom_type = request.GET.get("acom","pass")
+        rand = request.GET.get("rand","false")
         number = int(request.GET.get("num","10"))
 
         questions = list(Question.objects.filter(

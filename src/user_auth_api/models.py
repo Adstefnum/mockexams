@@ -22,7 +22,13 @@ import uuid
 
 class UserManager(BaseUserManager):
 
-  def _create_user(self,user_name,email, current_jamb_score,phone_num,password,last_name,first_name, is_staff, is_superuser, **extra_fields):
+  def _create_user(
+
+    self,user_name,email, current_jamb_score,
+    phone_num,password,last_name,first_name, is_staff, is_superuser
+
+    ):
+
     if not email and phone_num and first_name and last_name and user_name:
         raise ValueError('Users must have all specified fields')
     now = timezone.now()
@@ -39,14 +45,24 @@ class UserManager(BaseUserManager):
         is_superuser=is_superuser, 
         last_login=now,
         date_joined=now, 
-        **extra_fields
     )
     user.set_password(password)
     user.save(using=self._db)
     return user
 
-  def  create_user(self,user_name,email, current_jamb_score,phone_num,password,last_name,first_name, is_staff, is_superuser, **extra_fields):
-    return self._create_user(user_name,email, current_jamb_score,phone_num,password,last_name,first_name, is_staff, is_superuser, **extra_fields)
+  def  create_user(self,user_name,email, current_jamb_score,phone_num,password,last_name,first_name):
+    return self._create_user(
+        user_name,email, current_jamb_score,phone_num,password,
+        last_name,first_name, False, False
+        )
+
+  def create_superuser(self,user_name,email,phone_num,password,last_name,first_name):
+
+    user=self._create_user(user_name,email,0,phone_num,password,last_name,
+        first_name, True, True)
+    return user
+
+
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -68,7 +84,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'user_name'
     EMAIL_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = [
+    'email', 'phone_num', 'last_name', 'first_name'
+    ]
 
     objects = UserManager()
 
