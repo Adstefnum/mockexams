@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView
+from user_auth_api.models import UserRecord
 
 
 class IndexView(ListView):
@@ -14,11 +15,19 @@ class IndexView(ListView):
 		return render(request, self.template_name, static)
 
 	def exam(self, request, examid, userid):
-		static = {'js' : 'exam', 'css' : 'exam'}
-		return render(request, self.template_name, static)
+		current_user_id = request.user.id
+		if UserRecord.objects.filter(user__id=current_user_id).count() == 5 and user.has_paid = False:
+			return self.payment(request)
+		else:
+			static = {'js' : 'exam', 'css' : 'exam'}
+			return render(request, self.template_name, static)
 
 	def user(self, request, userid):
 		static = {'js' : 'user', 'css' : 'user'}
+		return render(request, self.template_name, static)
+
+	def payment(self, request) :
+		static = {'js' : 'payment', 'css' : 'payment'}
 		return render(request, self.template_name, static)
 
 	def get_queryset(self):
