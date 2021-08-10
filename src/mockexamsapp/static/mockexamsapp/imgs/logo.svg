@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.0"
-   width="2300pt"
-   height="600pt"
-   viewBox="0 0 2300 600"
+   width="3000pt"
+   height="1000pt"
+   viewBox="0 0 3000 1000"
    preserveAspectRatio="xMidYMid meet"
    id="svg1048"
    sodipodi:docname="logo.svg"
    inkscape:version="1.1 (ce6663b3b7, 2021-05-25)"
+   inkscape:export-filename="/home/cnerd/Documents/Python/webdev/mockexams/src/mockexamsapp/static/mockexamsapp/imgs/logo.png"
+   inkscape:export-xdpi="96.092842"
+   inkscape:export-ydpi="96.092842"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -27,12 +30,12 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1366"
-     inkscape:window-height="694"
+     inkscape:window-height="689"
      id="namedview1050"
      showgrid="false"
      inkscape:zoom="0.22978058"
-     inkscape:cx="2025.8457"
-     inkscape:cy="916.09134"
+     inkscape:cx="2378.3559"
+     inkscape:cy="913.91535"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -40,7 +43,7 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="pt"
      height="1213pt"
-     width="2300pt" />
+     width="2301pt" />
   <metadata
      id="metadata1042">
 Created by potrace 1.15, written by Peter Selinger 2001-2017
@@ -54,7 +57,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 </rdf:RDF>
 </metadata>
   <g
-     transform="matrix(0.02136107,0,0,-0.01932917,214.75692,284.06127)"
+     transform="matrix(0.02136107,0,0,-0.01932917,511.74773,491.21345)"
      fill="#000000"
      stroke="none"
      id="g1046">
@@ -65,7 +68,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
        style="fill:#46bf31;fill-opacity:0.819729" />
   </g>
   <g
-     transform="matrix(0.04426819,0,0,-0.05398951,27.277519,532.17713)"
+     transform="matrix(0.04426819,0,0,-0.05398951,324.26833,739.32931)"
      fill="#000000"
      stroke="none"
      id="g576"
@@ -103,12 +106,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
   <text
      xml:space="preserve"
      style="font-size:300px;line-height:1.25;font-family:'Nimbus Mono PS';-inkscape-font-specification:'Nimbus Mono PS';fill:#fefefe;fill-opacity:1;stroke-width:0.75"
-     x="680.74701"
-     y="387.67438"
+     x="977.73785"
+     y="594.82654"
      id="text7345"><tspan
        sodipodi:role="line"
        id="tspan7343"
        style="font-size:300px;fill:#fefefe;fill-opacity:1;stroke-width:0.75"
-       x="680.74701"
-       y="387.67438">Mockexams</tspan></text>
+       x="977.73785"
+       y="594.82654">Mockexams</tspan></text>
 </svg>
