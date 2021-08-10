@@ -1,6 +1,7 @@
 import karax / [karax, karaxdsl, vdom, kdom, kajax], datatype, asyncjs, json
 from strutils import format, split, strip
 from jsffi import to
+from jsre import newRegExp, RegExp, exec
 
 proc fluke*(e : Event, n : VNode) {.deprecated.} =
     discard
@@ -18,6 +19,8 @@ proc toCstr*[T](item: T): cstring =
     let item: cstring = $item
     return item
 
+proc parseMarkdown(markdownText : cstring) : cstring {.importjs.}
+
 proc callBackend*[T](url: string, form: T, headers : seq[(cstring, cstring)]): Future[JsonNode] =
 
     var
@@ -33,7 +36,7 @@ proc callBackend*[T](url: string, form: T, headers : seq[(cstring, cstring)]): F
                     let jsonresp = parseJson($resp)
                     resolve(jsonresp)
             )
-
+    
     return promise
 
 proc callApi*(url: string, useget: bool = false): Future[JsonNode] =
@@ -160,7 +163,7 @@ proc auth*(cancelproc: proc(ev: Event, n: VNode) = fluke, showcancel : bool = tr
                     username : data.username,
                     password : data.password
                 ), @[
-                    ("Authorization".toCstr, "e9c4c24be896d4a7f280a8f029dea8e5ed8c661c".toCstr), 
+                    ("Authorization".toCstr, "Token e9c4c24be896d4a7f280a8f029dea8e5ed8c661c".toCstr), 
                     ("Content-Type".toCstr, "application/json".toCstr)])
 
                 echo response
@@ -195,9 +198,11 @@ proc auth*(cancelproc: proc(ev: Event, n: VNode) = fluke, showcancel : bool = tr
                     user_name : data.username,
                     password : data.password,
                     phone_num : data.number,
-                    email : data.email
+                    email : data.email,
+                    last_name : "whatever",
+                    first_name : "oknow"
                 ), @[
-                    ("Authorization".toCstr, "e9c4c24be896d4a7f280a8f029dea8e5ed8c661c".toCstr), 
+                    ("Authorization".toCstr, "Token e9c4c24be896d4a7f280a8f029dea8e5ed8c661c".toCstr), 
                     ("Content-Type".toCstr, "application/json".toCstr)])
                 
                 echo response

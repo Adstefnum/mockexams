@@ -3,7 +3,7 @@ var framePtr = null;
 var excHandler = 0;
 var lastJSError = null;
 var NTI12915033 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
-var NTI12905199 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
+var NTI12905201 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
 var NTI12841095 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
 var NTI12841094 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
 var NTI12276098 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
@@ -922,9 +922,9 @@ var NNI12841095 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{ki
 {kind: 1, offset: "Field1", len: 0, typ: NTI1188015, name: "Field1", sons: null}]};
 NTI12841095.node = NNI12841095;
 NTI12841094.base = NTI12841095;
-var NNI12905199 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "Field0", len: 0, typ: NTI1188015, name: "Field0", sons: null}, 
+var NNI12905201 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "Field0", len: 0, typ: NTI1188015, name: "Field0", sons: null}, 
 {kind: 1, offset: "Field1", len: 0, typ: NTI1188015, name: "Field1", sons: null}]};
-NTI12905199.node = NNI12905199;
+NTI12905201.node = NNI12905201;
 var NNI12915033 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "Field0", len: 0, typ: NTI1188015, name: "Field0", sons: null}, 
 {kind: 1, offset: "Field1", len: 0, typ: NTI1188015, name: "Field1", sons: null}]};
 NTI12915033.node = NNI12915033;
@@ -3596,6 +3596,7 @@ function callBackend_12905023(url_12905026, form_12905027, headers_12905028) {
     var data_12905129 = toCstr_12905109(info_12905108);
     var headers_12905130 = nimCopy(null, headers_12905028, NTI12841094);
     var promise_12905183 = (new Promise(HEX3Aanonymous_12905131));
+    rawEcho(cstrToNimstr(data_12905129));
     result_12905030 = promise_12905183;
     break BeforeRet;
   } while (false);
@@ -3610,8 +3611,8 @@ function login_12900030() {
           var result_12905011 = null;
 
           BeforeRet: do {
-            var response_12905238 = (await callBackend_12905023(makeNimstrLit("/users/v1/login/"), {user_name: nimCopy(null, data_12905006.Field0, NTI1188013), password: nimCopy(null, data_12905006.Field1, NTI1188013), email: [], phone_num: [], last_name: [], first_name: [], groups: [], permissions: [], current_jamb_score: 0}, [nimCopy(null, {Field0: toCstr_12905109(makeNimstrLit("Authorization")), Field1: toCstr_12905109(makeNimstrLit("e9c4c24be896d4a7f280a8f029dea8e5ed8c661c"))}, NTI12905199), nimCopy(null, {Field0: toCstr_12905109(makeNimstrLit("Content-Type")), Field1: toCstr_12905109(makeNimstrLit("application/json"))}, NTI12905199)]));
-            rawEcho(HEX24_12620416(response_12905238));
+            var response_12905240 = (await callBackend_12905023(makeNimstrLit("/users/v1/login/"), {user_name: nimCopy(null, data_12905006.Field0, NTI1188013), password: nimCopy(null, data_12905006.Field1, NTI1188013), email: [], phone_num: [], last_name: [], first_name: [], groups: [], permissions: [], current_jamb_score: 0}, [nimCopy(null, {Field0: toCstr_12905109(makeNimstrLit("Authorization")), Field1: toCstr_12905109(makeNimstrLit("Token e9c4c24be896d4a7f280a8f029dea8e5ed8c661c"))}, NTI12905201), nimCopy(null, {Field0: toCstr_12905109(makeNimstrLit("Content-Type")), Field1: toCstr_12905109(makeNimstrLit("application/json"))}, NTI12905201)]));
+            rawEcho(HEX24_12620416(response_12905240));
             result_12905011 = undefined;
             break BeforeRet;
           } while (false);
@@ -3620,45 +3621,45 @@ function login_12900030() {
 
         }
 
-        var username_12905299 = document.getElementById("username").value;
-        var password_12905300 = document.getElementById("password").value;
-        var _ = loginUser_12905001({Field0: cstrToNimstr(username_12905299), Field1: cstrToNimstr(password_12905300)});
+        var username_12905301 = document.getElementById("username").value;
+        var password_12905302 = document.getElementById("password").value;
+        var _ = loginUser_12905001({Field0: cstrToNimstr(username_12905301), Field1: cstrToNimstr(password_12905302)});
 
       
     }
 
   var result_12900032 = null;
 
-    var tmp_12905317 = tree_10560445(43, []);
-    tmp_12905317.id = "authmode";
-    var tmp_12905318 = tree_10560445(43, []);
-    tmp_12905318.class = "authcapsule";
-    var tmp_12905319 = tree_10560445(104, []);
-    add_10550072(tmp_12905319, text_10560582(makeNimstrLit("Username")));
-    add_10550072(tmp_12905318, tmp_12905319);
-    var tmp_12905320 = tree_10560445(105, []);
-    setAttr_10500105(tmp_12905320, "type", "text");
-    setAttr_10500105(tmp_12905320, "placeholder", "username");
-    tmp_12905320.id = "username";
-    add_10550072(tmp_12905318, tmp_12905320);
-    add_10550072(tmp_12905317, tmp_12905318);
-    var tmp_12905321 = tree_10560445(43, []);
-    tmp_12905321.class = "authcapsule";
-    var tmp_12905322 = tree_10560445(104, []);
-    add_10550072(tmp_12905322, text_10560582(makeNimstrLit("Password")));
-    add_10550072(tmp_12905321, tmp_12905322);
-    var tmp_12905323 = tree_10560445(105, []);
-    setAttr_10500105(tmp_12905323, "type", "password");
-    setAttr_10500105(tmp_12905323, "placeholder", "password");
-    tmp_12905323.id = "password";
-    add_10550072(tmp_12905321, tmp_12905323);
-    add_10550072(tmp_12905317, tmp_12905321);
-    var tmp_12905324 = tree_10560445(106, []);
-    setAttr_10500105(tmp_12905324, "type", "button");
-    addEventHandler_11460118(tmp_12905324, 0, actionLogin_12900033, kxi_10897284[0]);
-    add_10550072(tmp_12905324, text_10560582(makeNimstrLit("Login")));
-    add_10550072(tmp_12905317, tmp_12905324);
-    result_12900032 = tmp_12905317;
+    var tmp_12905319 = tree_10560445(43, []);
+    tmp_12905319.id = "authmode";
+    var tmp_12905320 = tree_10560445(43, []);
+    tmp_12905320.class = "authcapsule";
+    var tmp_12905321 = tree_10560445(104, []);
+    add_10550072(tmp_12905321, text_10560582(makeNimstrLit("Username")));
+    add_10550072(tmp_12905320, tmp_12905321);
+    var tmp_12905322 = tree_10560445(105, []);
+    setAttr_10500105(tmp_12905322, "type", "text");
+    setAttr_10500105(tmp_12905322, "placeholder", "username");
+    tmp_12905322.id = "username";
+    add_10550072(tmp_12905320, tmp_12905322);
+    add_10550072(tmp_12905319, tmp_12905320);
+    var tmp_12905323 = tree_10560445(43, []);
+    tmp_12905323.class = "authcapsule";
+    var tmp_12905324 = tree_10560445(104, []);
+    add_10550072(tmp_12905324, text_10560582(makeNimstrLit("Password")));
+    add_10550072(tmp_12905323, tmp_12905324);
+    var tmp_12905325 = tree_10560445(105, []);
+    setAttr_10500105(tmp_12905325, "type", "password");
+    setAttr_10500105(tmp_12905325, "placeholder", "password");
+    tmp_12905325.id = "password";
+    add_10550072(tmp_12905323, tmp_12905325);
+    add_10550072(tmp_12905319, tmp_12905323);
+    var tmp_12905326 = tree_10560445(106, []);
+    setAttr_10500105(tmp_12905326, "type", "button");
+    addEventHandler_11460118(tmp_12905326, 0, actionLogin_12900033, kxi_10897284[0]);
+    add_10550072(tmp_12905326, text_10560582(makeNimstrLit("Login")));
+    add_10550072(tmp_12905319, tmp_12905326);
+    result_12900032 = tmp_12905319;
 
   return result_12900032;
 
@@ -3676,7 +3677,7 @@ function register_12910047() {
           var result_12915013 = null;
 
           BeforeRet: do {
-            var response_12915072 = (await callBackend_12905023(makeNimstrLit("/users/v1/register/"), {user_name: nimCopy(null, data_12915008.Field0, NTI1188013), password: nimCopy(null, data_12915008.Field1, NTI1188013), phone_num: nimCopy(null, data_12915008.Field2, NTI1188013), email: nimCopy(null, data_12915008.Field3, NTI1188013), last_name: [], first_name: [], groups: [], permissions: [], current_jamb_score: 0}, [nimCopy(null, {Field0: toCstr_12905109(makeNimstrLit("Authorization")), Field1: toCstr_12905109(makeNimstrLit("e9c4c24be896d4a7f280a8f029dea8e5ed8c661c"))}, NTI12915033), nimCopy(null, {Field0: toCstr_12905109(makeNimstrLit("Content-Type")), Field1: toCstr_12905109(makeNimstrLit("application/json"))}, NTI12915033)]));
+            var response_12915072 = (await callBackend_12905023(makeNimstrLit("/users/v1/register/"), {user_name: nimCopy(null, data_12915008.Field0, NTI1188013), password: nimCopy(null, data_12915008.Field1, NTI1188013), phone_num: nimCopy(null, data_12915008.Field2, NTI1188013), email: nimCopy(null, data_12915008.Field3, NTI1188013), last_name: makeNimstrLit("whatever"), first_name: makeNimstrLit("oknow"), groups: [], permissions: [], current_jamb_score: 0}, [nimCopy(null, {Field0: toCstr_12905109(makeNimstrLit("Authorization")), Field1: toCstr_12905109(makeNimstrLit("Token e9c4c24be896d4a7f280a8f029dea8e5ed8c661c"))}, NTI12915033), nimCopy(null, {Field0: toCstr_12905109(makeNimstrLit("Content-Type")), Field1: toCstr_12905109(makeNimstrLit("application/json"))}, NTI12915033)]));
             rawEcho(HEX24_12620416(response_12915072));
             result_12915013 = undefined;
             break BeforeRet;

@@ -1,5 +1,5 @@
-function markDown(text) {
-	let html = text
+function parseMarkdown(markdownText) {
+	const htmlText = markdownText
 		.replace(/^### (.*$)/gim, '<h3>$1</h3>')
 		.replace(/^## (.*$)/gim, '<h2>$1</h2>')
 		.replace(/^# (.*$)/gim, '<h1>$1</h1>')
@@ -11,5 +11,5 @@ function markDown(text) {
 		.replace(/\n$/gim, '<br />')
 		.replace(/```\s*([^]+?.*?[^]+?[^]+?)```/g, '<pre><code>$1</code></pre>')
 
-	return html.trim()
+	return htmlText.trim()
 }
