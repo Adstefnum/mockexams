@@ -197,6 +197,7 @@
 }
 
 .addcontainer p{
+    margin-left: 50px;
     color: var(--secondary);
     cursor: pointer;
 }

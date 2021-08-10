@@ -1272,15 +1272,15 @@ function applyEvents_11010073(n_11010075) {
     var dest_11010076 = n_11010075.dom;
     L1: do {
       var i_11010089 = 0;
-      var colontmp__11680093 = 0;
-      colontmp__11680093 = (n_11010075.events).length;
-      var i_11680094 = 0;
+      var colontmp__11685093 = 0;
+      colontmp__11685093 = (n_11010075.events).length;
+      var i_11685094 = 0;
       L2: do {
           L3: while (true) {
-          if (!(i_11680094 < colontmp__11680093)) break L3;
-            i_11010089 = i_11680094;
+          if (!(i_11685094 < colontmp__11685093)) break L3;
+            i_11010089 = i_11685094;
             n_11010075.events[i_11010089]["Field2"] = wrapEvent_10900097(dest_11010076, n_11010075, n_11010075.events[i_11010089]["Field0"], n_11010075.events[i_11010089]["Field1"]);
-            i_11680094 += 1;
+            i_11685094 += 1;
           }
       } while(false);
     } while(false);
@@ -1291,15 +1291,15 @@ function applyStyle_10455628(n_10455630, s_10455631) {
     n_10455630.style = {};
     L1: do {
       var i_10455664 = 0;
-      var colontmp__11680104 = 0;
-      colontmp__11680104 = (s_10455631.length - 1);
-      var res_11680105 = 0;
+      var colontmp__11685104 = 0;
+      colontmp__11685104 = (s_10455631.length - 1);
+      var res_11685105 = 0;
       L2: do {
           L3: while (true) {
-          if (!(res_11680105 <= colontmp__11680104)) break L3;
-            i_10455664 = res_11680105;
+          if (!(res_11685105 <= colontmp__11685104)) break L3;
+            i_10455664 = res_11685105;
             n_10455630.style[s_10455631[i_10455664]] = s_10455631[(i_10455664 + 1)];
-            res_11680105 += 2;
+            res_11685105 += 2;
           }
       } while(false);
     } while(false);
@@ -1394,17 +1394,17 @@ function toDom_11010154(n_11010156, useAttachedNode_11010157, kxi_11010158) {
       L1: do {
         var k_11135016 = null;
         L2: do {
-          var i_11680073 = 0;
-          var colontmp__11680074 = 0;
-          colontmp__11680074 = (n_11010156.kids).length;
-          var i_11680075 = 0;
+          var i_11685073 = 0;
+          var colontmp__11685074 = 0;
+          colontmp__11685074 = (n_11010156.kids).length;
+          var i_11685075 = 0;
           L3: do {
               L4: while (true) {
-              if (!(i_11680075 < colontmp__11680074)) break L4;
-                i_11680073 = i_11680075;
-                k_11135016 = n_11010156.kids[i_11680073];
+              if (!(i_11685075 < colontmp__11685074)) break L4;
+                i_11685073 = i_11685075;
+                k_11135016 = n_11010156.kids[i_11685073];
                 result_11010159.appendChild(toDom_11010154(k_11135016, useAttachedNode_11010157, kxi_11010158));
-                i_11680075 += 1;
+                i_11685075 += 1;
               }
           } while(false);
         } while(false);
@@ -1427,21 +1427,21 @@ function toDom_11010154(n_11010156, useAttachedNode_11010157, kxi_11010158) {
       var k_11150001 = null;
       var v_11150002 = null;
       L6: do {
-        var i_11680086 = 0;
-        var colontmp__11680087 = 0;
-        colontmp__11680087 = ((n_11010156.attrs).length - 2);
-        var res_11680088 = 0;
+        var i_11685086 = 0;
+        var colontmp__11685087 = 0;
+        colontmp__11685087 = ((n_11010156.attrs).length - 2);
+        var res_11685088 = 0;
         L7: do {
             L8: while (true) {
-            if (!(res_11680088 <= colontmp__11680087)) break L8;
-              i_11680086 = res_11680088;
-              k_11150001 = n_11010156.attrs[i_11680086];
-              v_11150002 = n_11010156.attrs[(i_11680086 + 1)];
+            if (!(res_11685088 <= colontmp__11685087)) break L8;
+              i_11685086 = res_11685088;
+              k_11150001 = n_11010156.attrs[i_11685086];
+              v_11150002 = n_11010156.attrs[(i_11685086 + 1)];
               if (!((v_11150002 == null))) {
               result_11010159.setAttribute(k_11150001, v_11150002);
               }
               
-              res_11680088 += 2;
+              res_11685088 += 2;
             }
         } while(false);
       } while(false);
@@ -1488,13 +1488,13 @@ function tree_10560445(kind_10560447, kids_10560449) {
     L1: do {
       var k_10560483 = null;
       var k_10560483_Idx = 0;
-      var i_11680116 = 0;
+      var i_11685116 = 0;
       L2: do {
           L3: while (true) {
-          if (!(i_11680116 < (kids_10560449).length)) break L3;
-            k_10560483 = kids_10560449; k_10560483_Idx = i_11680116;
+          if (!(i_11685116 < (kids_10560449).length)) break L3;
+            k_10560483 = kids_10560449; k_10560483_Idx = i_11685116;
             add_10550072(result_10560450, k_10560483[k_10560483_Idx]);
-            i_11680116 += 1;
+            i_11685116 += 1;
           }
       } while(false);
     } while(false);
@@ -1572,19 +1572,19 @@ function same_11160072(n_11160074, e_11160075, nesting_11160076) {
     
     L3: do {
       var i_11175024 = 0;
-      var colontmp__11680128 = 0;
-      colontmp__11680128 = len_10550014(n_11160074);
-      var i_11680129 = 0;
+      var colontmp__11685128 = 0;
+      colontmp__11685128 = len_10550014(n_11160074);
+      var i_11685129 = 0;
       L4: do {
           L5: while (true) {
-          if (!(i_11680129 < colontmp__11680128)) break L5;
-            i_11175024 = i_11680129;
+          if (!(i_11685129 < colontmp__11685128)) break L5;
+            i_11175024 = i_11685129;
             if (!(same_11160072(HEX5BHEX5D_10550036(n_11160074, i_11175024), e_11160075.childNodes[i_11175024], (nesting_11160076 + 1)))) {
             result_11160078 = false;
             break BeforeRet;
             }
             
-            i_11680129 += 1;
+            i_11685129 += 1;
           }
       } while(false);
     } while(false);
@@ -1715,19 +1715,19 @@ function eq_10420229(a_10420231, b_10420232) {
     
     L1: do {
       var i_10425083 = 0;
-      var colontmp__11680172 = 0;
-      colontmp__11680172 = a_10420231.length;
-      var i_11680173 = 0;
+      var colontmp__11685172 = 0;
+      colontmp__11685172 = a_10420231.length;
+      var i_11685173 = 0;
       L2: do {
           L3: while (true) {
-          if (!(i_11680173 < colontmp__11680172)) break L3;
-            i_10425083 = i_11680173;
+          if (!(i_11685173 < colontmp__11685172)) break L3;
+            i_10425083 = i_11685173;
             if (!((a_10420231[i_10425083] == b_10420232[i_10425083]))) {
             result_10420233 = false;
             break BeforeRet;
             }
             
-            i_11680173 += 1;
+            i_11685173 += 1;
           }
       } while(false);
     } while(false);
@@ -1746,19 +1746,19 @@ function sameAttrs_10561079(a_10561081, b_10561082) {
     result_10561083 = true;
     L1: do {
       var i_10561106 = 0;
-      var colontmp__11680176 = 0;
-      colontmp__11680176 = (a_10561081.attrs).length;
-      var i_11680177 = 0;
+      var colontmp__11685176 = 0;
+      colontmp__11685176 = (a_10561081.attrs).length;
+      var i_11685177 = 0;
       L2: do {
           L3: while (true) {
-          if (!(i_11680177 < colontmp__11680176)) break L3;
-            i_10561106 = i_11680177;
+          if (!(i_11685177 < colontmp__11685176)) break L3;
+            i_10561106 = i_11685177;
             if (!((a_10561081.attrs[i_10561106] == b_10561082.attrs[i_10561106]))) {
             result_10561083 = false;
             break BeforeRet;
             }
             
-            i_11680177 += 1;
+            i_11685177 += 1;
           }
       } while(false);
     } while(false);
@@ -1813,19 +1813,19 @@ function eq_11175214(a_11175216, b_11175217, recursive_11175218) {
     
     L1: do {
       var i_11205008 = 0;
-      var colontmp__11680164 = 0;
-      colontmp__11680164 = len_10550014(a_11175216);
-      var i_11680165 = 0;
+      var colontmp__11685164 = 0;
+      colontmp__11685164 = len_10550014(a_11175216);
+      var i_11685165 = 0;
       L2: do {
           L3: while (true) {
-          if (!(i_11680165 < colontmp__11680164)) break L3;
-            i_11205008 = i_11680165;
+          if (!(i_11685165 < colontmp__11685164)) break L3;
+            i_11205008 = i_11685165;
             if ((eq_11175214(HEX5BHEX5D_10550036(a_11175216, i_11205008), HEX5BHEX5D_10550036(b_11175217, i_11205008), recursive_11175218) == 1)) {
             result_11175219 = 1;
             break BeforeRet;
             }
             
-            i_11680165 += 1;
+            i_11685165 += 1;
           }
       } while(false);
     } while(false);
@@ -1879,19 +1879,19 @@ function eq_11175214(a_11175216, b_11175217, recursive_11175218) {
     
     L6: do {
       var i_11230008 = 0;
-      var colontmp__11680168 = 0;
-      colontmp__11680168 = len_10550014(a_11175216);
-      var i_11680169 = 0;
+      var colontmp__11685168 = 0;
+      colontmp__11685168 = len_10550014(a_11175216);
+      var i_11685169 = 0;
       L7: do {
           L8: while (true) {
-          if (!(i_11680169 < colontmp__11680168)) break L8;
-            i_11230008 = i_11680169;
+          if (!(i_11685169 < colontmp__11685168)) break L8;
+            i_11230008 = i_11685169;
             if (!((eq_11175214(HEX5BHEX5D_10550036(a_11175216, i_11230008), HEX5BHEX5D_10550036(b_11175217, i_11230008), true) == 3))) {
             result_11175219 = 1;
             break BeforeRet;
             }
             
-            i_11680169 += 1;
+            i_11685169 += 1;
           }
       } while(false);
     } while(false);
@@ -1931,18 +1931,18 @@ function updateAttributes_11245052(newNode_11245054, oldNode_11245055) {
       var k_11250009 = null;
       var __11250010 = null;
       L2: do {
-        var i_11680182 = 0;
-        var colontmp__11680183 = 0;
-        colontmp__11680183 = ((oldNode_11245055.attrs).length - 2);
-        var res_11680184 = 0;
+        var i_11685182 = 0;
+        var colontmp__11685183 = 0;
+        colontmp__11685183 = ((oldNode_11245055.attrs).length - 2);
+        var res_11685184 = 0;
         L3: do {
             L4: while (true) {
-            if (!(res_11680184 <= colontmp__11680183)) break L4;
-              i_11680182 = res_11680184;
-              k_11250009 = oldNode_11245055.attrs[i_11680182];
-              __11250010 = oldNode_11245055.attrs[(i_11680182 + 1)];
+            if (!(res_11685184 <= colontmp__11685183)) break L4;
+              i_11685182 = res_11685184;
+              k_11250009 = oldNode_11245055.attrs[i_11685182];
+              __11250010 = oldNode_11245055.attrs[(i_11685182 + 1)];
               oldNode_11245055.dom.removeAttribute(k_11250009);
-              res_11680184 += 2;
+              res_11685184 += 2;
             }
         } while(false);
       } while(false);
@@ -1951,21 +1951,21 @@ function updateAttributes_11245052(newNode_11245054, oldNode_11245055) {
       var k_11250011 = null;
       var v_11250012 = null;
       L6: do {
-        var i_11680190 = 0;
-        var colontmp__11680191 = 0;
-        colontmp__11680191 = ((newNode_11245054.attrs).length - 2);
-        var res_11680192 = 0;
+        var i_11685190 = 0;
+        var colontmp__11685191 = 0;
+        colontmp__11685191 = ((newNode_11245054.attrs).length - 2);
+        var res_11685192 = 0;
         L7: do {
             L8: while (true) {
-            if (!(res_11680192 <= colontmp__11680191)) break L8;
-              i_11680190 = res_11680192;
-              k_11250011 = newNode_11245054.attrs[i_11680190];
-              v_11250012 = newNode_11245054.attrs[(i_11680190 + 1)];
+            if (!(res_11685192 <= colontmp__11685191)) break L8;
+              i_11685190 = res_11685192;
+              k_11250011 = newNode_11245054.attrs[i_11685190];
+              v_11250012 = newNode_11245054.attrs[(i_11685190 + 1)];
               if (!((v_11250012 == null))) {
               oldNode_11245055.dom.setAttribute(k_11250011, v_11250012);
               }
               
-              res_11680192 += 2;
+              res_11685192 += 2;
             }
         } while(false);
       } while(false);
@@ -1980,15 +1980,15 @@ function removeAllEventHandlers_10897436(d_10897438) {
     if (!((d_10897438.karaxEvents == null))) {
     L1: do {
       var i_10900041 = 0;
-      var colontmp__11680197 = 0;
-      colontmp__11680197 = d_10897438.karaxEvents.length;
-      var i_11680198 = 0;
+      var colontmp__11685197 = 0;
+      colontmp__11685197 = d_10897438.karaxEvents.length;
+      var i_11685198 = 0;
       L2: do {
           L3: while (true) {
-          if (!(i_11680198 < colontmp__11680197)) break L3;
-            i_10900041 = i_11680198;
+          if (!(i_11685198 < colontmp__11685197)) break L3;
+            i_10900041 = i_11685198;
             d_10897438.removeEventListener(d_10897438.karaxEvents[i_10900041]["Field0"], d_10897438.karaxEvents[i_10900041]["Field1"]);
-            i_11680198 += 1;
+            i_11685198 += 1;
           }
       } while(false);
     } while(false);
@@ -2092,28 +2092,28 @@ function diff_11310215(newNode_11310217, oldNode_11310218, parent_11310219, curr
       var pos_11340018 = (nimMin(oldPos_11330214, newPos_11330215) + 1);
       L7: do {
         var i_11340024 = 0;
-        var colontmp__11680139 = 0;
-        colontmp__11680139 = (pos_11340018 - 1);
-        var res_11680140 = commonPrefix_11330202;
+        var colontmp__11685139 = 0;
+        colontmp__11685139 = (pos_11340018 - 1);
+        var res_11685140 = commonPrefix_11330202;
         L8: do {
             L9: while (true) {
-            if (!(res_11680140 <= colontmp__11680139)) break L9;
-              i_11340024 = res_11680140;
+            if (!(res_11685140 <= colontmp__11685139)) break L9;
+              i_11340024 = res_11685140;
               diff_11310215(HEX5BHEX5D_10550036(newNode_11310217, i_11340024), HEX5BHEX5D_10550036(oldNode_11310218, i_11340024), current_11310220, current_11310220.childNodes[i_11340024], kxi_11310221);
-              res_11680140 += 1;
+              res_11685140 += 1;
             }
         } while(false);
       } while(false);
       if (((oldPos_11330214 + 1) == oldLength_11320007)) {
       L10: do {
         var i_11340030 = 0;
-        var res_11680146 = pos_11340018;
+        var res_11685146 = pos_11340018;
         L11: do {
             L12: while (true) {
-            if (!(res_11680146 <= newPos_11330215)) break L12;
-              i_11340030 = res_11680146;
+            if (!(res_11685146 <= newPos_11330215)) break L12;
+              i_11340030 = res_11685146;
               addPatch_11260414(kxi_11310221, 2, current_11310220, null, HEX5BHEX5D_10550036(newNode_11310217, i_11340030), null);
-              res_11680146 += 1;
+              res_11685146 += 1;
             }
         } while(false);
       } while(false);
@@ -2122,13 +2122,13 @@ function diff_11310215(newNode_11310217, oldNode_11310218, parent_11310219, curr
         var before_11340031 = current_11310220.childNodes[(oldPos_11330214 + 1)];
         L13: do {
           var i_11340037 = 0;
-          var res_11680152 = pos_11340018;
+          var res_11685152 = pos_11340018;
           L14: do {
               L15: while (true) {
-              if (!(res_11680152 <= newPos_11330215)) break L15;
-                i_11340037 = res_11680152;
+              if (!(res_11685152 <= newPos_11330215)) break L15;
+                i_11340037 = res_11685152;
                 addPatch_11260414(kxi_11310221, 3, current_11310220, before_11340031, HEX5BHEX5D_10550036(newNode_11310217, i_11340037), null);
-                res_11680152 += 1;
+                res_11685152 += 1;
               }
           } while(false);
         } while(false);
@@ -2136,14 +2136,14 @@ function diff_11310215(newNode_11310217, oldNode_11310218, parent_11310219, curr
       
       L16: do {
         var i_11340043 = 0;
-        var res_11680158 = pos_11340018;
+        var res_11685158 = pos_11340018;
         L17: do {
             L18: while (true) {
-            if (!(res_11680158 <= oldPos_11330214)) break L18;
-              i_11340043 = res_11680158;
+            if (!(res_11685158 <= oldPos_11330214)) break L18;
+              i_11340043 = res_11685158;
               addPatch_11260414(kxi_10897284[0], 4, null, null, null, HEX5BHEX5D_10550036(oldNode_11310218, i_11340043));
               addPatch_11260414(kxi_11310221, 1, current_11310220, current_11310220.childNodes[i_11340043], null, null);
-              res_11680158 += 1;
+              res_11685158 += 1;
             }
         } while(false);
       } while(false);
@@ -2206,15 +2206,15 @@ function moveDom_11270048(dest_11270050, src_11270051) {
     
     L1: do {
       var i_11285208 = 0;
-      var colontmp__11680209 = 0;
-      colontmp__11680209 = len_10550014(dest_11270050);
-      var i_11680210 = 0;
+      var colontmp__11685209 = 0;
+      colontmp__11685209 = len_10550014(dest_11270050);
+      var i_11685210 = 0;
       L2: do {
           L3: while (true) {
-          if (!(i_11680210 < colontmp__11680209)) break L3;
-            i_11285208 = i_11680210;
+          if (!(i_11685210 < colontmp__11685209)) break L3;
+            i_11285208 = i_11685210;
             moveDom_11270048(HEX5BHEX5D_10550036(dest_11270050, i_11285208), HEX5BHEX5D_10550036(src_11270051, i_11285208));
-            i_11680210 += 1;
+            i_11685210 += 1;
           }
       } while(false);
     } while(false);
@@ -2229,11 +2229,11 @@ function HEX5BHEX5DHEX3D_10550054(x_10550056, idx_10550057, y_10550058) {
 function applyPatch_11285222(kxi_11285224) {
     L1: do {
       var i_11285232 = 0;
-      var i_11680203 = 0;
+      var i_11685203 = 0;
       L2: do {
           L3: while (true) {
-          if (!(i_11680203 < kxi_11285224.patchLen)) break L3;
-            i_11285232 = i_11680203;
+          if (!(i_11685203 < kxi_11285224.patchLen)) break L3;
+            i_11285232 = i_11685203;
             var p_11285233 = nimCopy(null, kxi_11285224.patches[i_11285232], NTI10897209);
             switch (p_11285233.k) {
             case 0:
@@ -2286,21 +2286,21 @@ function applyPatch_11285222(kxi_11285224) {
               
               break;
             }
-            i_11680203 += 1;
+            i_11685203 += 1;
           }
       } while(false);
     } while(false);
     kxi_11285224.patchLen = 0;
     L4: do {
       var i_11295013 = 0;
-      var i_11680206 = 0;
+      var i_11685206 = 0;
       L5: do {
           L6: while (true) {
-          if (!(i_11680206 < kxi_11285224.patchLenV)) break L6;
-            i_11295013 = i_11680206;
+          if (!(i_11685206 < kxi_11285224.patchLenV)) break L6;
+            i_11295013 = i_11685206;
             var p_11295014 = nimCopy(null, kxi_11285224.patchesV[i_11295013], NTI10897211);
             HEX5BHEX5DHEX3D_10550054(p_11295014.parent, p_11295014.pos, p_11295014.newChild);
-            i_11680206 += 1;
+            i_11685206 += 1;
           }
       } while(false);
     } while(false);
@@ -2396,18 +2396,18 @@ function userNav_11632022(btns_11632025) {
     tmp_11632027.id = "usernav";
     L1: do {
       var btn_11645214 = null;
-      var i_11680123 = 0;
-      var L_11680124 = (btns_11632025).length;
+      var i_11685123 = 0;
+      var L_11685124 = (btns_11632025).length;
       L2: do {
           L3: while (true) {
-          if (!(i_11680123 < L_11680124)) break L3;
-            btn_11645214 = btns_11632025[i_11680123];
+          if (!(i_11685123 < L_11685124)) break L3;
+            btn_11645214 = btns_11632025[i_11685123];
             var tmp_11632028 = tree_10560445(31, []);
             tmp_11632028.class = "usernavbtn";
             addEventHandler_11460118(tmp_11632028, 0, btn_11645214.action, kxi_10897284[0]);
             add_10550072(tmp_11632028, text_10560582(btn_11645214.name));
             add_10550072(tmp_11632027, tmp_11632028);
-            i_11680123 += 1;
+            i_11685123 += 1;
           }
       } while(false);
     } while(false);
@@ -2434,10 +2434,10 @@ function settingPage_11645264() {
   return result_11645266;
 
 }
-function loading(e_11680050, n_11680051) {
-    var background_11680052 = document.getElementById("app");
-    var userpage_11680053 = document.getElementById("userpage");
-    background_11680052.replaceChild(vnodeToDom_11470073(settingPage_11645264(), null), userpage_11680053);
+function loading(e_11685050, n_11685051) {
+    var background_11685052 = document.getElementById("app");
+    var userpage_11685053 = document.getElementById("userpage");
+    background_11685052.replaceChild(vnodeToDom_11470073(settingPage_11645264(), null), userpage_11685053);
 
   
 }
@@ -2521,19 +2521,19 @@ function setAttr_10500105(n_10500107, key_10500108, val_10500109) {
     else {
       L1: do {
         var i_10500138 = 0;
-        var colontmp__11690269 = 0;
-        colontmp__11690269 = ((n_10500107.attrs).length - 2);
-        var res_11690270 = 0;
+        var colontmp__11695269 = 0;
+        colontmp__11695269 = ((n_10500107.attrs).length - 2);
+        var res_11695270 = 0;
         L2: do {
             L3: while (true) {
-            if (!(res_11690270 <= colontmp__11690269)) break L3;
-              i_10500138 = res_11690270;
+            if (!(res_11695270 <= colontmp__11695269)) break L3;
+              i_10500138 = res_11695270;
               if ((n_10500107.attrs[i_10500138] == key_10500108)) {
               n_10500107.attrs[(i_10500138 + 1)] = val_10500109;
               break BeforeRet;
               }
               
-              res_11690270 += 2;
+              res_11695270 += 2;
             }
         } while(false);
       } while(false);
@@ -2587,13 +2587,13 @@ function logPage_11650063() {
     tmp_11655039.id = "userlogarea";
     L1: do {
       var __11660018 = 0;
-      var res_11690257 = 0;
+      var res_11695257 = 0;
       L2: do {
           L3: while (true) {
-          if (!(res_11690257 <= 3)) break L3;
-            __11660018 = res_11690257;
+          if (!(res_11695257 <= 3)) break L3;
+            __11660018 = res_11695257;
             add_10550072(tmp_11655039, log_11650083());
-            res_11690257 += 1;
+            res_11695257 += 1;
           }
       } while(false);
     } while(false);
@@ -2642,172 +2642,198 @@ function add_11545042(action_11545048) {
 function fluke_11542028(e_11542030, n_11542031) {
   
 }
-function sudoPage_11665031() {
-    function editTerms_11665051(e_11665053, n_11665054) {
-        var userpage_11665055 = document.getElementById("userpage");
-        var settingsarea_11665056 = document.getElementById("usersettingsarea");
-        var tmp_11665057 = tree_10560445(43, []);
-        tmp_11665057.id = "usersettingsarea";
-        var tmp_11665058 = tree_10560445(43, []);
-        tmp_11665058.class = "addcontainer";
-        add_10550072(tmp_11665058, add_11545042(fluke_11542028));
-        add_10550072(tmp_11665057, tmp_11665058);
-        var tmp_11665059 = tree_10560445(111, []);
-        tmp_11665059.id = "note";
-        add_10550072(tmp_11665057, tmp_11665059);
-        var editarea_11670013 = tmp_11665057;
-        userpage_11665055.replaceChild(vnodeToDom_11470073(editarea_11670013, null), settingsarea_11665056);
-
-      
-    }
-    function editSmedia_11670042(e_11670044, n_11670045) {
-        var userpage_11670046 = document.getElementById("userpage");
-        var settingsarea_11670047 = document.getElementById("usersettingsarea");
-        var tmp_11670048 = tree_10560445(43, []);
-        tmp_11670048.id = "usersettingsarea";
-        var tmp_11670049 = tree_10560445(43, []);
-        tmp_11670049.class = "addcontainer";
-        add_10550072(tmp_11670049, add_11545042(fluke_11542028));
-        add_10550072(tmp_11670048, tmp_11670049);
-        var tmp_11670050 = tree_10560445(43, []);
-        tmp_11670050.class = "inputandlabel";
-        var tmp_11670051 = tree_10560445(104, []);
-        add_10550072(tmp_11670051, text_10560582(makeNimstrLit("Youtube Url")));
-        add_10550072(tmp_11670050, tmp_11670051);
-        var tmp_11670052 = tree_10560445(105, []);
-        setAttr_10500105(tmp_11670052, "type", "text");
-        tmp_11670052.id = "youtube";
-        setAttr_10500105(tmp_11670052, "placeholder", "Youtube Url");
-        add_10550072(tmp_11670050, tmp_11670052);
-        add_10550072(tmp_11670048, tmp_11670050);
-        var tmp_11670053 = tree_10560445(43, []);
-        tmp_11670053.class = "inputandlabel";
-        var tmp_11670054 = tree_10560445(104, []);
-        add_10550072(tmp_11670054, text_10560582(makeNimstrLit("Twitter Url")));
-        add_10550072(tmp_11670053, tmp_11670054);
-        var tmp_11670055 = tree_10560445(105, []);
-        setAttr_10500105(tmp_11670055, "type", "text");
-        tmp_11670055.id = "twitter";
-        setAttr_10500105(tmp_11670055, "placeholder", "Twitter Url");
-        add_10550072(tmp_11670053, tmp_11670055);
-        add_10550072(tmp_11670048, tmp_11670053);
-        var tmp_11670056 = tree_10560445(43, []);
-        tmp_11670056.class = "inputandlabel";
-        var tmp_11670057 = tree_10560445(104, []);
-        add_10550072(tmp_11670057, text_10560582(makeNimstrLit("Telegram Url")));
-        add_10550072(tmp_11670056, tmp_11670057);
-        var tmp_11670058 = tree_10560445(105, []);
-        setAttr_10500105(tmp_11670058, "type", "text");
-        tmp_11670058.id = "telegram";
-        setAttr_10500105(tmp_11670058, "placeholder", "Telegram Url");
-        add_10550072(tmp_11670056, tmp_11670058);
-        add_10550072(tmp_11670048, tmp_11670056);
-        var tmp_11670059 = tree_10560445(43, []);
-        tmp_11670059.class = "inputandlabel";
-        var tmp_11670060 = tree_10560445(104, []);
-        add_10550072(tmp_11670060, text_10560582(makeNimstrLit("Instagram Url")));
-        add_10550072(tmp_11670059, tmp_11670060);
-        var tmp_11670061 = tree_10560445(105, []);
-        setAttr_10500105(tmp_11670061, "type", "text");
-        tmp_11670061.id = "instagram";
-        setAttr_10500105(tmp_11670061, "placeholder", "Instagram Url");
-        add_10550072(tmp_11670059, tmp_11670061);
-        add_10550072(tmp_11670048, tmp_11670059);
-        var editarea_11675057 = tmp_11670048;
-        userpage_11670046.replaceChild(vnodeToDom_11470073(editarea_11675057, null), settingsarea_11670047);
-
-      
-    }
-    function fluke_11665034(e_11665036, n_11665037) {
-      
-    }
-
+function exams_11665031() {
   var result_11665033 = null;
 
-    var tmp_11675071 = tree_10560445(43, []);
-    tmp_11675071.id = "userpage";
-    add_10550072(tmp_11675071, userNav_11632022([{name: makeNimstrLit("Log"), action: checkLog_11660032}, {name: makeNimstrLit("Terms"), action: editTerms_11665051}, {name: makeNimstrLit("Policy"), action: editTerms_11665051}, {name: makeNimstrLit("Developers"), action: editTerms_11665051}, {name: makeNimstrLit("Faq"), action: editTerms_11665051}, {name: makeNimstrLit("Social Media"), action: editSmedia_11670042}, {name: makeNimstrLit("Exams"), action: fluke_11665034}]));
-    var tmp_11675072 = tree_10560445(43, []);
-    tmp_11675072.id = "usersettingsarea";
-    add_10550072(tmp_11675071, tmp_11675072);
-    result_11665033 = tmp_11675071;
+    var tmp_11665034 = tree_10560445(43, []);
+    tmp_11665034.id = "usersettingsarea";
+    var tmp_11665035 = tree_10560445(43, []);
+    tmp_11665035.class = "addcontainer";
+    var tmp_11665036 = tree_10560445(31, []);
+    add_10550072(tmp_11665036, text_10560582(makeNimstrLit("Exams")));
+    add_10550072(tmp_11665035, tmp_11665036);
+    var tmp_11665037 = tree_10560445(31, []);
+    add_10550072(tmp_11665037, text_10560582(makeNimstrLit("Create Exam")));
+    add_10550072(tmp_11665035, tmp_11665037);
+    add_10550072(tmp_11665034, tmp_11665035);
+    var tmp_11665038 = tree_10560445(43, []);
+    tmp_11665038.class = "inputandlabel";
+    add_10550072(tmp_11665034, tmp_11665038);
+    result_11665033 = tmp_11665034;
 
   return result_11665033;
 
 }
-function user_11680213() {
-    function showSettings_11680216(e_11680218, n_11680219) {
-        var background_11680220 = document.getElementById("app");
-        var userpage_11680221 = document.getElementById("userpage");
-        background_11680220.replaceChild(vnodeToDom_11470073(settingPage_11645264(), null), userpage_11680221);
+function sudoPage_11670034() {
+    function editTerms_11670054(e_11670056, n_11670057) {
+        var userpage_11670058 = document.getElementById("userpage");
+        var settingsarea_11670059 = document.getElementById("usersettingsarea");
+        var tmp_11670060 = tree_10560445(43, []);
+        tmp_11670060.id = "usersettingsarea";
+        var tmp_11670061 = tree_10560445(43, []);
+        tmp_11670061.class = "addcontainer";
+        add_10550072(tmp_11670061, add_11545042(fluke_11542028));
+        add_10550072(tmp_11670060, tmp_11670061);
+        var tmp_11670062 = tree_10560445(111, []);
+        tmp_11670062.id = "note";
+        add_10550072(tmp_11670060, tmp_11670062);
+        var editarea_11675013 = tmp_11670060;
+        userpage_11670058.replaceChild(vnodeToDom_11470073(editarea_11675013, null), settingsarea_11670059);
 
       
     }
-    function showLog_11680235(e_11680237, n_11680238) {
-        var background_11680239 = document.getElementById("app");
-        var userpage_11680240 = document.getElementById("userpage");
-        background_11680239.replaceChild(vnodeToDom_11470073(logPage_11650063(), null), userpage_11680240);
+    function editSmedia_11675042(e_11675044, n_11675045) {
+        var userpage_11675046 = document.getElementById("userpage");
+        var settingsarea_11675047 = document.getElementById("usersettingsarea");
+        var tmp_11675048 = tree_10560445(43, []);
+        tmp_11675048.id = "usersettingsarea";
+        var tmp_11675049 = tree_10560445(43, []);
+        tmp_11675049.class = "addcontainer";
+        add_10550072(tmp_11675049, add_11545042(fluke_11542028));
+        add_10550072(tmp_11675048, tmp_11675049);
+        var tmp_11675050 = tree_10560445(43, []);
+        tmp_11675050.class = "inputandlabel";
+        var tmp_11675051 = tree_10560445(104, []);
+        add_10550072(tmp_11675051, text_10560582(makeNimstrLit("Youtube Url")));
+        add_10550072(tmp_11675050, tmp_11675051);
+        var tmp_11675052 = tree_10560445(105, []);
+        setAttr_10500105(tmp_11675052, "type", "text");
+        tmp_11675052.id = "youtube";
+        setAttr_10500105(tmp_11675052, "placeholder", "Youtube Url");
+        add_10550072(tmp_11675050, tmp_11675052);
+        add_10550072(tmp_11675048, tmp_11675050);
+        var tmp_11675053 = tree_10560445(43, []);
+        tmp_11675053.class = "inputandlabel";
+        var tmp_11675054 = tree_10560445(104, []);
+        add_10550072(tmp_11675054, text_10560582(makeNimstrLit("Twitter Url")));
+        add_10550072(tmp_11675053, tmp_11675054);
+        var tmp_11675055 = tree_10560445(105, []);
+        setAttr_10500105(tmp_11675055, "type", "text");
+        tmp_11675055.id = "twitter";
+        setAttr_10500105(tmp_11675055, "placeholder", "Twitter Url");
+        add_10550072(tmp_11675053, tmp_11675055);
+        add_10550072(tmp_11675048, tmp_11675053);
+        var tmp_11675056 = tree_10560445(43, []);
+        tmp_11675056.class = "inputandlabel";
+        var tmp_11675057 = tree_10560445(104, []);
+        add_10550072(tmp_11675057, text_10560582(makeNimstrLit("Telegram Url")));
+        add_10550072(tmp_11675056, tmp_11675057);
+        var tmp_11675058 = tree_10560445(105, []);
+        setAttr_10500105(tmp_11675058, "type", "text");
+        tmp_11675058.id = "telegram";
+        setAttr_10500105(tmp_11675058, "placeholder", "Telegram Url");
+        add_10550072(tmp_11675056, tmp_11675058);
+        add_10550072(tmp_11675048, tmp_11675056);
+        var tmp_11675059 = tree_10560445(43, []);
+        tmp_11675059.class = "inputandlabel";
+        var tmp_11675060 = tree_10560445(104, []);
+        add_10550072(tmp_11675060, text_10560582(makeNimstrLit("Instagram Url")));
+        add_10550072(tmp_11675059, tmp_11675060);
+        var tmp_11675061 = tree_10560445(105, []);
+        setAttr_10500105(tmp_11675061, "type", "text");
+        tmp_11675061.id = "instagram";
+        setAttr_10500105(tmp_11675061, "placeholder", "Instagram Url");
+        add_10550072(tmp_11675059, tmp_11675061);
+        add_10550072(tmp_11675048, tmp_11675059);
+        var editarea_11680057 = tmp_11675048;
+        userpage_11675046.replaceChild(vnodeToDom_11470073(editarea_11680057, null), settingsarea_11675047);
 
       
     }
-    function showSudo_11680254(e_11680256, n_11680257) {
-        var background_11680258 = document.getElementById("app");
-        var userpage_11680259 = document.getElementById("userpage");
-        var tmp_11680260 = tree_10560445(43, []);
-        tmp_11680260.id = "usersettingsarea";
-        var tmp_11680261 = tree_10560445(43, []);
-        tmp_11680261.class = "addcontainer";
-        var tmp_11680262 = tree_10560445(31, []);
-        add_10550072(tmp_11680262, text_10560582(makeNimstrLit("Clear Log")));
-        add_10550072(tmp_11680261, tmp_11680262);
-        add_10550072(tmp_11680260, tmp_11680261);
-        var tmp_11680263 = tree_10560445(70, []);
-        tmp_11680263.id = "note";
-        add_10550072(tmp_11680260, tmp_11680263);
-        var editarea_11685017 = tmp_11680260;
-        background_11680258.replaceChild(vnodeToDom_11470073(sudoPage_11665031(), null), userpage_11680259);
-        userpage_11680259 = document.getElementById("userpage");
-        var settingsarea_11685018 = document.getElementById("usersettingsarea");
-        userpage_11680259.replaceChild(vnodeToDom_11470073(editarea_11685017, null), settingsarea_11685018);
+    function editExam_11680071(e_11680073, n_11680074) {
+        var userpage_11680075 = document.getElementById("userpage");
+        var settingsarea_11680076 = document.getElementById("usersettingsarea");
+        userpage_11680075.replaceChild(vnodeToDom_11470073(exams_11665031(), null), settingsarea_11680076);
 
       
     }
 
-  var result_11680215 = null;
+  var result_11670036 = null;
 
-    var tmp_11685032 = tree_10560445(30, []);
-    tmp_11685032.id = "background";
-    var tmp_11685033 = tree_10560445(43, []);
-    tmp_11685033.id = "navbar";
-    var tmp_11685034 = tree_10560445(70, []);
-    tmp_11685034.id = "userbtns";
-    var tmp_11685035 = tree_10560445(43, []);
-    tmp_11685035.id = "usersettings";
-    tmp_11685035.class = "usermenubtns";
-    addEventHandler_11460118(tmp_11685035, 0, showSettings_11680216, kxi_10897284[0]);
-    add_10550072(tmp_11685034, tmp_11685035);
-    var tmp_11685036 = tree_10560445(43, []);
-    tmp_11685036.id = "userrecord";
-    tmp_11685036.class = "usermenubtns";
-    addEventHandler_11460118(tmp_11685036, 0, showLog_11680235, kxi_10897284[0]);
-    add_10550072(tmp_11685034, tmp_11685036);
-    var tmp_11685037 = tree_10560445(43, []);
-    tmp_11685037.id = "sudoopt";
-    tmp_11685037.class = "usermenubtns";
-    addEventHandler_11460118(tmp_11685037, 0, showSudo_11680254, kxi_10897284[0]);
-    add_10550072(tmp_11685034, tmp_11685037);
-    add_10550072(tmp_11685033, tmp_11685034);
-    var tmp_11685038 = tree_10560445(75, []);
-    setAttr_10500105(tmp_11685038, "src", "../../../static/imgs/avatar.png");
-    tmp_11685038.id = "profilepic";
-    add_10550072(tmp_11685033, tmp_11685038);
-    add_10550072(tmp_11685032, tmp_11685033);
-    var tmp_11685039 = tree_10560445(43, []);
-    tmp_11685039.id = "userpage";
-    add_10550072(tmp_11685032, tmp_11685039);
-    result_11680215 = tmp_11685032;
+    var tmp_11680090 = tree_10560445(43, []);
+    tmp_11680090.id = "userpage";
+    add_10550072(tmp_11680090, userNav_11632022([{name: makeNimstrLit("Log"), action: checkLog_11660032}, {name: makeNimstrLit("Terms"), action: editTerms_11670054}, {name: makeNimstrLit("Policy"), action: editTerms_11670054}, {name: makeNimstrLit("Developers"), action: editTerms_11670054}, {name: makeNimstrLit("Faq"), action: editTerms_11670054}, {name: makeNimstrLit("Social Media"), action: editSmedia_11675042}, {name: makeNimstrLit("Exams"), action: editExam_11680071}]));
+    var tmp_11680091 = tree_10560445(43, []);
+    tmp_11680091.id = "usersettingsarea";
+    add_10550072(tmp_11680090, tmp_11680091);
+    result_11670036 = tmp_11680090;
 
-  return result_11680215;
+  return result_11670036;
 
 }
-setRenderer_11455238(user_11680213, "app", null);
+function user_11685213() {
+    function showSettings_11685216(e_11685218, n_11685219) {
+        var background_11685220 = document.getElementById("app");
+        var userpage_11685221 = document.getElementById("userpage");
+        background_11685220.replaceChild(vnodeToDom_11470073(settingPage_11645264(), null), userpage_11685221);
+
+      
+    }
+    function showLog_11685235(e_11685237, n_11685238) {
+        var background_11685239 = document.getElementById("app");
+        var userpage_11685240 = document.getElementById("userpage");
+        background_11685239.replaceChild(vnodeToDom_11470073(logPage_11650063(), null), userpage_11685240);
+
+      
+    }
+    function showSudo_11685254(e_11685256, n_11685257) {
+        var background_11685258 = document.getElementById("app");
+        var userpage_11685259 = document.getElementById("userpage");
+        var tmp_11685260 = tree_10560445(43, []);
+        tmp_11685260.id = "usersettingsarea";
+        var tmp_11685261 = tree_10560445(43, []);
+        tmp_11685261.class = "addcontainer";
+        var tmp_11685262 = tree_10560445(31, []);
+        add_10550072(tmp_11685262, text_10560582(makeNimstrLit("Clear Log")));
+        add_10550072(tmp_11685261, tmp_11685262);
+        add_10550072(tmp_11685260, tmp_11685261);
+        var tmp_11685263 = tree_10560445(70, []);
+        tmp_11685263.id = "note";
+        add_10550072(tmp_11685260, tmp_11685263);
+        var editarea_11690017 = tmp_11685260;
+        background_11685258.replaceChild(vnodeToDom_11470073(sudoPage_11670034(), null), userpage_11685259);
+        userpage_11685259 = document.getElementById("userpage");
+        var settingsarea_11690018 = document.getElementById("usersettingsarea");
+        userpage_11685259.replaceChild(vnodeToDom_11470073(editarea_11690017, null), settingsarea_11690018);
+
+      
+    }
+
+  var result_11685215 = null;
+
+    var tmp_11690032 = tree_10560445(30, []);
+    tmp_11690032.id = "background";
+    var tmp_11690033 = tree_10560445(43, []);
+    tmp_11690033.id = "navbar";
+    var tmp_11690034 = tree_10560445(70, []);
+    tmp_11690034.id = "userbtns";
+    var tmp_11690035 = tree_10560445(43, []);
+    tmp_11690035.id = "usersettings";
+    tmp_11690035.class = "usermenubtns";
+    addEventHandler_11460118(tmp_11690035, 0, showSettings_11685216, kxi_10897284[0]);
+    add_10550072(tmp_11690034, tmp_11690035);
+    var tmp_11690036 = tree_10560445(43, []);
+    tmp_11690036.id = "userrecord";
+    tmp_11690036.class = "usermenubtns";
+    addEventHandler_11460118(tmp_11690036, 0, showLog_11685235, kxi_10897284[0]);
+    add_10550072(tmp_11690034, tmp_11690036);
+    var tmp_11690037 = tree_10560445(43, []);
+    tmp_11690037.id = "sudoopt";
+    tmp_11690037.class = "usermenubtns";
+    addEventHandler_11460118(tmp_11690037, 0, showSudo_11685254, kxi_10897284[0]);
+    add_10550072(tmp_11690034, tmp_11690037);
+    add_10550072(tmp_11690033, tmp_11690034);
+    var tmp_11690038 = tree_10560445(75, []);
+    setAttr_10500105(tmp_11690038, "src", "../../../static/imgs/avatar.png");
+    tmp_11690038.id = "profilepic";
+    add_10550072(tmp_11690033, tmp_11690038);
+    add_10550072(tmp_11690032, tmp_11690033);
+    var tmp_11690039 = tree_10560445(43, []);
+    tmp_11690039.id = "userpage";
+    add_10550072(tmp_11690032, tmp_11690039);
+    result_11685215 = tmp_11690032;
+
+  return result_11685215;
+
+}
+setRenderer_11455238(user_11685213, "app", null);

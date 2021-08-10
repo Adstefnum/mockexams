@@ -58,6 +58,15 @@ proc checkLog(e : Event, n : VNode) =
 
     userpage.replaceChild(editarea.vnodeToDom(), settingsarea)
 
+proc exams() : VNode =
+    result = buildHtml(tdiv(id = "usersettingsarea")):
+        tdiv(class = "addcontainer"):
+            p:
+                text "Exams"
+            p:
+                text "Create Exam"
+        tdiv(class = "inputandlabel")
+
 proc sudoPage() : VNode =
     proc fluke(e : Event, n : VNode) {.closure.} =
         discard
@@ -106,6 +115,14 @@ proc sudoPage() : VNode =
 
         userpage.replaceChild(editarea.vnodeToDom(), settingsarea)
 
+    proc editExam(e : Event, n : VNode) {.closure.} =
+        {.cast(noSideEffect).}
+        let 
+            userpage = document.getElementById("userpage")
+            settingsarea = document.getElementById("usersettingsarea")
+
+        userpage.replaceChild(exams().vnodeToDom(), settingsarea)
+
     result = buildHtml(tdiv(id = "userpage")):
         userNav(@[
             Btn(name : "Log", action : checkLog),
@@ -114,7 +131,7 @@ proc sudoPage() : VNode =
             Btn(name : "Developers", action : editTerms), 
             Btn(name : "Faq", action : editTerms), 
             Btn(name : "Social Media", action : editSmedia),
-            Btn(name : "Exams", action : fluke)])
+            Btn(name : "Exams", action : editExam)])
         tdiv(id = "usersettingsarea")
 
 proc loading(e : Event, n : VNode) {.exportc.} =
