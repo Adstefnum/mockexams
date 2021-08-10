@@ -23,3 +23,9 @@ task exam, "Compiles the project's exam page":
 
 task user, "Compiles the project's user page":
     exec "nim js -d:release -d:danger --gc:orc -o:js/user.js nim_src/user.nim"
+
+task note, "Compiles the project's note page":
+    exec "nim js -d:release -d:danger --gc:orc -o:js/note.js nim_src/note.nim"
+
+task authenticate, "Compiles the project's authenticate page":
+    exec "nim js -d:release -d:danger --gc:orc -o:js/authenticate.js nim_src/authenticate.nim"

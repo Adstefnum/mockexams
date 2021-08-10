@@ -48,7 +48,7 @@ http://127.0.0.1:8000/users/v1/login/
 ```JSON
 {
     "password": "chuchu",
- "username": "ola",
+    "username": "ola",
     "groups": [],
     "user_permissions": []
 }

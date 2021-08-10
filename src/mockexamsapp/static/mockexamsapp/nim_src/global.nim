@@ -1,8 +1,68 @@
-import karax / [karax, karaxdsl, vdom, kdom], datatype
-from strutils import format
+import karax / [karax, karaxdsl, vdom, kdom, kajax], datatype, asyncjs, json
+from strutils import format, split, strip
+from jsffi import to
 
-proc fluke(e : Event, n : VNode) =
+proc fluke*(e : Event, n : VNode) {.deprecated.} =
     discard
+
+proc readCookies*(keyword : string) : string =
+    let cookies = $document.cookie
+
+    for cookie in cookies.split(";"):
+        let splitcookie = cookie.strip.split("=")
+
+        if splitcookie[0] == keyword:
+            return splitcookie[1]
+
+proc toCstr*[T](item: T): cstring =
+    let item: cstring = $item
+    return item
+
+proc callBackend*[T](url: string, form: T, headers : seq[(cstring, cstring)]): Future[JsonNode] =
+
+    var
+        url: cstring = url
+        info : string = $(%*form)
+
+    var
+        data = (info).toCstr()
+        headers = headers
+        promise = newPromise() do (resolve: proc(response: JsonNode)):
+            ajaxPost(url, headers, data, proc (status: int, resp: cstring) =
+                if status == 200:
+                    let jsonresp = parseJson($resp)
+                    resolve(jsonresp)
+            )
+
+    return promise
+
+proc callApi*(url: string, useget: bool = false): Future[JsonNode] =
+    let
+        url: cstring = url
+
+    var
+        headers: seq[(cstring, cstring)]
+        data: cstring
+        promise: Future[JsonNode]
+
+    if useget:
+        promise = newPromise() do (resolve: proc(response: JsonNode)):
+            ajaxGet(url, headers, proc (status: int, resp: cstring) =
+                if status == 200:
+                    echo resp, url
+                    let jsonresp = parseJson($resp)
+                    resolve(jsonresp)
+            )
+
+    else:
+        promise = newPromise() do (resolve: proc(response: JsonNode)):
+            ajaxPost(url, headers, data, proc (status: int, resp: cstring) =
+                if status == 200:
+                    let jsonresp = parseJson($resp)
+                    resolve(jsonresp)
+            )
+
+    return promise
 
 proc cancel*(action : proc(e : Event, n : VNode) = fluke) : VNode =
     result = buildHtml(tdiv(id = "cancel", onclick = action)):
@@ -89,49 +149,93 @@ proc menu*(): VNode =
         menubtn(("Login", "loginicon", testevent))
         menubtn(("Register", "registericon", testevent))
 
-proc auth*(cancelproc: proc(ev: Event, n: VNode)): VNode =
+proc auth*(cancelproc: proc(ev: Event, n: VNode) = fluke, showcancel : bool = true): VNode =
     proc login(): VNode {.closure.} =
+
+        proc actionLogin(e : Event, n : VNode) {.closure.} =
+
+            proc loginUser(data : tuple[username, password : string]) {.async.} =
+
+                let response = await callBackend[BackendUser]("/users/v1/login/", BackendUser(
+                    username : data.username,
+                    password : data.password
+                ), @[
+                    ("Authorization".toCstr, "e9c4c24be896d4a7f280a8f029dea8e5ed8c661c".toCstr), 
+                    ("Content-Type".toCstr, "application/json".toCstr)])
+
+                echo response
+
+            let
+                username = document.getElementById("username").value
+                password = document.getElementById("password").value
+
+            discard loginUser((username : $username, password : $password))
+
         result = buildHtml(tdiv(id = "authmode")):
             tdiv(class = "authcapsule"):
                 label:
                     text "Username"
-                input(`type` = "text", placeholder = "username")
+                input(`type` = "text", placeholder = "username", id = "username")
 
             tdiv(class = "authcapsule"):
                 label:
                     text "Password"
-                input(`type` = "password", placeholder = "password")
+                input(`type` = "password", placeholder = "password", id = "password")
 
-            button(`type` = "button"):
+            button(`type` = "button", onclick = actionLogin):
                 text "Login"
 
     proc register(): VNode {.closure.} =
+
+        proc createUser(e : Event, n : VNode) {.closure.} =
+
+            proc addUser(data : tuple[username, password, number, email : string]) {.async.} =
+
+                let response = await callBackend[BackendUser]("/users/v1/register/", BackendUser(
+                    user_name : data.username,
+                    password : data.password,
+                    phone_num : data.number,
+                    email : data.email
+                ), @[
+                    ("Authorization".toCstr, "e9c4c24be896d4a7f280a8f029dea8e5ed8c661c".toCstr), 
+                    ("Content-Type".toCstr, "application/json".toCstr)])
+                
+                echo response
+
+            let
+                username = document.getElementById("username").value
+                password = document.getElementById("password").value
+                number = document.getElementById("number").value
+                email = document.getElementById("email").value
+
+            discard addUser(($username, $password, $number, $email))
+
         result = buildHtml(tdiv(id = "authmode")):
             tdiv(class = "authcapsule"):
                 label:
                     text "Username"
-                input(`type` = "text", placeholder = "username")
+                input(`type` = "text", placeholder = "username", id = "username")
 
             tdiv(class = "imgcapsule"):
                 label(id = "whatsapp", class = "formimg")
-                input(`type` = "tel", placeholder = "whatsapp number")
+                input(`type` = "tel", placeholder = "whatsapp number", id = "number")
 
             tdiv(class = "authcapsule"):
                 label:
                     text "Email"
-                input(`type` = "email", placeholder = "email")
+                input(`type` = "email", placeholder = "email", id = "email")
 
             tdiv(class = "authcapsule"):
                 label:
                     text "Password"
-                input(`type` = "password", placeholder = "password")
+                input(`type` = "password", placeholder = "password", id = "password")
 
             tdiv(class = "authcapsule"):
                 label:
                     text "Retype Password"
                 input(`type` = "password", placeholder = "retype password")
 
-            button(`type` = "button"):
+            button(`type` = "button", onclick = createUser):
                 text "Register"
 
     proc showLogin(ev: Event, n: VNode) {.closure.} =
@@ -149,8 +253,11 @@ proc auth*(cancelproc: proc(ev: Event, n: VNode)): VNode =
         canvas.replaceChild(register().vnodeToDom(), previtem)
 
     result = buildHtml(span(id = "auth")):
-        tdiv(class = "cancelcontainer"):
-            cancel(cancelproc)
+
+        if showcancel:
+            tdiv(class = "cancelcontainer"):
+                cancel(cancelproc)
+
         tdiv(id = "authswap"):
             span(class = "authbtns", onclick = showLogin):
                 text "Login"

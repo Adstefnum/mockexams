@@ -21,6 +21,11 @@ type
     User = object
         name*, image*, id* : string
 
+    BackendUser* = object
+        user_name*, email*, password*, phone_num*, last_name*, first_name* : string
+        groups*, permissions* : seq[string]
+        current_jamb_score* : int
+
     Exam* = object
         name*, description*, image* : string
         time* : int

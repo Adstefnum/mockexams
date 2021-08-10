@@ -10,6 +10,10 @@ class IndexView(ListView):
 		static = {'js' : 'home', 'css' : 'home'}
 		return render(request, self.template_name, static)
 
+	def auth(self, request):
+		static = {'js' : 'authenticate', 'css' : 'authenticate'}
+		return render(request, self.template_name, static)
+
 	def note(self, request):
 		static = {'js' : 'note', 'css' : 'note'}
 		return render(request, self.template_name, static)
