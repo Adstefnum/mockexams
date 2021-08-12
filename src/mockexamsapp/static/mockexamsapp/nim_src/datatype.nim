@@ -22,7 +22,7 @@ type
         name*, image*, id* : string
 
     BackendUser* = object
-        user_name*, email*, password*, phone_num*, last_name*, first_name* : string
+        username*, email*, password*, phone_num*, last_name*, first_name* : string
         groups*, permissions* : seq[string]
         current_jamb_score* : int
 

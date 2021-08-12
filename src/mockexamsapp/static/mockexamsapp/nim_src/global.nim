@@ -19,7 +19,7 @@ proc toCstr*[T](item: T): cstring =
     let item: cstring = $item
     return item
 
-proc parseMarkdown(markdownText : cstring) : cstring {.importjs.}
+proc parseMarkdown*(markdownText : cstring) : cstring {.importc.}
 
 proc callBackend*[T](url: string, form: T, headers : seq[(cstring, cstring)]): Future[JsonNode] =
 
