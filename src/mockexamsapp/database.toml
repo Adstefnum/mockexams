@@ -1,0 +1,18 @@
+[dbschema.note]
+Terms = """
+## Terms and Conditions
+"""
+Policy = """
+## Site Policies
+"""
+Devs = """
+## The Amazing devs
+"""
+FAQ = """
+## Frequently Asked Questions(FAQ)
+"""
+
+[dbschema.social-media]
+Gmail = "/"
+Twitter = "/"
+Telegram = "/"

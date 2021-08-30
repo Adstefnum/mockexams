@@ -8,25 +8,24 @@ const subjects = [
 ]
 
 var examinfo : Exam
-
 proc sidebar() : VNode =
     result = buildHtml(tdiv(id = "sidebar")):
 
-        tdiv(id = "userinfo"):
-            img(src = "../../../media/mockexamsapp/imgs/avatar.png", id = "profilepic")
-            p:
-                text "C-NERD"
+        #[tdiv(id = "userinfo"):
+            img(src = "/static/mockexamsapp/imgs/avatar.png", id = "profilepic")]#
+
+        span(id = "subjectsinfo"):
+            for each in subjects:
+                button(`type` = "button", class = "btn"):
+                    text each.name
 
         span(id = "examinfo"):
             p:
                 text "Exam : UTME"
             p:
                 text "Time : 120:00"
-
-        span(id = "subjectsinfo"):
-            for each in subjects:
-                button(`type` = "button", class = "btn"):
-                    text each.name
+            p:
+                text "C-NERD"
 
 proc showSidebar(e : Event, n : VNode) =
 

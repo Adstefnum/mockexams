@@ -12,6 +12,7 @@ urlpatterns = [
 	path('policy', views.IndexView().note, name = "policy"),
 	path('devs', views.IndexView().note, name = "developers"),
 	path('faq', views.IndexView().note, name = "faq"),
+	path('socialmedia', views.IndexView().sm, name = "sm"),
 	path('payment', views.IndexView().payment, name = "payment"),
 	#path('payment', views.subscribe_view, name = "payment"),
 

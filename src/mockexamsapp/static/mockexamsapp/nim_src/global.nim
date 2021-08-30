@@ -1,7 +1,5 @@
 import karax / [karax, karaxdsl, vdom, kdom, kajax], datatype, asyncjs, json
 from strutils import format, split, strip
-from jsffi import to
-from jsre import newRegExp, RegExp, exec
 
 proc fluke*(e : Event, n : VNode) {.deprecated.} =
     discard
@@ -100,6 +98,19 @@ proc navbar*(): VNode =
                 text "Register"]#
             #burger()
 
+proc socialMedia*(socialmedia: SocialMedia) : VNode =
+    
+    proc mediaImg(name, url: string): VNode =
+        
+        result = buildHtml(a(href = url)):
+            tdiv(class = "socialmedia", id = name)
+    
+    result = buildHtml(span(id = "socialmedia")):
+        
+        mediaImg("Gmail", socialmedia.Gmail)
+        mediaImg("Twitter", socialmedia.Twitter)
+        mediaImg("Telegram", socialmedia.Telegram)
+
 proc exam*(exam: Exam, action: proc(ev: Event, n: VNode)): VNode =
     result = buildHtml(tdiv(class = "exams", onclick = action)):
         img(alt = "examimage", src = exam.image)
@@ -120,7 +131,17 @@ proc footbar*(): VNode =
             for each in data.content:
                 a(href = each.url):
                     text each.name
-
+    
+    proc getSocialMedia() {.closure, async.} =
+    
+        let 
+            data = await callApi("/socialmedia")
+            info = data.to(SocialMedia)
+            footer = document.getElementById("footbar")
+            oldsm = document.getElementById("socialmedia")
+        
+        footer.replaceChild(socialMedia(info).vnodeToDom, oldsm)
+        
     result = buildHtml(footer(id = "footbar")):
         column(("Legal", @[
             ("Terms and Conditions", "/terms"),
@@ -131,6 +152,9 @@ proc footbar*(): VNode =
             ("Developers", "/devs"),
             ("FAQ", "/faq")
             ]))
+        span(id = "socialmedia")
+            
+    discard getSocialMedia()
 
 proc footbar2*(): VNode =
     result = buildHtml(footer(id = "footbar2")):

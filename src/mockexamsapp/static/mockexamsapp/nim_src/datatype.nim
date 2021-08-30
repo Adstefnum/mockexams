@@ -31,7 +31,10 @@ type
         time* : int
         user* : User
         subjects* : seq[Subject]
-
+    
+    SocialMedia* = object
+        Gmail*, Twitter*, Telegram*: string
+    
     ConfigExam* = object
         exam*: Exam
         time* : string
