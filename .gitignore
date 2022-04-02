@@ -4,6 +4,7 @@ curl.txt
 __pycache__/
 *.py[cod]
 *$py.class
+env.py
 
 .history
 # C extensions
