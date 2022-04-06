@@ -4,7 +4,9 @@
 </script>
 
  <div class="card">
-    <p>A. Option here</p>
+    <p>
+<slot></slot>
+</p>
 </div> 
 
 <style>
