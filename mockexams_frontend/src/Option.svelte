@@ -1,7 +1,6 @@
 <script>
-
-
 </script>
+
 
  <div class="card">
     <p>
@@ -16,6 +15,7 @@
   transition: 0.3s;
  border-radius: 5px;
 height:45px;
+width:50%;
 }
 
 .card:click{
