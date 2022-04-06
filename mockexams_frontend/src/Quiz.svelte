@@ -3,11 +3,9 @@ import Option from './Option.svelte';
 import Question from './Question.svelte';
 </script>
 
-<h1>
-	quiz is firing
-</h1>
-
-<Question />
+<Question>
+What is the answer to abcd?
+</Question>
 <div class="options">
 <Option>
 A. Option A
